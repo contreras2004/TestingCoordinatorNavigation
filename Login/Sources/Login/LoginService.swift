@@ -62,7 +62,7 @@ public class LoginService: LoginServiceProtocol {
             } receiveValue: { userModel in
                 DispatchQueue.main.async {
                     completion(.success(userModel))
-                }º
+                }
             }.store(in: &cancelables)
     }
 

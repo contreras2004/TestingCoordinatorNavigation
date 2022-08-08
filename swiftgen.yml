@@ -12,7 +12,7 @@ xcassets:
   inputs: Theme/Sources/Theme/Colors.xcassets
   outputs:
     templateName: swift5
-    output: Theme/Sources/Theme/Generated/Colors.swift
+    output: Theme/Sources/Theme/Generated/ThemeColor.swift
     params:
       publicAccess: true
       enumName: ThemeColor
