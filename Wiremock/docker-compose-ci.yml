@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  mock_api:
+    build:
+      context: ./wiremock
+      dockerfile: Dockerfile
+    container_name: mock_api
+    ports:
+      - 3001:3001
+    environment:
+      - WIREMOCK_PORT=3001

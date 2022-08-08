@@ -1,0 +1,22 @@
+{
+    "request": {
+        "url": "/login",
+        "method": "POST",
+        "headers": { },
+        
+        "bodyPatterns": [
+            { "matchesJsonPath" : "$[?(@.userName == '11111111-1')]"},
+            { "matchesJsonPath" : "$[?(@.password == '3')]"}
+        ]
+    },
+    "response": {
+        "status": 200,
+        "fixedDelayMilliseconds": 99000,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "jsonBody": {
+            "name": "Matias Contreras"
+        }
+    }
+}

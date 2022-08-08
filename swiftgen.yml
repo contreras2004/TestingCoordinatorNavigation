@@ -1,0 +1,26 @@
+#output_dir: 'Login/Sources/Login/Generated'
+
+strings:
+  inputs: Login/Sources/Login/Resources/Localizable/en.lproj
+  outputs:
+    templateName: structured-swift5
+    output: Login/Sources/Login/Generated/L10n.swift
+
+
+#output_dir: 'Theme/Sources/Theme/Generated'
+xcassets:
+  inputs: Theme/Sources/Theme/Colors.xcassets
+  outputs:
+    templateName: swift5
+    output: Theme/Sources/Theme/Generated/Colors.swift
+    params:
+      publicAccess: true
+      enumName: ThemeColor
+
+# Uncomment when we need to generate assets
+#xcassets:
+#  inputs:
+#    - Tolls/Assets.xcassets
+#  outputs:
+#    - templateName: swift5
+#      output: Asset.swift

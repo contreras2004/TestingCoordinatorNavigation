@@ -1,0 +1,28 @@
+{
+  "name": "wiremock-toolkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "mock": "node index mock",
+    "mock-proxy": "node index mock-proxy",
+    "mock-docker": "docker-compose -f docker-compose-local.yml up --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorsalgado/wiremock-toolkit.git"
+  },
+  "author": "Vitor Hugo Salgado <vsalgadopb@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vitorsalgado/wiremock-toolkit/issues"
+  },
+  "homepage": "https://github.com/vitorsalgado/wiremock-toolkit#readme",
+  "dependencies": {
+    "@hapi/joi": "15.1.1",
+    "commander": "^2.19.0",
+    "dotenv": "^6.1.0",
+    "wiremock-auto-reloader": "file:wiremock-auto-reloader"
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "request": {
+        "url": "/login",
+        "method": "POST",
+        "headers": { },
+        "bodyPatterns": [
+            { "matchesJsonPath" : "$[?(@.userName == '11111111-1')]"},
+            { "matchesJsonPath" : "$[?(@.password == '2')]"}
+        ]
+    },
+    "response": {
+        "status": 500,
+        "fixedDelayMilliseconds": 1000,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "jsonBody": {
+            "errorDescription": "User not registered",
+            "errorCode": 1
+        }
+    }
+}

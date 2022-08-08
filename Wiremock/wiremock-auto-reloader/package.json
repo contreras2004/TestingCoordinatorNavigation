@@ -1,0 +1,25 @@
+{
+  "name": "wiremock-auto-reloader",
+  "version": "0.0.1",
+  "description": "Tool to reload automatically reload Wiremock on file changes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "author": {
+    "name": "Vitor Hugo Salgado",
+    "email": "vsalgadopb@gmail.com",
+    "url": "https://github.com/vitorsalgado"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "chokidar": "^2.0.4",
+    "ip": "^1.1.5",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
