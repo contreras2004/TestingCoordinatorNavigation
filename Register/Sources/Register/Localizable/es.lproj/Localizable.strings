@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Tolls
+
+  Created by m.contreras.selman on 26-07-22.
+  
+*/
+
+// MARK: View titles
+"map" = "Map";
+"anotherView" = "AnotherView";
+
+"login" = "Iniciar Sesión";
+"logout" = "Cerrar Sesión";
+"goTo" = "Ir a %@";
+"thisIsAnotherView" = "Esta es AnotherView";
+"goToFirstTab" = "Ir a la primera pestaña";
+"popToRoot" = "Ir al inicio";
+"thereAreNViewsInTheStack" = "Hay %@ en el stack de navegación";
+
+// MARK: Error View
+"errorTitle"= "Error";
+"errorMessage" = "Ups! Algo salió mal 🥲";
+"errorAcceptButton" = "Ok";
+
+// MARK: Login error messages
+"loginErrorCode1" = "Usuario no registrado";
+"loginErrorCode2" = "Contraseña no es válida";
+"loginErrorUnknown" = "Error desconocido";

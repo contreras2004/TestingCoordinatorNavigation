@@ -13,6 +13,8 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
     let viewFactory: ViewFactory
     let viewModel: BaseViewModel
 
+    @State var isPresented = true
+
     public init(viewModel: BaseViewModel,
                 @ViewBuilder viewFactory: () -> ViewFactory) {
         self.coordinator = viewModel.coordinator
@@ -27,7 +29,10 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
             .navigationDestination(for: BaseViewModel.self) { viewModel in
                 viewFactory.viewFor(viewModel: viewModel)
                     .modified(viewModel: viewModel)
-            }
+            }/*
+            .sheet(isPresented: $isPresented) {
+                viewFactory.viewFor(viewModel: viewModel)
+            }*/
         }.tabItem {
             Label(viewModel.title, systemImage: viewModel.iconForTab)
         }

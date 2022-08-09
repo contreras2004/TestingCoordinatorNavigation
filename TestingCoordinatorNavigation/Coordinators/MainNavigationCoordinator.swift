@@ -46,6 +46,8 @@ class MainNavigationCoordinator: NavigationCoordinator {
             switch event {
             case .login:
                 login()
+            case .goToRegisterForm:
+                goToRegisterForm()
             }
         }
     }

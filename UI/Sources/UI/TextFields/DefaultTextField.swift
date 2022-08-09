@@ -10,22 +10,33 @@ import Theme
 
 public struct DefaultTextField: View {
     var placeholder: String = ""
+    var isSecure = false
     @Binding var value: String
 
     public init(
         placeholder: String,
+        isSecure: Bool = false,
         value: Binding<String> = .constant("")
     ) {
         self.placeholder = placeholder
+        self.isSecure = isSecure
         _value = value
     }
 
     public var body: some View {
-        TextField(placeholder, text: $value)
-            .padding(.horizontal, 15)
-            .frame(height: 48.0)
-            .background(Color(asset: ThemeColor.textfieldBackground))
-            .cornerRadius(5)
+        if isSecure {
+            SecureField(placeholder, text: $value)
+                .padding(.horizontal, 15)
+                .frame(height: 48.0)
+                .background(Color(asset: ThemeColor.textfieldBackground))
+                .cornerRadius(5)
+        } else {
+            TextField(placeholder, text: $value)
+                .padding(.horizontal, 15)
+                .frame(height: 48.0)
+                .background(Color(asset: ThemeColor.textfieldBackground))
+                .cornerRadius(5)
+        }
     }
 }
 

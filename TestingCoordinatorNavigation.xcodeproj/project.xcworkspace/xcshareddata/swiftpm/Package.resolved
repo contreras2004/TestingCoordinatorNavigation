@@ -33,7 +33,7 @@
       "location" : "https://github.com/Quick/Nimble",
       "state" : {
         "branch" : "main",
-        "revision" : "e313d9a67ec2e4171d416c61282e49fc3aadc7a4"
+        "revision" : "daad10d6a19458897c227d010d422898fcc56089"
       }
     },
     {
@@ -51,7 +51,7 @@
       "location" : "https://github.com/Quick/Quick",
       "state" : {
         "branch" : "main",
-        "revision" : "4cfa4791be84c75e84b41e886a5e4931b97d7572"
+        "revision" : "d18bb92651caba3a97e2c08d9d7c4f44f8dfd0f3"
       }
     },
     {
@@ -70,6 +70,15 @@
       "state" : {
         "revision" : "a1ef95548f6e2133e065d34aa3c0de9d3c9f2ad0",
         "version" : "0.3.0"
+      }
+    },
+    {
+      "identity" : "swiftgenplugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftGen/SwiftGenPlugin",
+      "state" : {
+        "revision" : "bc3038fa9c831f8c3ef3f225254d1895dac6a637",
+        "version" : "6.6.1"
       }
     }
   ],

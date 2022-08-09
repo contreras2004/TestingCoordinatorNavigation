@@ -33,6 +33,9 @@ public struct LoginView: View {
             LargeButton(text: L10n.login, isLoading: $viewModel.isLoading, action: {
                 viewModel.login()
             })
+            LargeButton(text: L10n.register, isLoading: $viewModel.isLoading, action: {
+                viewModel.coordinator.handle(event: LoginEvents.goToRegisterForm)
+            })
         }
         .padding()
         .navigationBarTitle(L10n.login, displayMode: .inline)

@@ -8,6 +8,7 @@
 import Foundation
 import Login
 import Navigation
+import Register
 import SwiftUI
 
 public struct CustomView: View {
@@ -28,6 +29,8 @@ public struct ViewFactory: ViewFactoryProtocol {
         switch viewModel {
         case let viewModel as LoginViewModel:
             LoginView(viewModel: viewModel)
+        case let viewModel as RegisterFormViewModel:
+            RegisterForm(viewModel: viewModel)
         case let viewModel as View1ViewModel:
             View1(viewModel: viewModel)
         case let viewModel as View2ViewModel:

@@ -18,9 +18,10 @@
 		8E29CA5B289B192700248D3F /* MainNavigationCoordinator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA5A289B192700248D3F /* MainNavigationCoordinator+Extension.swift */; };
 		8E29CA5F289B1AA700248D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA5E289B1AA700248D3F /* AppDelegate.swift */; };
 		8E29CA61289B1B5A00248D3F /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA60289B1B5A00248D3F /* NotificationModel.swift */; };
-		8E74CB0628A1A6B60089A68E /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 8E74CB0528A1A6B60089A68E /* Login */; };
-		8E74CB0828A1A6B60089A68E /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = 8E74CB0728A1A6B60089A68E /* Navigation */; };
-		8E74CB0A28A1A6B60089A68E /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8E74CB0928A1A6B60089A68E /* Networking */; };
+		8E344AF128A1BD6500826AEF /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 8E344AF028A1BD6500826AEF /* Login */; };
+		8E56684628A2959C00A88911 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = 8E56684528A2959C00A88911 /* Navigation */; };
+		8E56684828A295A100A88911 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8E56684728A295A100A88911 /* Networking */; };
+		8E6D158928A2A33D00EFACCE /* Register in Frameworks */ = {isa = PBXBuildFile; productRef = 8E6D158828A2A33D00EFACCE /* Register */; };
 		8E74CB0C28A1A6B60089A68E /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = 8E74CB0B28A1A6B60089A68E /* Theme */; };
 		8E74CB0E28A1A6B60089A68E /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 8E74CB0D28A1A6B60089A68E /* UI */; };
 		8EB21F74289DAFDC00D71AB7 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 8EB21F73289DAFDC00D71AB7 /* Quick */; };
@@ -56,12 +57,12 @@
 		8E29CA5E289B1AA700248D3F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E29CA60289B1B5A00248D3F /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		8E29CA62289B1B9800248D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8E74CB0028A1A6770089A68E /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UI; sourceTree = "<group>"; };
-		8E74CB0228A1A68E0089A68E /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
-		8E74CB0428A1A69F0089A68E /* Login */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Login; sourceTree = "<group>"; };
-		8E7C292428A1A5FD0045E537 /* Login */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Login; sourceTree = "<group>"; };
-		8E7C292528A1A5FD0045E537 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
-		8E7C292628A1A5FD0045E537 /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Navigation; sourceTree = "<group>"; };
+		8E344AEB28A1BD1800826AEF /* Login */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Login; sourceTree = "<group>"; };
+		8E344AEE28A1BD3400826AEF /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
+		8E344AEF28A1BD3C00826AEF /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UI; sourceTree = "<group>"; };
+		8E56684328A2954D00A88911 /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Navigation; sourceTree = "<group>"; };
+		8E56684428A2958700A88911 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
+		8E6D158728A29CB600EFACCE /* Register */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Register; sourceTree = "<group>"; };
 		8EB21F3D289D6E9000D71AB7 /* ViewFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFactoryTests.swift; sourceTree = "<group>"; };
 		8EB21F60289DAFC700D71AB7 /* TestingCoordinatorNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingCoordinatorNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,9 +74,10 @@
 			files = (
 				8E74CB0E28A1A6B60089A68E /* UI in Frameworks */,
 				8E74CB0C28A1A6B60089A68E /* Theme in Frameworks */,
-				8E74CB0A28A1A6B60089A68E /* Networking in Frameworks */,
-				8E74CB0828A1A6B60089A68E /* Navigation in Frameworks */,
-				8E74CB0628A1A6B60089A68E /* Login in Frameworks */,
+				8E56684628A2959C00A88911 /* Navigation in Frameworks */,
+				8E6D158928A2A33D00EFACCE /* Register in Frameworks */,
+				8E56684828A295A100A88911 /* Networking in Frameworks */,
+				8E344AF128A1BD6500826AEF /* Login in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,12 +105,7 @@
 		8E259FAD289826CC00D8FA01 = {
 			isa = PBXGroup;
 			children = (
-				8E74CB0428A1A69F0089A68E /* Login */,
-				8E74CB0228A1A68E0089A68E /* Theme */,
-				8E74CB0028A1A6770089A68E /* UI */,
-				8E7C292428A1A5FD0045E537 /* Login */,
-				8E7C292628A1A5FD0045E537 /* Navigation */,
-				8E7C292528A1A5FD0045E537 /* Networking */,
+				8E344AEA28A1BD1800826AEF /* Packages */,
 				8E259FB8289826CC00D8FA01 /* TestingCoordinatorNavigation */,
 				8EB21F61289DAFC800D71AB7 /* TestingCoordinatorNavigationTests */,
 				8E259FB7289826CC00D8FA01 /* Products */,
@@ -170,6 +167,19 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		8E344AEA28A1BD1800826AEF /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				8E6D158728A29CB600EFACCE /* Register */,
+				8E344AEB28A1BD1800826AEF /* Login */,
+				8E344AEE28A1BD3400826AEF /* Theme */,
+				8E344AEF28A1BD3C00826AEF /* UI */,
+				8E56684328A2954D00A88911 /* Navigation */,
+				8E56684428A2958700A88911 /* Networking */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		8EB21F61289DAFC800D71AB7 /* TestingCoordinatorNavigationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +199,6 @@
 				8E259FB3289826CC00D8FA01 /* Frameworks */,
 				8E29CA63289B20E600248D3F /* Run SwiftLint */,
 				8E259FB4289826CC00D8FA01 /* Resources */,
-				8ED68FFD28A020FC0029D8DA /* Swiftgen */,
 			);
 			buildRules = (
 			);
@@ -197,11 +206,12 @@
 			);
 			name = TestingCoordinatorNavigation;
 			packageProductDependencies = (
-				8E74CB0528A1A6B60089A68E /* Login */,
-				8E74CB0728A1A6B60089A68E /* Navigation */,
-				8E74CB0928A1A6B60089A68E /* Networking */,
 				8E74CB0B28A1A6B60089A68E /* Theme */,
 				8E74CB0D28A1A6B60089A68E /* UI */,
+				8E344AF028A1BD6500826AEF /* Login */,
+				8E56684528A2959C00A88911 /* Navigation */,
+				8E56684728A295A100A88911 /* Networking */,
+				8E6D158828A2A33D00EFACCE /* Register */,
 			);
 			productName = TestingCoordinatorNavigation;
 			productReference = 8E259FB6289826CC00D8FA01 /* TestingCoordinatorNavigation.app */;
@@ -314,24 +324,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint; then\n    swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		8ED68FFD28A020FC0029D8DA /* Swiftgen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Swiftgen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftgen; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -550,6 +542,7 @@
 		8EB21F67289DAFC800D71AB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -568,6 +561,7 @@
 		8EB21F68289DAFC800D71AB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -659,17 +653,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8E74CB0528A1A6B60089A68E /* Login */ = {
+		8E344AF028A1BD6500826AEF /* Login */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Login;
 		};
-		8E74CB0728A1A6B60089A68E /* Navigation */ = {
+		8E56684528A2959C00A88911 /* Navigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Navigation;
 		};
-		8E74CB0928A1A6B60089A68E /* Networking */ = {
+		8E56684728A295A100A88911 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		8E6D158828A2A33D00EFACCE /* Register */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Register;
 		};
 		8E74CB0B28A1A6B60089A68E /* Theme */ = {
 			isa = XCSwiftPackageProductDependency;

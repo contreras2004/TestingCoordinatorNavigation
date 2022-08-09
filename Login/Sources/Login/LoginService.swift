@@ -15,17 +15,17 @@ enum LoginError: Int64, Error {
     case unknown
 
     var title: String {
-        L10n.errorTitle
+        "L10n.errorTitle"
     }
 
     var message: String {
         switch self {
         case .nonExistingUser:
-            return L10n.loginErrorCode1
+            return "L10n.loginErrorCode1"
         case .invalidPassword:
-            return L10n.loginErrorCode2
+            return "L10n.loginErrorCode2"
         case .unknown:
-            return L10n.errorMessage
+            return "L10n.errorMessage"
         }
     }
 }

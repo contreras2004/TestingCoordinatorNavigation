@@ -42,6 +42,8 @@ internal enum L10n {
   }
   /// Pop to root
   internal static let popToRoot = L10n.tr("Localizable", "popToRoot", fallback: #"Pop to root"#)
+  /// Register
+  internal static let register = L10n.tr("Localizable", "register", fallback: #"Register"#)
   /// There %@ in the navigation stack
   internal static func thereAreNViewsInTheStack(_ p1: Any) -> String {
     return L10n.tr("Localizable", "thereAreNViewsInTheStack", String(describing: p1), fallback: #"There %@ in the navigation stack"#)

@@ -10,4 +10,5 @@ import Navigation
 
 public enum LoginEvents: NavigationCoordinatorEvent {
     case login
+    case goToRegisterForm
 }

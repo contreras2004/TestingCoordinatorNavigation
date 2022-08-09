@@ -11,6 +11,7 @@
 "anotherView" = "AnotherView";
 
 "login" = "Login";
+"register" = "Register";
 "logout" = "Logout";
 "goTo" = "Go to %@";
 "thisIsAnotherView" = "This is AnotherView";

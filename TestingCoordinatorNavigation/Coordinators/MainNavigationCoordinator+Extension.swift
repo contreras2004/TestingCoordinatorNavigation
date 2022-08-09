@@ -6,10 +6,15 @@
 //
 
 import Foundation
+import Register
 
 extension MainNavigationCoordinator {
     func login() {
         sessionManager?.isLogged = true
+    }
+
+    func goToRegisterForm() {
+        path.append(RegisterFormViewModel(coordinator: self))
     }
 
     func logout() {

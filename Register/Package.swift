@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Login",
+    name: "Register",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v16)
@@ -12,11 +12,10 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "Login",
-            targets: ["Login"])
+            name: "Register",
+            targets: ["Register"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
         .package(path: "./Navigation"),
         .package(path: "./Networking"),
         .package(path: "./UI"),
@@ -33,10 +32,8 @@ let package = Package(
         .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.0")
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "Login",
+            name: "Register",
             dependencies: [
                 .product(name: "Navigation", package: "Navigation"),
                 .product(name: "Networking", package: "Networking"),
@@ -48,9 +45,9 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "LoginTests",
+            name: "RegisterTests",
             dependencies: [
-                "Login",
+                "Register",
                 "Quick",
                 "Nimble",
                 "SnapshotTesting",

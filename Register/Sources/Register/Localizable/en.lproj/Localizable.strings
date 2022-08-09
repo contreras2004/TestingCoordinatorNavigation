@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Tolls
+
+  Created by m.contreras.selman on 26-07-22.
+  
+*/
+
+// MARK: View titles
+"registerTitle" = "Register";
+"name" = "Name";
+"email" = "Email";
+"password" = "Password";
+"passPlaceholder" = "******";
+"repeatPassword" = "Repeat password";
+"acceptTC" = "I accept the Terms and Conditions";

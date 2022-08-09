@@ -23,7 +23,7 @@ open class BaseViewModel: ViewModelProtocol, ObservableObject {
     open var navigationButtonIcon: String? { nil }
     open var actionForNavigationButton: () -> Void { {} }
 
-    /*@Published */open var coordinator: NavigationCoordinator
+    open var coordinator: NavigationCoordinator
 
     /// Init method for the BaseViewModel
     /// - Parameter coordinator: Will set the passed coordinator.

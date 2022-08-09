@@ -68,9 +68,8 @@ public struct LargeButton: View {
     }
 
     private var buttonBackground: Color {
-        (isDisabled || isLoading) ? Color(asset: ThemeColor.disabledButton) :
-        Color(asset: ThemeColor.primaryAccent)
-        //(isDisabled || isLoading) ? ThemeColor.disabledButton : ThemeColor.primaryAccent
+        (isDisabled || isLoading) ? ThemeColor.disabledButton.swiftUIColor :
+        ThemeColor.primaryAccent.swiftUIColor
     }
 
     public var body: some View {
