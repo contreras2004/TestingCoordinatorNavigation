@@ -21,10 +21,13 @@ public class View1ViewModel: BaseViewModel {
 }
 struct View1: View {
     @ObservedObject var viewModel: View1ViewModel
+    var namespace: Namespace.ID
+
     var body: some View {
         ZStack {
             Color.teal
             VStack {
+                Text("Hola").matchedGeometryEffect(id: "texto", in: namespace)
                 Text("This is \(viewModel.title)")
                 if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
                     Text("In Tab \(tabBarCoordinator.selectedTabIndex)")

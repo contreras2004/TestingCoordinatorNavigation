@@ -12,6 +12,8 @@ import Register
 import SwiftUI
 
 public struct ViewFactory: ViewFactoryProtocol {
+    var namespace: Namespace.ID
+
     public var viewModel: BaseViewModel
 
     public var body: some View {
@@ -22,13 +24,13 @@ public struct ViewFactory: ViewFactoryProtocol {
     public func viewFor(viewModel: BaseViewModel) -> some View {
         switch viewModel {
         case let viewModel as LoginViewModel:
-            LoginView(viewModel: viewModel)
+            LoginView(viewModel: viewModel, namespace: namespace)
         case let viewModel as InfoViewModel:
             InfoView(viewModel: viewModel)
         case let viewModel as RegisterFormViewModel:
             RegisterForm(viewModel: viewModel)
         case let viewModel as View1ViewModel:
-            View1(viewModel: viewModel)
+            View1(viewModel: viewModel, namespace: namespace)
         case let viewModel as View2ViewModel:
             View2(viewModel: viewModel)
         case let viewModel as View3ViewModel:

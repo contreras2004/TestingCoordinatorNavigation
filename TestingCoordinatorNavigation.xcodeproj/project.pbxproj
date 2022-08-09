@@ -95,13 +95,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E1FB76E289AEABA00D6910B /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		8E259FAD289826CC00D8FA01 = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +125,6 @@
 				8E1FB771289AF71800D6910B /* SessionManager.swift */,
 				8E259FF5289ABF8300D8FA01 /* Coordinators */,
 				8E259FF32899CA0800D8FA01 /* Views.swift */,
-				8E1FB76E289AEABA00D6910B /* Login */,
 				8E259FBD289826D500D8FA01 /* Assets.xcassets */,
 				8E259FBF289826D500D8FA01 /* Preview Content */,
 			);

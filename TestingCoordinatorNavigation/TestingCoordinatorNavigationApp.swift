@@ -19,6 +19,8 @@ struct TestingCoordinatorNavigationApp: App {
     @ObservedObject var loginCoordinator = MainNavigationCoordinator()
     var loginViewModel = LoginViewModel()
 
+    @Namespace var namespace
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
         self.setUpNavigation(isLogged: sessionManager.isLogged)
@@ -31,7 +33,7 @@ struct TestingCoordinatorNavigationApp: App {
                 TabBarView(coordinator: tabBarCoordinator) {
                     ForEach(tabBarCoordinator.tabs) { viewModel in
                         Navigation(viewModel: viewModel) {
-                            ViewFactory(viewModel: viewModel)
+                            ViewFactory(namespace: namespace, viewModel: viewModel)
                         }
                     }
                 }.onAppear {
@@ -39,7 +41,7 @@ struct TestingCoordinatorNavigationApp: App {
                 }
             } else {
                 Navigation(viewModel: loginViewModel) {
-                    ViewFactory(viewModel: loginViewModel)
+                    ViewFactory(namespace: namespace, viewModel: loginViewModel)
                 }.onAppear {
                     setUpNavigation(isLogged: false)
                 }

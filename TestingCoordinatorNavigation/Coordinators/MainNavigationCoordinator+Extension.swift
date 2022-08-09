@@ -10,7 +10,7 @@ import Register
 
 extension MainNavigationCoordinator {
     func login() {
-        sessionManager?.isLogged = true
+        sessionManager?.isLogged.toggle()//  = true
     }
 
     func goToRegisterForm() {

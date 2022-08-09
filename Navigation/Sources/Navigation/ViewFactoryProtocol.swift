@@ -19,6 +19,10 @@ public protocol ViewFactoryProtocol: View {
 struct ViewFactoryModifier: ViewModifier {
     let viewModel: BaseViewModel
 
+    init(viewModel: BaseViewModel) {
+        self.viewModel = viewModel
+    }
+
     func body(content: Content) -> some View {
         content
             .navigationTitle(viewModel.title)
