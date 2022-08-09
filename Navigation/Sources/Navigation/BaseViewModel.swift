@@ -26,9 +26,6 @@ open class BaseViewModel: ViewModelProtocol, ObservableObject {
 
     open var coordinator: NavigationCoordinator
 
-    @Published public var isShowingModal = false
-    open var viewModelForModal: BaseViewModel? { nil }
-
     /// Init method for the BaseViewModel
     /// - Parameter coordinator: Will set the passed coordinator.
     /// WARNING: A default coordinator will be assigned if not passed

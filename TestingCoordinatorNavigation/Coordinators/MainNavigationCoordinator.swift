@@ -48,6 +48,11 @@ class MainNavigationCoordinator: NavigationCoordinator {
                 login()
             case .goToRegisterForm:
                 goToRegisterForm()
+            case .showModal:
+                self.isShowingModal = true
+
+            case .dismissModal:
+                self.isShowingModal = false
             }
         }
     }

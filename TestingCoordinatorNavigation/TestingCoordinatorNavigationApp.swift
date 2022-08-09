@@ -16,7 +16,7 @@ struct TestingCoordinatorNavigationApp: App {
     @ObservedObject var tabBarCoordinator = MainTabBarCoordinator()
     @ObservedObject var sessionManager = SessionManager()
 
-    var loginCoordinator = MainNavigationCoordinator()
+    @ObservedObject var loginCoordinator = MainNavigationCoordinator()
     var loginViewModel = LoginViewModel()
 
     init() {

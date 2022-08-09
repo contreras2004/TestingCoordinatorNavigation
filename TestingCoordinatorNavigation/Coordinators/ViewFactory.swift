@@ -11,12 +11,6 @@ import Navigation
 import Register
 import SwiftUI
 
-public struct CustomView: View {
-    public var body: some View {
-        Text("Hola")
-    }
-}
-
 public struct ViewFactory: ViewFactoryProtocol {
     public var viewModel: BaseViewModel
 
@@ -29,6 +23,8 @@ public struct ViewFactory: ViewFactoryProtocol {
         switch viewModel {
         case let viewModel as LoginViewModel:
             LoginView(viewModel: viewModel)
+        case let viewModel as InfoViewModel:
+            InfoView(viewModel: viewModel)
         case let viewModel as RegisterFormViewModel:
             RegisterForm(viewModel: viewModel)
         case let viewModel as View1ViewModel:

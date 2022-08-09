@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Login
 import Navigation
 import SwiftUI
 import Theme
@@ -14,6 +15,9 @@ import UI
 public class View1ViewModel: BaseViewModel {
     override public var title: String { "View 1" }
     override public var iconForTab: String { "square.and.arrow.up.circle" }
+    /*override public var viewModelForModal: BaseViewModel? {
+        View3ViewModel(coordinator: self.coordinator)
+    }*/
 }
 struct View1: View {
     @ObservedObject var viewModel: View1ViewModel
@@ -41,9 +45,13 @@ class View2ViewModel: BaseViewModel {
     override var title: String { "View 2" }
     override var iconForTab: String { "info" }
     override var navigationButtonIcon: String? { "info.circle.fill" }
+    /*override var viewModelForModal: BaseViewModel? {
+        View3ViewModel(coordinator: self.coordinator)
+    }*/
     override var actionForNavigationButton: (() -> Void) {
         {
-            self.coordinator.handle(event: MainNavigationCoordinatorEvent.goToThirdPage)
+            self.coordinator.viewModelForModal = InfoViewModel(coordinator: self.coordinator)
+            self.coordinator.handle(event: LoginEvents.showModal)
         }
     }
 }

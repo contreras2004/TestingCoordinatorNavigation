@@ -33,11 +33,8 @@ public struct LoginView: View {
             LargeButton(text: L10n.login, isLoading: $viewModel.isLoading, action: {
                 viewModel.login()
             })
-            LargeButton(text: L10n.register, isLoading: $viewModel.isLoading, action: {
+            LargeButton(text: L10n.register, action: {
                 viewModel.coordinator.handle(event: LoginEvents.goToRegisterForm)
-            })
-            LargeButton(text: "show modal", isLoading: $viewModel.isLoading, action: {
-                viewModel.isShowingModal = true
             })
         }
         .padding()
@@ -52,19 +49,3 @@ public struct LoginView: View {
         })
     }
 }
-
-/*struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(viewModel: LoginViewModel(coordinator: Coordinator(tabs: [], viewModels: [])))
-    }
-}*/
-
-/*private final class BundleToken {
-  static let bundle: Bundle = {
-    #if SWIFT_PACKAGE
-    return Bundle.module
-    #else
-    return Bundle(for: BundleToken.self)
-    #endif
-  }()
-}*/

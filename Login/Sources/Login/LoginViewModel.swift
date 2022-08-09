@@ -10,16 +10,6 @@ import Foundation
 import Navigation
 import SwiftUI
 
-class OtherViewModel: BaseViewModel {
-    let string = "Otra vista"
-}
-struct OtherView: View {
-    @ObservedObject var viewModel: OtherViewModel
-    var body: some View {
-        Text(viewModel.string)
-    }
-}
-
 public class LoginViewModel: BaseViewModel {
     @Published var user: String = "11111111-1"
     @Published var pass: String = "1"
@@ -35,7 +25,14 @@ public class LoginViewModel: BaseViewModel {
     @Published var userModel: LoginResponseModel?
     @Published var apiError: LoginError = .unknown
 
-    override public var viewModelForModal: BaseViewModel? { LoginViewModel() }
+    override public var navigationButtonIcon: String? { "info.circle" }
+
+    override public var actionForNavigationButton: (() -> Void) {
+        {
+            self.coordinator.viewModelForModal = InfoViewModel(coordinator: self.coordinator)
+            self.coordinator.handle(event: LoginEvents.showModal)
+        }
+    }
 
     var isButtonDisabled: Bool {
         user.isEmpty && pass.isEmpty

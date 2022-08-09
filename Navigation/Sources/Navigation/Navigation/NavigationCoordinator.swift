@@ -15,6 +15,12 @@ public protocol NavigationCoordinatorProtocol {
     var path: [BaseViewModel] { get set }
 }
 open class NavigationCoordinator: ObservableObject, NavigationCoordinatorProtocol {
+    public weak var rootViewModel: BaseViewModel?
+
+    @Published public var isShowingModal = false
+
+    public var viewModelForModal: BaseViewModel?
+
     public weak var tabBarCoordinator: TabBarViewCoordinator?
 
     @Published public var path: [BaseViewModel] = [] { didSet { debugPrint(path) } }

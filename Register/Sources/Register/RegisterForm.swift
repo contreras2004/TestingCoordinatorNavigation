@@ -21,9 +21,11 @@ public struct RegisterForm: View {
         VStack {
             Spacer().frame(height: 100)
             DefaultTextField(placeholder: viewModel.namePlaceHolder, value: $viewModel.userName)
-            DefaultTextField(placeholder: viewModel.emailPlaceHolder, value: $viewModel.email)
+            DefaultTextField(placeholder: viewModel.emailPlaceHolder, value: $viewModel.email, errorMessage: $viewModel.emailError)
+
             DefaultTextField(placeholder: viewModel.passPlaceHolder, isSecure: true, value: $viewModel.password)
-            DefaultTextField(placeholder: viewModel.passPlaceHolder, isSecure: true, value: $viewModel.repeatPassword)
+
+            DefaultTextField(placeholder: viewModel.passPlaceHolder, isSecure: true, value: $viewModel.repeatPassword, errorMessage: $viewModel.passwordsDontMatchError)
             Toggle(isOn: $viewModel.acceptedTC) {
                 Text(L10n.acceptTC)
             }.tint(ThemeColor.primaryAccent.swiftUIColor)
