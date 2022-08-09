@@ -13,6 +13,7 @@ public protocol ViewModelProtocol: ObservableObject, Identifiable, Hashable {
     var title: String { get }
     var iconForTab: String { get }
     var coordinator: NavigationCoordinator { get set }
+    //var viewModelForModal: (any ViewModelProtocol)? { get }
 }
 
 open class BaseViewModel: ViewModelProtocol, ObservableObject {
@@ -24,6 +25,9 @@ open class BaseViewModel: ViewModelProtocol, ObservableObject {
     open var actionForNavigationButton: () -> Void { {} }
 
     open var coordinator: NavigationCoordinator
+
+    @Published public var isShowingModal = false
+    open var viewModelForModal: BaseViewModel? { nil }
 
     /// Init method for the BaseViewModel
     /// - Parameter coordinator: Will set the passed coordinator.

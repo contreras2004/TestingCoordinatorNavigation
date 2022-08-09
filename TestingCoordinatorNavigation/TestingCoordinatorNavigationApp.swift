@@ -40,9 +40,9 @@ struct TestingCoordinatorNavigationApp: App {
             } else {
                 Navigation(viewModel: loginViewModel) {
                     ViewFactory(viewModel: loginViewModel)
-                }.onChange(of: sessionManager.isLogged, perform: { newValue in
-                    setUpNavigation(isLogged: newValue)
-                })
+                }.onAppear {
+                    setUpNavigation(isLogged: false)
+                }
             }
         }
     }
@@ -62,17 +62,6 @@ struct TestingCoordinatorNavigationApp: App {
         } else {
             loginCoordinator.sessionManager = sessionManager
             loginViewModel.coordinator = loginCoordinator
-        }
-
-        debugPrint("bundle path: \(Bundle(for: LoginService.self))")
-        let bundlePath = Bundle.main.bundlePath + "/" + "Login.bundle"
-        for bundle in [
-            Bundle.main,
-            //Bundle(for: CurrentBundleFinder.self),
-            Bundle(path: bundlePath),
-            //Bundle.module
-        ] {
-            debugPrint(bundle?.url(forResource: "loginError", withExtension: "json"))
         }
     }
 }

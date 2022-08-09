@@ -35,6 +35,8 @@ public class LoginViewModel: BaseViewModel {
     @Published var userModel: LoginResponseModel?
     @Published var apiError: LoginError = .unknown
 
+    override public var viewModelForModal: BaseViewModel? { LoginViewModel() }
+
     var isButtonDisabled: Bool {
         user.isEmpty && pass.isEmpty
     }
