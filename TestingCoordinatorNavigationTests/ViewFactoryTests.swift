@@ -8,8 +8,9 @@
 import SwiftUI
 import Nimble
 import Quick
-import SnapshotTesting
 import Navigation
+import Nimble_Snapshots
+import TestUtils
 
 @testable import TestingCoordinatorNavigation
 
@@ -21,7 +22,7 @@ final class ViewFactoryTests: QuickSpec {
                 it("should have expected layout") {
                     let viewModel = View1ViewModel()
                     let view = ViewFactory(viewModel: viewModel)
-                    assertSnapshot(matching: view, as: .image, record: false)
+                    expect(view.view()) == snapshot()
                 }
             }
             
@@ -29,7 +30,7 @@ final class ViewFactoryTests: QuickSpec {
                 it("should have expected layout") {
                     let viewModel = View2ViewModel()
                     let view = ViewFactory(viewModel: viewModel)
-                    assertSnapshot(matching: view, as: .image, record: false)
+                    expect(view.view()) == snapshot()
                 }
             }
             
@@ -37,7 +38,7 @@ final class ViewFactoryTests: QuickSpec {
                 it("should have expected layout") {
                     let viewModel = View3ViewModel()
                     let view = ViewFactory(viewModel: viewModel)
-                    assertSnapshot(matching: view, as: .image, record: false)
+                    expect(view.view()) == snapshot()
                 }
             }
         }

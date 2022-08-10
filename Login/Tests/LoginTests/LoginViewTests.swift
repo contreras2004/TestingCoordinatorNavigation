@@ -7,26 +7,25 @@
 
 import Navigation
 import Nimble
+import Nimble_Snapshots
 import Quick
-import SnapshotTesting
-import SnapshotTesting_Nimble
 import SwiftUI
+import TestUtils
 
 @testable import Login
 
 final class LoginViewTests: QuickSpec {
     var window: UIWindow!
     var viewModel: LoginViewModel!
-    //var view: any View?
-    var sut = LoginView(viewModel: LoginViewModel())
+    var sut: LoginView!
 
     override func spec() {
         describe("LoginView") {
             context("on init") {
                 it("should have expected layout") {
                     self.viewModel = LoginViewModel()
-                    let view = LoginView(viewModel: self.viewModel).withSize(SnapshotSize.iPhone13Pro)
-                    expect(view).to(haveValidSnapshot(as: .image, record: false))
+                    self.sut = LoginView(viewModel: self.viewModel)
+                    expect(self.sut.view()) == snapshot()
                 }
 
                 context("when taped login") {
@@ -38,9 +37,10 @@ final class LoginViewTests: QuickSpec {
                         self.viewModel.pass = "111"
                         self.viewModel.service = service
 
-                        let view = LoginView(viewModel: self.viewModel).withSize(SnapshotSize.iPhone13Pro)
+                        self.sut = LoginView(viewModel: self.viewModel)
                         self.viewModel.login()
-                        expect(view).to(haveValidSnapshot(as: .image, record: false))
+
+                        expect(self.sut.view()) == snapshot()
                     }
                 }
 
@@ -59,31 +59,5 @@ final class LoginViewTests: QuickSpec {
                 }
             }
         }
-    }
-}
-
-public enum SnapshotSize {
-    static var iPhone13Pro = CGSize(width: 390, height: 844)
-}
-
-public extension View {
-    func withSize(_ size: CGSize) -> some View {
-        frame(width: size.width, height: size.height)
-    }
-}
-
-public extension UIWindow {
-    static func deviceFrame() -> UIWindow {
-        UIWindow(frame: UIScreen.main.bounds)
-    }
-
-    func showTestWindow(controller: UIViewController) {
-        self.rootViewController = controller
-        self.makeKeyAndVisible()
-    }
-
-    func cleanTestWindow() {
-        self.rootViewController = nil
-        self.isHidden = true
     }
 }

@@ -23,6 +23,9 @@ struct View1: View {
         ZStack {
             Color.teal
             VStack {
+                Circle()
+                    .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
+                    .frame(width: 40 * CGFloat(self.viewModel.coordinator.path.count + 1))
                 Text("This is \(viewModel.title)")
                 if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
                     Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
@@ -58,6 +61,9 @@ struct View2: View {
             Color.gray
             VStack {
                 Spacer()
+                Circle()
+                    .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
+                    .frame(width: 40 * CGFloat(self.viewModel.coordinator.path.count + 1))
                 Text("This is \(viewModel.title)")
                 if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
                     Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
@@ -93,6 +99,9 @@ struct View3: View {
         ZStack {
             Color.red
             VStack {
+                Circle()
+                    .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
+                    .frame(width: 40 * CGFloat(self.viewModel.coordinator.path.count + 1))
                 Text("This is \(viewModel.title)")
                 if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
                     Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
@@ -105,6 +114,9 @@ struct View3: View {
                 }
                 DefaultButton(text: "Go to another instance of View1 1️⃣") {
                     viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToFirstPage)
+                }
+                DefaultButton(text: "Remove previouse view from stack") {
+                    viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.removePreviouseViewFromStack)
                 }
                 DefaultButton(text: "Logout 🚪") {
                     viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.logout)

@@ -55,24 +55,6 @@
       }
     },
     {
-      "identity" : "swift-snapshot-testing",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-snapshot-testing",
-      "state" : {
-        "revision" : "f8a9c997c3c1dab4e216a8ec9014e23144cbab37",
-        "version" : "1.9.0"
-      }
-    },
-    {
-      "identity" : "swift-snapshot-testing-nimble",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/bastianX6/swift-snapshot-testing-nimble.git",
-      "state" : {
-        "revision" : "a1ef95548f6e2133e065d34aa3c0de9d3c9f2ad0",
-        "version" : "0.3.0"
-      }
-    },
-    {
       "identity" : "swiftgenplugin",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwiftGen/SwiftGenPlugin",

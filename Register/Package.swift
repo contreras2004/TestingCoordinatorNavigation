@@ -19,12 +19,7 @@ let package = Package(
         .package(path: "./Navigation"),
         .package(path: "./Networking"),
         .package(path: "./UI"),
-        .package(name: "SnapshotTesting",
-                 url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
-                 from: "1.9.0"),
-        .package(name: "SnapshotTesting-Nimble",
-                 url: "https://github.com/bastianX6/swift-snapshot-testing-nimble.git",
-                 from: "0.3.0"),
+        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0"),
         .package(url: "https://github.com/Quick/Nimble.git",
                  .upToNextMajor(from: "10.0.0")),
         .package(url: "https://github.com/Quick/Quick.git",
@@ -50,8 +45,7 @@ let package = Package(
                 "Register",
                 "Quick",
                 "Nimble",
-                "SnapshotTesting",
-                "SnapshotTesting-Nimble",
+                "Nimble-Snapshots",
                 "Networking"
             ]
         )

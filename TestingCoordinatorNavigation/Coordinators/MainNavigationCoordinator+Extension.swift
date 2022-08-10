@@ -36,4 +36,12 @@ extension MainNavigationCoordinator {
     func goToTab(index: Int) {
         tabBarCoordinator?.handle(event: MainTabBarCoordinatorEvent.goToTab(index: index))
     }
+
+    func removePreviouseView() {
+        if path.count - 2 >= 0 {
+            path.remove(at: path.count - 2)
+        } else {
+            debugPrint("No enough views in the stack")
+        }
+    }
 }
