@@ -10,7 +10,6 @@ let package = Package(
         .iOS(.v16)
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Register",
             targets: ["Register"]),
@@ -34,7 +33,6 @@ let package = Package(
                 .product(name: "Networking", package: "Networking"),
                 .product(name: "UI", package: "UI")
             ],
-            resources: [.process("Resources")],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
             ]
