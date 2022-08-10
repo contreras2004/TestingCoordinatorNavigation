@@ -16,31 +16,31 @@ struct MainContentView: View {
     var loginViewModel = LoginViewModel()
 
     var body: some View {
-        VStack {
-            if sessionManager.isLogged {
-                Spacer()
-                TabBarView(coordinator: tabBarCoordinator) {
-                    ForEach(tabBarCoordinator.tabs) { viewModel in
-                        Navigation(viewModel: viewModel) {
-                            ViewFactory(viewModel: viewModel)
-                        }
+        if sessionManager.isLogged {
+            TabBarView(coordinator: tabBarCoordinator) {
+                ForEach(tabBarCoordinator.tabs) { viewModel in
+                    Navigation(viewModel: viewModel) {
+                        ViewFactory(viewModel: viewModel)
                     }
-                }.onAppear {
-                    setUpNavigation(isLogged: true)
                 }
-            } else {
-                Navigation(viewModel: loginViewModel) {
-                    ViewFactory(viewModel: loginViewModel)
-                }.onAppear {
-                    setUpNavigation(isLogged: false)
+            }.onAppear {
+                withAnimation {
+                    setUpNavigation()
+                }
+            }
+        } else {
+            Navigation(viewModel: loginViewModel) {
+                ViewFactory(viewModel: loginViewModel)
+            }.onAppear {
+                withAnimation {
+                    setUpNavigation()
                 }
             }
         }
     }
 
-    func setUpNavigation(isLogged: Bool) {
-        // prevent everything to be in memory when user is not logged
-        if isLogged {
+    func setUpNavigation() {
+        if sessionManager.isLogged {
             let coordinator1 = MainNavigationCoordinator(tabBarCoordinator: self.tabBarCoordinator)
             coordinator1.sessionManager = sessionManager
 

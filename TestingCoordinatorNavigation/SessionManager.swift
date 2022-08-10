@@ -9,11 +9,15 @@ import Foundation
 import SwiftUI
 
 class SessionManager: ObservableObject {
-    @AppStorage("isLogged") public var isLogged = true {
+    static let key: String = "isLogged"
+
+    @Published public var isLogged = false {
         didSet {
-            withAnimation {
-                self.objectWillChange.send()
-            }
+            UserDefaults.standard.set(self.isLogged, forKey: SessionManager.key)
         }
+    }
+
+    init() {
+        self.isLogged = UserDefaults.standard.bool(forKey: SessionManager.key)
     }
 }

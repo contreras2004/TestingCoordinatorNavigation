@@ -21,7 +21,8 @@
 
 // MARK: Error View
 "errorTitle"= "Error";
-"errorMessage" = "Ups! Algo salió mal 🥲";
+"errorMessage" = "Ups! Something went wrong 🥲";
+"errorCreateAccountButton" = "Create account";
 "errorAcceptButton" = "Ok";
 
 // MARK: Login error messages

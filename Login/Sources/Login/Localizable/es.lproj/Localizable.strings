@@ -11,6 +11,7 @@
 "anotherView" = "AnotherView";
 
 "login" = "Iniciar Sesión";
+"register" = "Registrarse";
 "logout" = "Cerrar Sesión";
 "goTo" = "Ir a %@";
 "thisIsAnotherView" = "Esta es AnotherView";
@@ -21,6 +22,7 @@
 // MARK: Error View
 "errorTitle"= "Error";
 "errorMessage" = "Ups! Algo salió mal 🥲";
+"errorCreateAccountButton" = "Crear cuenta";
 "errorAcceptButton" = "Ok";
 
 // MARK: Login error messages

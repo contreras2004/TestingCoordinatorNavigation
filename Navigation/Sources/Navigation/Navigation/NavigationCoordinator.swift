@@ -14,6 +14,7 @@ public protocol NavigationCoordinatorProtocol {
     var tabBarCoordinator: TabBarViewCoordinator? { get set }
     var path: [BaseViewModel] { get set }
 }
+
 open class NavigationCoordinator: ObservableObject, NavigationCoordinatorProtocol {
     public weak var rootViewModel: BaseViewModel?
 

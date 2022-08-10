@@ -43,6 +43,11 @@ public struct LoginView: View {
                isPresented: $viewModel.isPresentingError,
                presenting: LoginError.self,
                actions: { _ in
+            if viewModel.apiError == .nonExistingUser {
+                Button(L10n.errorCreateAccountButton, role: .none) {
+                    self.viewModel.coordinator.handle(event: LoginEvents.goToRegisterForm)
+                }
+            }
             Button(L10n.errorAcceptButton, role: .cancel) { }
         }, message: { _ in
             Text(viewModel.apiError.message)

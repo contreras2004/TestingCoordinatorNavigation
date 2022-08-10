@@ -14,8 +14,10 @@ internal enum L10n {
   internal static let anotherView = L10n.tr("Localizable", "anotherView", fallback: #"AnotherView"#)
   /// Ok
   internal static let errorAcceptButton = L10n.tr("Localizable", "errorAcceptButton", fallback: #"Ok"#)
-  /// Ups! Algo salió mal 🥲
-  internal static let errorMessage = L10n.tr("Localizable", "errorMessage", fallback: #"Ups! Algo salió mal 🥲"#)
+  /// Create account
+  internal static let errorCreateAccountButton = L10n.tr("Localizable", "errorCreateAccountButton", fallback: #"Create account"#)
+  /// Ups! Something went wrong 🥲
+  internal static let errorMessage = L10n.tr("Localizable", "errorMessage", fallback: #"Ups! Something went wrong 🥲"#)
   /// Error
   internal static let errorTitle = L10n.tr("Localizable", "errorTitle", fallback: #"Error"#)
   /// Go to %@
