@@ -31,7 +31,7 @@ final class LoginViewTests: QuickSpec {
                 context("when taped login") {
                     it("should show loading") {
                         let service = LoginServiceMock()
-                        service.serviceState = .noReturn
+                        service.serviceState = .success
 
                         self.viewModel.user = "11111111-1"
                         self.viewModel.pass = "111"
@@ -55,6 +55,7 @@ final class LoginViewTests: QuickSpec {
 
                         self.viewModel.login()
                         expect(self.viewModel.isPresentingError).to(beTrue())
+                        expect(self.sut.window()) == recordSnapshot()
                     }
                 }
             }

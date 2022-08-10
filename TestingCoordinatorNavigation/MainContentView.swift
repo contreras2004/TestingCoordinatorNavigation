@@ -9,7 +9,7 @@ import Login
 import Navigation
 import SwiftUI
 
-struct ContentView: View {
+struct MainContentView: View {
     @ObservedObject var tabBarCoordinator = MainTabBarCoordinator()
     @ObservedObject var sessionManager = SessionManager()
     @ObservedObject var loginCoordinator = MainNavigationCoordinator()

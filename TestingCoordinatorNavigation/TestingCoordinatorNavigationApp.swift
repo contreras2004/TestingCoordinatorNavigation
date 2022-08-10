@@ -20,7 +20,7 @@ struct TestingCoordinatorNavigationApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainContentView()
         }
     }
 }

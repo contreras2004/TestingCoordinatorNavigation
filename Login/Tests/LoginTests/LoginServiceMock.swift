@@ -38,20 +38,8 @@ class LoginServiceMock: LoginServiceProtocol {
         }
     }
 }
-/*class MockAPI: ApiProtocol {
-    
-    func execute<T>(endpoint: Networking.Endpoint, decodingType: T.Type, httpMethod: Networking.HTTPMethod, params: Encodable) -> AnyPublisher<T, Networking.APIError> where T : Decodable {
-        
-        let json: Login.LoginResponseModel = JSONHelper.loadJSON(withFile: "loginError.json", inBundle: Bundle(for: LoginServiceMock.self))
-        debugPrint(json)
-        
-        return publisher
-    }
-    
-    
-}*/
 
-public enum JSONHelper {
+/*public enum JSONHelper {
     public static func loadJSON<Element: Decodable>(withFile fileName: String, inBundle bundle: Bundle) -> Element? {
         var jsonData: Element?
 
@@ -69,9 +57,9 @@ public enum JSONHelper {
         }
         return nil
     }
-}
+}*/
 
-extension Foundation.Bundle {
+/*extension Foundation.Bundle {
     static var module: Bundle = {
         var thisModuleName = "Login_Login"
         var url = Bundle.main.bundleURL
@@ -99,41 +87,4 @@ extension Foundation.Bundle {
         }
         return url
     }()
-}
-/*#if XCODE_BUILD
-extension Foundation.Bundle {
-    
-    /// Returns resource bundle as a `Bundle`.
-    /// Requires Xcode copy phase to locate files into `ExecutableName.bundle`;
-    /// or `ExecutableNameTests.bundle` for test resources
-    static var module: Bundle = {
-        var thisModuleName = "Login"
-        var url = Bundle.main.bundleURL
-        
-        for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
-            url = bundle.bundleURL.deletingLastPathComponent()
-            thisModuleName = thisModuleName.appending("Tests")
-        }
-        
-        url = url.appendingPathComponent("\(thisModuleName).bundle")
-        
-        guard let bundle = Bundle(url: url) else {
-            fatalError("Foundation.Bundle.module could not load resource bundle: \(url.path)")
-        }
-        
-        return bundle
-    }()
-    
-    /// Directory containing resource bundle
-    static var moduleDir: URL = {
-        var url = Bundle.main.bundleURL
-        for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
-            // remove 'ExecutableNameTests.xctest' path component
-            url = bundle.bundleURL.deletingLastPathComponent()
-        }
-        return url
-    }()
-    
-}
-#endif
-*/
+}*/

@@ -19,11 +19,11 @@ let package = Package(
         .package(path: "./Networking"),
         .package(path: "./UI"),
         .package(path: "./TestUtils"),
-        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0"),
-        .package(url: "https://github.com/Quick/Nimble.git",
-                 .upToNextMajor(from: "10.0.0")),
         .package(url: "https://github.com/Quick/Quick.git",
                  .upToNextMajor(from: "5.0.1")),
+        .package(url: "https://github.com/Quick/Nimble.git",
+                 .upToNextMajor(from: "10.0.0")),
+        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0"),
         .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.0")
     ],
     targets: [
