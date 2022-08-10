@@ -19,6 +19,7 @@
 		8E29CA5F289B1AA700248D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA5E289B1AA700248D3F /* AppDelegate.swift */; };
 		8E29CA61289B1B5A00248D3F /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA60289B1B5A00248D3F /* NotificationModel.swift */; };
 		8E344AF128A1BD6500826AEF /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 8E344AF028A1BD6500826AEF /* Login */; };
+		8E39923E28A31FCF00B73FB5 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E39923D28A31FCF00B73FB5 /* MainContentView.swift */; };
 		8E56684628A2959C00A88911 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = 8E56684528A2959C00A88911 /* Navigation */; };
 		8E56684828A295A100A88911 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8E56684728A295A100A88911 /* Networking */; };
 		8E6D158928A2A33D00EFACCE /* Register in Frameworks */ = {isa = PBXBuildFile; productRef = 8E6D158828A2A33D00EFACCE /* Register */; };
@@ -60,6 +61,7 @@
 		8E344AEB28A1BD1800826AEF /* Login */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Login; sourceTree = "<group>"; };
 		8E344AEE28A1BD3400826AEF /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
 		8E344AEF28A1BD3C00826AEF /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UI; sourceTree = "<group>"; };
+		8E39923D28A31FCF00B73FB5 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		8E56684328A2954D00A88911 /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Navigation; sourceTree = "<group>"; };
 		8E56684428A2958700A88911 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		8E6D158728A29CB600EFACCE /* Register */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Register; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				8E29CA62289B1B9800248D3F /* Info.plist */,
 				8E259FCB28987D2200D8FA01 /* TestingCoordinatorNavigationApp.swift */,
+				8E39923D28A31FCF00B73FB5 /* MainContentView.swift */,
 				8E29CA5E289B1AA700248D3F /* AppDelegate.swift */,
 				8E29CA60289B1B5A00248D3F /* NotificationModel.swift */,
 				8E1FB771289AF71800D6910B /* SessionManager.swift */,
@@ -333,6 +336,7 @@
 				8E29CA5B289B192700248D3F /* MainNavigationCoordinator+Extension.swift in Sources */,
 				8E1FB772289AF71800D6910B /* SessionManager.swift in Sources */,
 				8E259FCE28987D3F00D8FA01 /* ViewFactory.swift in Sources */,
+				8E39923E28A31FCF00B73FB5 /* MainContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

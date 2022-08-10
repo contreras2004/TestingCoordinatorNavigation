@@ -29,6 +29,7 @@ public class RegisterFormViewModel: BaseViewModel {
     func register() {
         if formIsValid() == false { return }
         debugPrint("Register the user")
+        self.coordinator.handle(event: RegisterEvent.goToRoot)
     }
 
     private func formIsValid() -> Bool {

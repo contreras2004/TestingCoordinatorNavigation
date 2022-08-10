@@ -9,5 +9,11 @@ import Foundation
 import SwiftUI
 
 class SessionManager: ObservableObject {
-    @AppStorage("isLogged") public var isLogged = true
+    @AppStorage("isLogged") public var isLogged = true {
+        didSet {
+            withAnimation {
+                self.objectWillChange.send()
+            }
+        }
+    }
 }

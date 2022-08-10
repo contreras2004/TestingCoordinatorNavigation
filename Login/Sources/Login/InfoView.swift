@@ -15,6 +15,8 @@ public class InfoViewModel: BaseViewModel { }
 
 public struct InfoView: View {
     @ObservedObject var viewModel: InfoViewModel
+    @Namespace var animation
+    @State var shouldAnimate = false
 
     public init(viewModel: InfoViewModel) {
         self.viewModel = viewModel
@@ -25,14 +27,45 @@ public struct InfoView: View {
             ThemeColor.primaryAccent.swiftUIColor
             VStack {
                 Spacer()
-                Text("This is a modal")
-                    .font(.largeTitle)
+                Text("Tap me! 😄")
                     .foregroundColor(.white)
+                ZStack {
+                    if shouldAnimate {
+                        ZStack {
+                            Circle()
+                                .matchedGeometryEffect(id: "title", in: animation)
+                                .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.9))
+                                .onTapGesture {
+                                    withAnimation(.spring()) {
+                                        shouldAnimate.toggle()
+                                    }
+                                }
+                            Text("This is a modal")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                        }
+                    } else {
+                        ZStack {
+                            Circle()
+                                .matchedGeometryEffect(id: "title", in: animation)
+                                .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
+                                .frame(width: 180, height: 180)
+                                .onTapGesture {
+                                    withAnimation(.spring()) {
+                                        shouldAnimate.toggle()
+                                    }
+                                }
+                            Text("This is a modal")
+                                .foregroundColor(.white)
+                        }
+                    }
+                }.padding()
+
                 Text("To show any modal you should override the property \"viewModelForModal\" in the parent View")
                     .foregroundColor(.white)
                     .padding()
                     .multilineTextAlignment(.center)
-                LargeButton(text: "Dismiss modal") {
+                DefaultButton(text: "Dismiss modal") {
                     self.viewModel.coordinator.handle(event: LoginEvents.dismissModal)
                 }
                 Spacer()

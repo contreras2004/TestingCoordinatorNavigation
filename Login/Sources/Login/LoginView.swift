@@ -13,12 +13,9 @@ import UI
 public struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
 
-    public init(viewModel: LoginViewModel, namespace: Namespace.ID) {
+    public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
-        self.namespace = namespace
     }
-
-    var namespace: Namespace.ID
 
     public var body: some View {
         VStack {
@@ -33,11 +30,10 @@ public struct LoginView: View {
             DefaultTextField(placeholder: viewModel.userPlaceHolder, value: $viewModel.user)
             DefaultTextField(placeholder: viewModel.passPlaceHolder, value: $viewModel.pass)
             Spacer()
-            Text("Hola Matias").matchedGeometryEffect(id: "texto", in: namespace)
-            LargeButton(text: L10n.login, isLoading: $viewModel.isLoading, action: {
+            DefaultButton(text: L10n.login, isLoading: $viewModel.isLoading, action: {
                 viewModel.login()
             })
-            LargeButton(text: L10n.register, action: {
+            DefaultButton(text: L10n.register, style: .onlyText, action: {
                 viewModel.coordinator.handle(event: LoginEvents.goToRegisterForm)
             })
         }

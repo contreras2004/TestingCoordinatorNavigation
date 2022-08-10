@@ -7,6 +7,7 @@
 
 import Login
 import Navigation
+import Register
 
 enum MainNavigationCoordinatorEvent: NavigationCoordinatorEvent {
     case goToFirstPage
@@ -53,6 +54,13 @@ class MainNavigationCoordinator: NavigationCoordinator {
 
             case .dismissModal:
                 self.isShowingModal = false
+            }
+        }
+
+        if let event = event as? RegisterEvent {
+            switch event {
+            case .goToRoot:
+                path.removeAll()
             }
         }
     }

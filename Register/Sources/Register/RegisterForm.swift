@@ -30,7 +30,7 @@ public struct RegisterForm: View {
                 Text(L10n.acceptTC)
             }.tint(ThemeColor.primaryAccent.swiftUIColor)
             Spacer()
-            LargeButton(
+            DefaultButton(
                 text: L10n.registerTitle,
                 isDisabled: $viewModel.formIsDisabled,
                 isLoading: $viewModel.isLoading,

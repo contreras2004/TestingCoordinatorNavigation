@@ -47,9 +47,7 @@ public class LoginViewModel: BaseViewModel {
             case .success(let model):
                 DispatchQueue.main.async {
                     self?.userModel = model
-                    withAnimation {
-                        self?.coordinator.handle(event: LoginEvents.login)
-                    }
+                    self?.coordinator.handle(event: LoginEvents.login)
                 }
             case .failure(let error):
                 self?.apiError = error
