@@ -33,7 +33,7 @@ public struct InfoView: View {
                     if shouldAnimate {
                         ZStack {
                             Circle()
-                                .matchedGeometryEffect(id: "title", in: animation)
+                                .matchedGeometryEffect(id: "circle", in: animation)
                                 .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.9))
                                 .onTapGesture {
                                     withAnimation(.spring()) {
@@ -47,7 +47,7 @@ public struct InfoView: View {
                     } else {
                         ZStack {
                             Circle()
-                                .matchedGeometryEffect(id: "title", in: animation)
+                                .matchedGeometryEffect(id: "circle", in: animation)
                                 .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
                                 .frame(width: 180, height: 180)
                                 .onTapGesture {

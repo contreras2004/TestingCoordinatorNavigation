@@ -25,7 +25,7 @@ final class InfoViewTests: QuickSpec {
                 it("should have expected layout") {
                     self.viewModel = InfoViewModel()
                     self.sut = InfoView(viewModel: self.viewModel)
-                    expect(self.sut.view()) == recordSnapshot()
+                    expect(self.sut.view()) == snapshot()
                 }
             }
         }

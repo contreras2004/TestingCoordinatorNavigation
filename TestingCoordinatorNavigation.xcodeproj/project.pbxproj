@@ -24,7 +24,6 @@
 		8E56684828A295A100A88911 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8E56684728A295A100A88911 /* Networking */; };
 		8E6D158928A2A33D00EFACCE /* Register in Frameworks */ = {isa = PBXBuildFile; productRef = 8E6D158828A2A33D00EFACCE /* Register */; };
 		8E74CB0C28A1A6B60089A68E /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = 8E74CB0B28A1A6B60089A68E /* Theme */; };
-		8E90B6A328A42290007EE657 /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 8E90B6A228A42290007EE657 /* UI */; };
 		8EB21F74289DAFDC00D71AB7 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 8EB21F73289DAFDC00D71AB7 /* Quick */; };
 		8EB21F76289DAFDC00D71AB7 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8EB21F75289DAFDC00D71AB7 /* Nimble */; };
 		8EB21F79289DAFEB00D71AB7 /* ViewFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB21F3D289D6E9000D71AB7 /* ViewFactoryTests.swift */; };
@@ -62,7 +61,6 @@
 		8E344AEE28A1BD3400826AEF /* Theme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Theme; sourceTree = "<group>"; };
 		8E39923D28A31FCF00B73FB5 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		8E44DE0728A4216D00274203 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
-		8E44DE0928A4223400274203 /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UI; sourceTree = "<group>"; };
 		8E44DE0A28A4224400274203 /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UI; sourceTree = "<group>"; };
 		8E56684328A2954D00A88911 /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Navigation; sourceTree = "<group>"; };
 		8E6D158728A29CB600EFACCE /* Register */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Register; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				8E56684628A2959C00A88911 /* Navigation in Frameworks */,
 				8E6D158928A2A33D00EFACCE /* Register in Frameworks */,
 				8E56684828A295A100A88911 /* Networking in Frameworks */,
-				8E90B6A328A42290007EE657 /* UI in Frameworks */,
 				8E344AF128A1BD6500826AEF /* Login in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,7 +170,6 @@
 				8E344AEB28A1BD1800826AEF /* Login */,
 				8E344AEE28A1BD3400826AEF /* Theme */,
 				8E56684328A2954D00A88911 /* Navigation */,
-				8E44DE0928A4223400274203 /* UI */,
 				8E44DE0A28A4224400274203 /* UI */,
 			);
 			name = Packages;
@@ -210,7 +206,6 @@
 				8E56684528A2959C00A88911 /* Navigation */,
 				8E56684728A295A100A88911 /* Networking */,
 				8E6D158828A2A33D00EFACCE /* Register */,
-				8E90B6A228A42290007EE657 /* UI */,
 			);
 			productName = TestingCoordinatorNavigation;
 			productReference = 8E259FB6289826CC00D8FA01 /* TestingCoordinatorNavigation.app */;
@@ -654,10 +649,6 @@
 		8E74CB0B28A1A6B60089A68E /* Theme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Theme;
-		};
-		8E90B6A228A42290007EE657 /* UI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UI;
 		};
 		8EB21F73289DAFDC00D71AB7 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;

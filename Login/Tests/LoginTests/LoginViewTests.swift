@@ -25,13 +25,13 @@ final class LoginViewTests: QuickSpec {
                 it("should have expected layout") {
                     self.viewModel = LoginViewModel()
                     self.sut = LoginView(viewModel: self.viewModel)
-                    expect(self.sut.view()) == snapshot()
+                    expect(self.sut.view(colorScheme: .light)) == snapshot()
                 }
 
                 context("when taped login") {
                     it("should show loading") {
                         let service = LoginServiceMock()
-                        service.serviceState = .success
+                        service.serviceState = .noReturn
 
                         self.viewModel.user = "11111111-1"
                         self.viewModel.pass = "111"
@@ -40,22 +40,7 @@ final class LoginViewTests: QuickSpec {
                         self.sut = LoginView(viewModel: self.viewModel)
                         self.viewModel.login()
 
-                        expect(self.sut.view()) == snapshot()
-                    }
-                }
-
-                context("when taped login") {
-                    it("should show error alert") {
-                        let service = LoginServiceMock()
-                        service.serviceState = .error
-
-                        self.viewModel.user = "11111111-1"
-                        self.viewModel.pass = "111"
-                        self.viewModel.service = service
-
-                        self.viewModel.login()
-                        expect(self.viewModel.isPresentingError).to(beTrue())
-                        expect(self.sut.window()) == recordSnapshot()
+                        expect(self.sut.view(colorScheme: .light)) == snapshot()
                     }
                 }
             }
