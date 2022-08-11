@@ -18,6 +18,7 @@ let package = Package(
         .package(path: "./Navigation"),
         .package(path: "./Networking"),
         .package(path: "./UI"),
+        .package(path: "./TestUtils"),
         .package(url: "https://github.com/Quick/Quick.git",
                  .upToNextMajor(from: "5.0.1")),
         .package(url: "https://github.com/Quick/Nimble.git",
@@ -44,6 +45,7 @@ let package = Package(
                 "Quick",
                 "Nimble",
                 "Nimble-Snapshots",
+                "TestUtils",
                 "Networking"
             ]
         )

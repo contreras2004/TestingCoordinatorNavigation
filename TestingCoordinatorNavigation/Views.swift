@@ -27,18 +27,21 @@ struct View1: View {
         ZStack {
             Color.teal
             VStack {
+                Text("This is \(viewModel.title)")
                 Circle()
                     .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
                     .frame(width: 40 * CGFloat(self.viewModel.coordinator.path.count + 1))
-                Text("This is \(viewModel.title)")
-                if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
-                    Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
-                }
-                if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
-                    Text("and this is the element  \(index) in the navigation stack")
-                }
-                DefaultButton(text: "Go To Second Page 2️⃣") {
-                    viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToSecondPage)
+                Spacer()
+                VStack {
+                    if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
+                        Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
+                    }
+                    if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
+                        Text("and this is the element  \(index) in the navigation stack")
+                    }
+                    DefaultButton(text: "Go To Second Page 2️⃣") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToSecondPage)
+                    }
                 }
             }.multilineTextAlignment(.center)
                 .padding()
@@ -64,18 +67,18 @@ struct View2: View {
         ZStack {
             Color.gray
             VStack {
-                Spacer()
+                Text("This is \(viewModel.title)")
                 Circle()
                     .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
                     .frame(width: 40 * CGFloat(self.viewModel.coordinator.path.count + 1))
-                Text("This is \(viewModel.title)")
-                if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
-                    Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
-                }
-                if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
-                    Text("and this is the element  \(index) in the navigation stack")
-                }
+                Spacer()
                 VStack {
+                    if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
+                        Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
+                    }
+                    if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
+                        Text("and this is the element  \(index) in the navigation stack")
+                    }
                     DefaultButton(text: "Go To Third Page 3️⃣") {
                         viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToThirdPage)
                     }
@@ -87,9 +90,8 @@ struct View2: View {
                             viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToTab(index: 0))
                         }
                     }
-                }.padding()
-                Spacer()
-            }
+                }
+            }.padding()
         }
     }
 }
@@ -107,27 +109,30 @@ struct View3: View {
         ZStack {
             Color.red
             VStack {
+                Text("This is \(viewModel.title)")
                 Circle()
                     .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
                     .frame(width: 40 * CGFloat(self.viewModel.coordinator.path.count + 1))
-                Text("This is \(viewModel.title)")
-                if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
-                    Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
-                }
-                if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
-                    Text("and this is the element  \(index) in the navigation stack")
-                }
-                DefaultButton(text: "Go to Root 🏁") {
-                    viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToRoot)
-                }
-                DefaultButton(text: "Go to another instance of View1 1️⃣") {
-                    viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToFirstPage)
-                }
-                DefaultButton(text: "Remove previouse view from stack") {
-                    viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.removePreviouseViewFromStack)
-                }
-                DefaultButton(text: "Logout 🚪") {
-                    viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.logout)
+                Spacer()
+                VStack {
+                    if let tabBarCoordinator = viewModel.coordinator.tabBarCoordinator {
+                        Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
+                    }
+                    if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
+                        Text("Element Nº\(index) of the Stack")
+                    }
+                    DefaultButton(text: "Go to Root 🏁") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToRoot)
+                    }
+                    DefaultButton(text: "Go to another instance of View1 1️⃣") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToFirstPage)
+                    }
+                    DefaultButton(text: "Remove previouse view from stack") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.removePreviouseViewFromStack)
+                    }
+                    DefaultButton(text: "Logout 🚪") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.logout)
+                    }
                 }
             }.padding()
         }
