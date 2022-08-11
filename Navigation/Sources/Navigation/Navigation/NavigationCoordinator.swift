@@ -24,7 +24,11 @@ open class NavigationCoordinator: ObservableObject, NavigationCoordinatorProtoco
 
     public weak var tabBarCoordinator: TabBarViewCoordinator?
 
-    @Published public var path: [BaseViewModel] = [] { didSet { debugPrint(path) } }
+    @Published public var path: [BaseViewModel] = [] {
+        willSet {
+            debugPrint(path) }
+        didSet {
+            debugPrint(path) } }
 
     public func indexFor(viewModel: BaseViewModel) -> Int? {
         path.firstIndex(where: { $0 == viewModel })

@@ -26,6 +26,10 @@ class MainNavigationCoordinator: NavigationCoordinator {
         self.tabBarCoordinator as? MainTabBarCoordinator
     }
 
+    deinit {
+        debugPrint("\(self) deinit")
+    }
+
     override func handle(event: NavigationCoordinatorEvent) {
         if let event = event as? MainNavigationCoordinatorEvent {
             switch event {

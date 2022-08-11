@@ -18,7 +18,19 @@ extension MainNavigationCoordinator {
     }
 
     func logout() {
+        resetNavigation()
         sessionManager?.isLogged = false
+    }
+
+    private func resetNavigation() {
+        if let tabs = tabBarCoordinator?.tabs {
+            for tab in tabs {
+                tab.coordinator.path = []
+            }
+        }
+        if let selectedTab = tabBarCoordinator?.tabs.first {
+            tabBarCoordinator?.selectedTab = selectedTab.id
+        }
     }
 
     func goToFirstPage() {

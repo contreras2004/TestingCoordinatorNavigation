@@ -7,23 +7,10 @@
 */
 
 // MARK: View titles
-"map" = "Map";
-"anotherView" = "AnotherView";
-
-"login" = "Iniciar Sesión";
-"logout" = "Cerrar Sesión";
-"goTo" = "Ir a %@";
-"thisIsAnotherView" = "Esta es AnotherView";
-"goToFirstTab" = "Ir a la primera pestaña";
-"popToRoot" = "Ir al inicio";
-"thereAreNViewsInTheStack" = "Hay %@ en el stack de navegación";
-
-// MARK: Error View
-"errorTitle"= "Error";
-"errorMessage" = "Ups! Algo salió mal 🥲";
-"errorAcceptButton" = "Ok";
-
-// MARK: Login error messages
-"loginErrorCode1" = "Usuario no registrado";
-"loginErrorCode2" = "Contraseña no es válida";
-"loginErrorUnknown" = "Error desconocido";
+"registerTitle" = "Registrarse";
+"name" = "Nombre";
+"email" = "Correo electrónico";
+"password" = "Contraseña";
+"passPlaceholder" = "******";
+"repeatPassword" = "Repite la contraseña";
+"acceptTC" = "Acepto los Términos y Condiciones";

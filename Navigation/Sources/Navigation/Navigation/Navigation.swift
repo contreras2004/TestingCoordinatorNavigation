@@ -29,14 +29,6 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
                 viewFactory.viewFor(viewModel: viewModel)
                     .modified(viewModel: viewModel)
             }
-            /*.sheet(item: $coordinator.rootViewModel, content: { viewModel in
-                if let modalVM = viewModel.viewModelForModal {
-                    viewFactory.viewFor(viewModel: viewModel)
-                        .modified(viewModel: viewModel)
-                } else {
-                    Text("❌ No modal defined for this view \n remember to override \"viewModelForModal\"")
-                }
-            })*/
         }.tabItem {
             Label(viewModel.title, systemImage: viewModel.iconForTab)
         }

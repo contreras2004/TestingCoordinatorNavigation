@@ -41,4 +41,8 @@ class MainTabBarCoordinator: TabBarViewCoordinator {
             break
         }
     }
+
+    deinit {
+        debugPrint("DEINIT MainTabBarCoordinator")
+    }
 }

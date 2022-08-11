@@ -15,6 +15,10 @@ import UI
 public class View1ViewModel: BaseViewModel {
     override public var title: String { "View 1" }
     override public var iconForTab: String { "square.and.arrow.up.circle" }
+
+    deinit {
+        debugPrint("\(self) has been deinitialized")
+    }
 }
 struct View1: View {
     @ObservedObject var viewModel: View1ViewModel
@@ -92,6 +96,10 @@ struct View2: View {
 
 class View3ViewModel: BaseViewModel {
     override var title: String { "View 3" }
+
+    deinit {
+        debugPrint("\(self) has been deinitialized")
+    }
 }
 struct View3: View {
     @ObservedObject var viewModel: View3ViewModel

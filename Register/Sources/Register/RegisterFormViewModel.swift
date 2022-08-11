@@ -32,6 +32,10 @@ public class RegisterFormViewModel: BaseViewModel {
         self.coordinator.handle(event: RegisterEvent.goToRoot)
     }
 
+    deinit {
+        debugPrint("\(self) has been deinitialized")
+    }
+
     private func formIsValid() -> Bool {
         if !isValid(email: email) {
             emailError = "Email no es válido"
