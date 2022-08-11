@@ -11,9 +11,12 @@ import SwiftUI
 
 enum MainTabBarCoordinatorEvent: TabBarCoordinatorEvent {
     case goToTab(index: Int)
+    case handleNotification(payload: PushNotificationPayload)
 }
 
 class MainTabBarCoordinator: TabBarViewCoordinator {
+    weak var sessionManager: SessionManager?
+
     override func handle(event: TabBarCoordinatorEvent) {
         guard let event = event as? MainTabBarCoordinatorEvent else {
             fatalError("Event not recognized")
@@ -22,6 +25,8 @@ class MainTabBarCoordinator: TabBarViewCoordinator {
         switch event {
         case .goToTab(index: let index):
             goToTab(index: index)
+        case .handleNotification(payload: let payload):
+            handleNotification(payload: payload)
         }
     }
 
@@ -36,13 +41,14 @@ class MainTabBarCoordinator: TabBarViewCoordinator {
     func handleNotification(payload: PushNotificationPayload) {
         switch payload.flow {
         case .thirdView:
-            goToTab(index: 0)
+            goToTab(index: 1)
+            tabs[1].actionForNavigationButton()
         case .none:
             break
         }
     }
 
     deinit {
-        debugPrint("DEINIT MainTabBarCoordinator")
+        debugPrint("\(self) deinit")
     }
 }

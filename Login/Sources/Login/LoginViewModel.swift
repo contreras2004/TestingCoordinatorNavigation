@@ -9,6 +9,7 @@ import Combine
 import Foundation
 import Navigation
 import SwiftUI
+import UI
 
 public class LoginViewModel: BaseViewModel {
     @Published var user: String = "11111111-1"

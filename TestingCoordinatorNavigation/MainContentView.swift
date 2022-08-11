@@ -8,6 +8,7 @@
 import Login
 import Navigation
 import SwiftUI
+import UI
 
 struct MainContentView: View {
     @ObservedObject var tabBarCoordinator = MainTabBarCoordinator()
@@ -15,11 +16,10 @@ struct MainContentView: View {
     @ObservedObject var loginCoordinator = MainNavigationCoordinator()
     @ObservedObject var loginViewModel = LoginViewModel()
 
-    //dumy vars
-    @State var stack: [String] = []
-
-    init() {
+    init(appDelegate: AppDelegate) {
         setUpNavigation()
+        appDelegate.tabBarCoordinator = self.tabBarCoordinator
+        appDelegate.loginCoordinator = self.loginCoordinator
     }
 
     var body: some View {
@@ -40,7 +40,7 @@ struct MainContentView: View {
                     ViewFactory(viewModel: loginViewModel)
                 }
             }
-        }
+        }.modifier(BannerModifier(model: $loginCoordinator.bannerData))
     }
 
     func setUpNavigation() {
@@ -56,6 +56,7 @@ struct MainContentView: View {
         ]
 
         //sets up the navigation for the logged out state
+        tabBarCoordinator.sessionManager = sessionManager
         loginCoordinator.sessionManager = sessionManager
         loginViewModel.coordinator = loginCoordinator
     }

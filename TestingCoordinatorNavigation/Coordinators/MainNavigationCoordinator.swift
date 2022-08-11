@@ -8,6 +8,8 @@
 import Login
 import Navigation
 import Register
+import SwiftUI
+import UI
 
 enum MainNavigationCoordinatorEvent: NavigationCoordinatorEvent {
     case goToFirstPage
@@ -22,12 +24,18 @@ enum MainNavigationCoordinatorEvent: NavigationCoordinatorEvent {
 class MainNavigationCoordinator: NavigationCoordinator {
     weak var sessionManager: SessionManager?
 
+    @Published var bannerData: BannerData?
+
     var mainTabBarCoordinator: MainTabBarCoordinator? {
         self.tabBarCoordinator as? MainTabBarCoordinator
     }
 
     deinit {
         debugPrint("\(self) deinit")
+    }
+
+    func showBanner() {
+        bannerData = BannerData(title: "Debes iniciar sesión primero", type: .warning)
     }
 
     override func handle(event: NavigationCoordinatorEvent) {
