@@ -23,6 +23,7 @@ open class BaseViewModel: ViewModelProtocol, ObservableObject {
 
     open var navigationButtonIcon: String? { nil }
     open var actionForNavigationButton: () -> Void { {} }
+    open var navigationButtonIconColor: Color { .blue }
 
     open var coordinator: NavigationCoordinator
     /// Init method for the BaseViewModel
@@ -37,5 +38,11 @@ open class BaseViewModel: ViewModelProtocol, ObservableObject {
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+
+    public func setNavigationBarColor(color: UIColor) {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: color]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: color]
     }
 }

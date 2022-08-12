@@ -23,53 +23,52 @@ public struct InfoView: View {
     }
 
     public var body: some View {
-        ZStack {
-            ThemeColor.primaryAccent.swiftUIColor
-            VStack {
-                Spacer()
-                Text("Tap me! 😄")
-                    .foregroundColor(.white)
-                ZStack {
-                    if shouldAnimate {
-                        ZStack {
-                            Circle()
-                                .matchedGeometryEffect(id: "circle", in: animation)
-                                .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.9))
-                                .onTapGesture {
-                                    withAnimation(.spring()) {
-                                        shouldAnimate.toggle()
-                                    }
+        VStack {
+            Spacer()
+            Text("Tap me! 😄")
+                .foregroundColor(.white)
+            ZStack {
+                if shouldAnimate {
+                    ZStack {
+                        Circle()
+                            .matchedGeometryEffect(id: "circle", in: animation)
+                            .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.9))
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    shouldAnimate.toggle()
                                 }
-                            Text("This is a modal")
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                        }
-                    } else {
-                        ZStack {
-                            Circle()
-                                .matchedGeometryEffect(id: "circle", in: animation)
-                                .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
-                                .frame(width: 180, height: 180)
-                                .onTapGesture {
-                                    withAnimation(.spring()) {
-                                        shouldAnimate.toggle()
-                                    }
-                                }
-                            Text("This is a modal")
-                                .foregroundColor(.white)
-                        }
+                            }
+                        Text("This is a modal")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
                     }
-                }.padding()
-
-                Text("To show any modal you should override the property \"viewModelForModal\" in the parent View")
-                    .foregroundColor(.white)
-                    .padding()
-                    .multilineTextAlignment(.center)
-                DefaultButton(text: "Dismiss modal") {
-                    self.viewModel.coordinator.handle(event: LoginEvents.dismissModal)
+                } else {
+                    ZStack {
+                        Circle()
+                            .matchedGeometryEffect(id: "circle", in: animation)
+                            .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.4))
+                            .frame(width: 180, height: 180)
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    shouldAnimate.toggle()
+                                }
+                            }
+                        Text("This is a modal")
+                            .foregroundColor(.white)
+                    }
                 }
-                Spacer()
+            }.padding()
+
+            Text("To show any modal you should override the property \"viewModelForModal\" in the parent View")
+                .foregroundColor(.white)
+                .padding()
+                .multilineTextAlignment(.center)
+            DefaultButton(text: "Dismiss modal") {
+                self.viewModel.coordinator.handle(event: LoginEvents.dismissModal)
             }
-        }.ignoresSafeArea()
+            Spacer()
+        }
+        .padding()
+        .withAnimatedBackground()
     }
 }

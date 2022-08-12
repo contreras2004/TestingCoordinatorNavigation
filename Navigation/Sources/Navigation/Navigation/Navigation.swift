@@ -25,9 +25,9 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
         NavigationStack(path: $coordinator.path) {
             viewFactory
                 .modified(viewModel: viewModel)
-            .navigationDestination(for: BaseViewModel.self) { viewModel in
-                viewFactory.viewFor(viewModel: viewModel)
-                    .modified(viewModel: viewModel)
+            .navigationDestination(for: BaseViewModel.self) { innerVM in
+                viewFactory.viewFor(viewModel: innerVM)
+                    .modified(viewModel: innerVM)
             }
         }.tabItem {
             Label(viewModel.title, systemImage: viewModel.iconForTab)

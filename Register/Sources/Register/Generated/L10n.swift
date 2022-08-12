@@ -14,16 +14,20 @@ internal enum L10n {
   internal static let acceptTC = L10n.tr("Localizable", "acceptTC", fallback: #"I accept the Terms and Conditions"#)
   /// Email
   internal static let email = L10n.tr("Localizable", "email", fallback: #"Email"#)
+  /// Ok
+  internal static let errorAcceptButton = L10n.tr("Localizable", "errorAcceptButton", fallback: #"Ok"#)
+  /// Ups! Something went wrong 🥲
+  internal static let errorMessage = L10n.tr("Localizable", "errorMessage", fallback: #"Ups! Something went wrong 🥲"#)
+  /// Error
+  internal static let errorTitle = L10n.tr("Localizable", "errorTitle", fallback: #"Error"#)
   /// Name
   internal static let name = L10n.tr("Localizable", "name", fallback: #"Name"#)
-  /// Plural format key: "%#@views@"
-  internal static func nViews(_ p1: Int) -> String {
-    return L10n.tr("Localizable", "nViews", p1, fallback: #"Plural format key: "%#@views@""#)
-  }
   /// ******
   internal static let passPlaceholder = L10n.tr("Localizable", "passPlaceholder", fallback: #"******"#)
   /// Password
   internal static let password = L10n.tr("Localizable", "password", fallback: #"Password"#)
+  /// Email already taken
+  internal static let registerErrorCode1 = L10n.tr("Localizable", "registerErrorCode1", fallback: #"Email already taken"#)
   /// Register
   internal static let registerTitle = L10n.tr("Localizable", "registerTitle", fallback: #"Register"#)
   /// Repeat password

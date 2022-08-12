@@ -14,3 +14,10 @@
 "passPlaceholder" = "******";
 "repeatPassword" = "Repite la contraseña";
 "acceptTC" = "Acepto los Términos y Condiciones";
+
+// MARK: Error View
+"errorTitle"= "Error";
+"errorMessage" = "Ups! Algo salió mal 🥲";
+"errorAcceptButton" = "Ok";
+
+"registerErrorCode1" = "El correo ya tiene una cuenta asociada";

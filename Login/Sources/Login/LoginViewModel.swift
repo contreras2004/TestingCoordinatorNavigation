@@ -14,20 +14,18 @@ import UI
 public class LoginViewModel: BaseViewModel {
     @Published var user: String = "11111111-1"
     @Published var pass: String = "1"
+    @Published var isPresentingError = false
+    @Published var isLoading = false
+    @Published var userModel: LoginResponseModel?
+    @Published var apiError: LoginError = .unknown
 
     let userPlaceHolder: String = "User"
     let passPlaceHolder: String = "Pass"
 
-    @Published var isPresentingError = false
-    @Published var isLoading = false
-
     var service: LoginServiceProtocol = LoginService()
 
-    @Published var userModel: LoginResponseModel?
-    @Published var apiError: LoginError = .unknown
-
     override public var navigationButtonIcon: String? { "info.circle" }
-
+    override public var navigationButtonIconColor: Color { .white }
     override public var actionForNavigationButton: (() -> Void) {
         {
             self.coordinator.viewModelForModal = InfoViewModel(coordinator: self.coordinator)

@@ -1,0 +1,21 @@
+{
+    "request": {
+        "url": "/register",
+        "method": "POST",
+        "headers": { },
+        "bodyPatterns": [
+            { "matchesJsonPath" : "$[?(@.email == 'Contreras2004@gmail.com')]"}
+        ]
+    },
+    "response": {
+        "status": 500,
+        "fixedDelayMilliseconds": 2000,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "jsonBody": {
+            "errorDescription": "This email already has an account",
+            "errorCode": 1
+        }
+    }
+}

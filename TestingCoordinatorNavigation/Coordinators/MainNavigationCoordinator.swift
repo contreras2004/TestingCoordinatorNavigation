@@ -34,8 +34,8 @@ class MainNavigationCoordinator: NavigationCoordinator {
         debugPrint("\(self) deinit")
     }
 
-    func showBanner() {
-        bannerData = BannerData(title: "Debes iniciar sesión primero", type: .warning)
+    func showBanner(bannerData: BannerData) {
+        self.bannerData = bannerData
     }
 
     override func handle(event: NavigationCoordinatorEvent) {

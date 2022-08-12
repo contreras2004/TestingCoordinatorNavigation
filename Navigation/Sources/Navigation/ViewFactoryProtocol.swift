@@ -33,7 +33,7 @@ struct ViewFactoryModifier: ViewModifier {
                         Button {
                             viewModel.actionForNavigationButton()
                         } label: {
-                            Image(systemName: iconName)
+                            Image(systemName: iconName).foregroundColor(viewModel.navigationButtonIconColor)
                         }
                     }
                 }

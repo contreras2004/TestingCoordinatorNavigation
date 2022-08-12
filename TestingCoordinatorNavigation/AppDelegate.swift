@@ -9,6 +9,7 @@ import Foundation
 import Navigation
 import SwiftUI
 import UIKit
+import UI
 
 // swiftlint:disable discouraged_optional_collection
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -84,7 +85,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
 
     private func handleNotification(payload: PushNotificationPayload) {
-        self.loginCoordinator?.showBanner()
-        self.tabBarCoordinator?.handleNotification(payload: payload)
+        if !(loginCoordinator?.sessionManager?.isLogged ?? true) {
+            let bannerData = BannerData(title: "Debes iniciar sesión primero", type: .warning)
+            loginCoordinator?.showBanner(bannerData: bannerData)
+        }
+
+        tabBarCoordinator?.handleNotification(payload: payload)
     }
 }

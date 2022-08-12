@@ -45,14 +45,24 @@ public class BannerData {
         }
     }
 
-    var type: BannerType = .success
+    let type: BannerType
     let title: String
     let message: String?
+    let autoDismiss: Bool
+    let autoDismissSeconds: Int
 
-    public init(title: String, message: String? = nil, type: BannerType) {
+    public init(
+        title: String,
+        message: String? = nil,
+        type: BannerType = .success,
+        autoDismiss: Bool = true,
+        autoDismissSeconds: Int = 3
+    ) {
         self.title = title
         self.message = message
         self.type = type
+        self.autoDismiss = autoDismiss
+        self.autoDismissSeconds = autoDismissSeconds
     }
 }
 
@@ -103,6 +113,11 @@ public struct BannerModifier: ViewModifier {
                                 }
                             }
                     )
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            model = nil
+                        }
+                    }
                 }
             }
             .animation(.spring())

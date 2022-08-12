@@ -14,6 +14,7 @@ public class RegisterFormViewModel: BaseViewModel {
     let namePlaceHolder: String = L10n.name
     let emailPlaceHolder: String = L10n.email
     let passPlaceHolder: String = L10n.passPlaceholder
+    var service: RegisterServiceProtocol = RegisterService()
 
     @Published var userName: String = "" { didSet { checkButtonEnabled() } }
     @Published var email: String = "" { didSet { checkButtonEnabled() } }
@@ -22,14 +23,26 @@ public class RegisterFormViewModel: BaseViewModel {
     @Published var acceptedTC = false { didSet { checkButtonEnabled() } }
     @Published var isLoading = false
     @Published var formIsDisabled = true
-
     @Published var emailError: String = ""
     @Published var passwordsDontMatchError: String = ""
 
+    @Published var apiError: RegisterError = .unknown
+    @Published var isPresentingError = false
+
     func register() {
         if formIsValid() == false { return }
-        debugPrint("Register the user")
-        self.coordinator.handle(event: RegisterEvent.goToRoot)
+        isLoading = true
+        let model = RegisterRequestModel(userName: userName, email: email, pass: password)
+        service.register(requestModel: model) { [weak self] response in
+            self?.isLoading = false
+            switch response {
+            case .success:
+                self?.coordinator.handle(event: RegisterEvent.goToRoot)
+            case .failure(let error):
+                self?.apiError = error
+                self?.isPresentingError = true
+            }
+        }
     }
 
     deinit {

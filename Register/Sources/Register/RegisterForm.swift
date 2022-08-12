@@ -39,15 +39,14 @@ public struct RegisterForm: View {
                 })
         }
         .padding()
-        //.navigationBarTitle("L10n.login", displayMode: .inline)
-        /*.alert(viewModel.apiError.title,
+        .alert(viewModel.apiError.title,
                isPresented: $viewModel.isPresentingError,
-               presenting: LoginError.self,
+               presenting: RegisterError.self,
                actions: { _ in
-            Button("L10n.errorAcceptButton", role: .cancel) { }
+            Button(L10n.errorAcceptButton, role: .cancel) { }
         }, message: { _ in
             Text(viewModel.apiError.message)
-        })*/
+        })
     }
 }
 

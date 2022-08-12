@@ -15,6 +15,7 @@ public struct LoginView: View {
 
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
+        viewModel.setNavigationBarColor(color: .white)
     }
 
     public var body: some View {
@@ -38,6 +39,7 @@ public struct LoginView: View {
             })
         }
         .padding()
+        .withAnimatedBackground()
         .navigationBarTitle(L10n.login, displayMode: .inline)
         .alert(viewModel.apiError.title,
                isPresented: $viewModel.isPresentingError,
@@ -52,6 +54,9 @@ public struct LoginView: View {
         }, message: { _ in
             Text(viewModel.apiError.message)
         })
+        .onDisappear {
+            viewModel.setNavigationBarColor(color: .black)
+        }
     }
 }
 

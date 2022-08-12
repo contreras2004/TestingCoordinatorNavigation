@@ -37,8 +37,9 @@ struct View1: View {
                         Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
                     }
                     if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
-                        Text("and this is the element  \(index) in the navigation stack")
+                        Text("Element \(index) in the navigation stack")
                     }
+
                     DefaultButton(text: "Go To Second Page 2️⃣") {
                         viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToSecondPage)
                     }
@@ -77,11 +78,9 @@ struct View2: View {
                         Text("In Tab \(tabBarCoordinator.selectedTabIndex)")
                     }
                     if let index = viewModel.coordinator.indexFor(viewModel: self.viewModel) {
-                        Text("and this is the element  \(index) in the navigation stack")
+                        Text("Element \(index) in the navigation stack")
                     }
-                    DefaultButton(text: "Go To Third Page 3️⃣") {
-                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToThirdPage)
-                    }
+
                     if viewModel.coordinator.tabBarCoordinator != nil {
                         DefaultButton(text: "Change to second Tab ➡️") {
                             viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToTab(index: 1))
@@ -89,6 +88,9 @@ struct View2: View {
                         DefaultButton(text: "Change to First Tab ⬅️") {
                             viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToTab(index: 0))
                         }
+                    }
+                    DefaultButton(text: "Go To Third Page 3️⃣") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToThirdPage)
                     }
                 }
             }.padding()
@@ -124,14 +126,17 @@ struct View3: View {
                     DefaultButton(text: "Go to Root 🏁") {
                         viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToRoot)
                     }
-                    DefaultButton(text: "Go to another instance of View1 1️⃣") {
-                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToFirstPage)
+
+                    DefaultButton(text: "Logout 🚪") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.logout)
                     }
+
                     DefaultButton(text: "Remove previouse view from stack") {
                         viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.removePreviouseViewFromStack)
                     }
-                    DefaultButton(text: "Logout 🚪") {
-                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.logout)
+
+                    DefaultButton(text: "Go to another instance of View1 1️⃣") {
+                        viewModel.coordinator.handle(event: MainNavigationCoordinatorEvent.goToFirstPage)
                     }
                 }
             }.padding()

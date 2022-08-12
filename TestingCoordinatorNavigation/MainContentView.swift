@@ -23,9 +23,12 @@ struct MainContentView: View {
     }
 
     var body: some View {
-        Toggle(isOn: $sessionManager.isLogged) {
+        // uncomment this to debug
+        /*Toggle(isOn: $sessionManager.isLogged) {
             Text("Is logged: ")
         }
+        .padding()
+        .background(.yellow)*/
         VStack {
             if sessionManager.isLogged {
                 TabBarView(coordinator: tabBarCoordinator) {
@@ -40,7 +43,8 @@ struct MainContentView: View {
                     ViewFactory(viewModel: loginViewModel)
                 }
             }
-        }.modifier(BannerModifier(model: $loginCoordinator.bannerData))
+        }
+        .modifier(BannerModifier(model: $loginCoordinator.bannerData))
     }
 
     func setUpNavigation() {
@@ -55,7 +59,7 @@ struct MainContentView: View {
             View2ViewModel(coordinator: coordinator2)
         ]
 
-        //sets up the navigation for the logged out state
+        //Sets up the navigation for the logged out state
         tabBarCoordinator.sessionManager = sessionManager
         loginCoordinator.sessionManager = sessionManager
         loginViewModel.coordinator = loginCoordinator

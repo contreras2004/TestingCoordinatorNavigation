@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct RegisterRequestModel: Codable {
+    let userName: String
+    let email: String
+    let pass: String
+}
+
+struct RegisterResponseModel: Codable {
+}

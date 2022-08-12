@@ -14,3 +14,10 @@
 "passPlaceholder" = "******";
 "repeatPassword" = "Repeat password";
 "acceptTC" = "I accept the Terms and Conditions";
+
+// MARK: Error View
+"errorTitle"= "Error";
+"errorMessage" = "Ups! Something went wrong 🥲";
+"errorAcceptButton" = "Ok";
+
+"registerErrorCode1" = "Email already taken";
