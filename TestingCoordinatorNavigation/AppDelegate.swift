@@ -8,8 +8,8 @@
 import Foundation
 import Navigation
 import SwiftUI
-import UIKit
 import UI
+import UIKit
 
 // swiftlint:disable discouraged_optional_collection
 class AppDelegate: NSObject, UIApplicationDelegate {

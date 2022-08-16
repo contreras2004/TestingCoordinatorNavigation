@@ -30,8 +30,8 @@ public struct AnimatedBackground: View {
                     .foregroundColor(.red)
                     .scaleEffect(isAnimating1 ? 1.2 : 1)
                     .position(
-                        x: isAnimating1 ? geo.size.width * 0.5 : 0,
-                        y: isAnimating1 ? -100 : 0 )
+                        x: isAnimating1 ? geo.size.width * 0.5 : -geo.size.width * 0.1,
+                        y: isAnimating1 ? -200 : 0 )
                     .opacity(isAnimating1 ? 0.8 : 0.5)
 
                 Circle()
