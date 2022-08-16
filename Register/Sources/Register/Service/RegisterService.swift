@@ -30,35 +30,29 @@ enum RegisterError: Int64, Error {
 
 protocol RegisterServiceProtocol {
     var api: ApiProtocol { get }
-    var cancelables: Set<AnyCancellable> { get }
 
-    func register(requestModel: RegisterRequestModel, completion: @escaping (Result<Void, RegisterError>) -> Void)
+    func register(requestModel: RegisterRequestModel) async -> Result<Void, RegisterError>
 }
 
 class RegisterService: RegisterServiceProtocol {
-    var cancelables = Set<AnyCancellable>()
-
     var api: Networking.ApiProtocol = API()
 
-    func register(requestModel: RegisterRequestModel, completion: @escaping (Result<Void, RegisterError>) -> Void) {
-        api.execute(endpoint: .register, decodingType: RegisterResponseModel.self, httpMethod: .post, params: requestModel)
-            .receive(on: DispatchQueue.main)
-            .sink { result in
-                switch result {
-                case .failure(let error):
-                    switch error {
-                    case .validationError(let error):
-                        completion(.failure(RegisterError(rawValue: error.errorCode) ?? .unknown))
-                    default:
-                        completion(.failure(RegisterError.unknown))
-                    }
-                case .finished:
-                    break
-                }
-            } receiveValue: { _ in
-                DispatchQueue.main.async {
-                    completion(.success(()))
-                }
-            }.store(in: &cancelables)
+    func register(requestModel: RegisterRequestModel) async -> Result<Void, RegisterError> {
+        let response = await api.execute(
+            endpoint: .register,
+            decodingType: RegisterResponseModel.self,
+            httpMethod: .post,
+            params: requestModel)
+        switch response {
+        case .success:
+            return .success(())
+        case .failure(let error):
+            switch error {
+            case .validationError(let error):
+                return .failure(RegisterError(rawValue: error.errorCode) ?? .unknown)
+            default:
+                return .failure(RegisterError.unknown)
+            }
+        }
     }
 }

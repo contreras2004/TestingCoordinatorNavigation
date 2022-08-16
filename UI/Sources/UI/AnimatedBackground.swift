@@ -27,7 +27,7 @@ public struct AnimatedBackground: View {
 
                 Circle()
                     .frame(width: geo.size.width * 1.3, height: geo.size.width * 1.6)
-                    .foregroundColor(.red)
+                    .foregroundColor(ThemeColor.primaryAccent.swiftUIColor)
                     .scaleEffect(isAnimating1 ? 1.2 : 1)
                     .position(
                         x: isAnimating1 ? geo.size.width * 0.5 : -geo.size.width * 0.1,
@@ -36,7 +36,7 @@ public struct AnimatedBackground: View {
 
                 Circle()
                     .frame(width: geo.size.width * 0.35, height: geo.size.width * 1.6)
-                    .foregroundColor(.blue)
+                    .foregroundColor(ThemeColor.secondaryAccent.swiftUIColor)
                     .scaleEffect(isAnimating2 ? 1.5 : 1)
                     .position(
                         x: isAnimating2 ? geo.size.width * 0.6 : geo.size.width * 0.8,
@@ -45,7 +45,7 @@ public struct AnimatedBackground: View {
 
                 Circle()
                     .frame(width: geo.size.width * 0.5, height: geo.size.width * 1.6)
-                    .foregroundColor(ThemeColor.primaryAccent.swiftUIColor)
+                    .foregroundColor(ThemeColor.thirdAccent.swiftUIColor)
                     .scaleEffect(isAnimating2 ? 1.5 : 1)
                     .position(
                         x: isAnimating2 ? geo.size.width * 0.5 : geo.size.width * 0.2,

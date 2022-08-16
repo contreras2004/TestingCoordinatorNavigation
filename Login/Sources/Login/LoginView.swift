@@ -32,7 +32,9 @@ public struct LoginView: View {
             DefaultTextField(placeholder: viewModel.passPlaceHolder, value: $viewModel.pass)
             Spacer()
             DefaultButton(text: L10n.login, isLoading: $viewModel.isLoading, action: {
-                viewModel.login()
+                Task(priority: .background) {
+                    await viewModel.login()
+                }
             })
             DefaultButton(text: L10n.register, style: .onlyText, action: {
                 viewModel.coordinator.handle(event: LoginEvents.goToRegisterForm)

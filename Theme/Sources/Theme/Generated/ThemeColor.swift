@@ -24,7 +24,9 @@ public typealias AssetColorTypeAlias = ColorAsset.Color
 public enum ThemeColor {
   public static let disabledButton = ColorAsset(name: "DisabledButton")
   public static let primaryAccent = ColorAsset(name: "PrimaryAccent")
+  public static let secondaryAccent = ColorAsset(name: "SecondaryAccent")
   public static let textfieldBackground = ColorAsset(name: "TextfieldBackground")
+  public static let thirdAccent = ColorAsset(name: "ThirdAccent")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

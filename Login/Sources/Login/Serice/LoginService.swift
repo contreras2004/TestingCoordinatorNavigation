@@ -32,57 +32,20 @@ enum LoginError: Int64, Error {
 
 protocol LoginServiceProtocol {
     var api: ApiProtocol { get }
-    var cancelables: Set<AnyCancellable> { get }
 
-    func login(requestModel: LoginRequestModel, completion: @escaping (Result<LoginResponseModel, LoginError>) -> Void)
+    func login(requestModel: LoginRequestModel) async -> Result<LoginResponseModel, LoginError>
 }
 
 public class LoginService: LoginServiceProtocol {
     var api: ApiProtocol = API()
 
-    var cancelables = Set<AnyCancellable>()
-
-    func login(
-        requestModel: LoginRequestModel,
-        completion: @escaping (Result<LoginResponseModel, LoginError>) -> Void) {
-        api.execute(endpoint: .login, decodingType: LoginResponseModel.self, httpMethod: .post, params: requestModel)
-            .receive(on: DispatchQueue.main)
-            .sink { result in
-                switch result {
-                case .failure(let error):
-                    switch error {
-                    case .validationError(let error):
-                        completion(.failure(LoginError(rawValue: error.errorCode) ?? .unknown))
-                    default:
-                        completion(.failure(LoginError.unknown))
-                    }
-                case .finished:
-                    break
-                }
-            } receiveValue: { userModel in
-                DispatchQueue.main.async {
-                    completion(.success(userModel))
-                }
-            }.store(in: &cancelables)
+    func login(requestModel: LoginRequestModel) async -> Result<LoginResponseModel, LoginError> {
+        let response = await api.execute(endpoint: .login, decodingType: LoginResponseModel.self, httpMethod: .post, params: requestModel)
+        switch response {
+        case .success(let success):
+            return .success(success)
+        case .failure(let failure):
+            return .failure(LoginError.unknown)
+        }
     }
-
-    /* Another way of writing the same function
-    func login(requestModel: LoginRequestModel) {
-        api.execute(endpoint: .login, decodingType: LoginResponseModel.self, httpMethod: .post, params: requestModel)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                switch completion {
-                case .failure(let error):
-                    debugPrint("error")
-                    //self?.isPresentingError = true
-                case .finished:
-                    break
-                }
-            } receiveValue: { [weak self] userModel in
-                DispatchQueue.main.async {
-                    debugPrint("login")
-                    //self?.coordinator?.login()
-                }
-            }.store(in: &cancelables)
-    }*/
 }

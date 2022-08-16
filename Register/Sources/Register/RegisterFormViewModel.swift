@@ -33,8 +33,8 @@ public class RegisterFormViewModel: BaseViewModel {
         if formIsValid() == false { return }
         isLoading = true
         let model = RegisterRequestModel(userName: userName, email: email, pass: password)
-        service.register(requestModel: model) { [weak self] response in
-            self?.isLoading = false
+        Task { [weak self] in
+            let response = await service.register(requestModel: model)
             switch response {
             case .success:
                 self?.coordinator.handle(event: RegisterEvent.goToRoot)
