@@ -100,5 +100,6 @@ struct PushNotificationPayload {
 
 enum PushNotificationFlow: String, Codable {
     case notifications
+    case exampleModal
     case none
 }

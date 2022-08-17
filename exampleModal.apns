@@ -1,0 +1,15 @@
+{
+   "Simulator Target Bundle": "matiascontreras.TestingCoordinatorNavigation",
+   "aps": {
+       "badge": 5,
+       "alert": {
+           "title": "Do you wana go somewhere nice?",
+           "subtitle": "Tap here",
+           "body": "Is this working?",
+       },
+      "sound":"default"
+   },
+   "payload": {
+        "flow": "exampleModal"
+   }
+}
