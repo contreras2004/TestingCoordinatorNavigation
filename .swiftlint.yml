@@ -129,6 +129,7 @@ excluded:
     - Login/Tests
     - Register/Tests
     - Navigation/Tests
+    - Notifications/Tests
 
 function_parameter_count:
     - 4 # warning

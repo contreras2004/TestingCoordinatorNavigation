@@ -10,6 +10,6 @@
       "sound":"default"
    },
    "payload": {
-        "flow": "thirdView"
+        "flow": "notifications"
    }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Notifications
 import Register
 
 extension MainNavigationCoordinator {
@@ -57,5 +58,9 @@ extension MainNavigationCoordinator {
         } else {
             debugPrint("No enough views in the stack")
         }
+    }
+
+    func goToNotifications() {
+        path.append(NotificationsListViewModel(coordinator: self))
     }
 }

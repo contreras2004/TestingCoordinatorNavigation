@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Tolls
+
+  Created by m.contreras.selman on 26-07-22.
+  
+*/
+
+// MARK: View titles
+"notificationsTitle"= "Notificaciones";
+"reload"= "Recargar";
+"error"= "Oops, algo salió mal 🥸";

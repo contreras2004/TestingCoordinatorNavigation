@@ -1,0 +1,5 @@
+strings:
+  inputs: Sources/Notifications/Localizable/en.lproj
+  outputs:
+    templateName: structured-swift5
+    output: Sources/Notifications/Generated/L10n.swift

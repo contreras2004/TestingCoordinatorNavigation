@@ -1,0 +1,43 @@
+{
+    "request": {
+        "url": "/notifications",
+        "method": "GET",
+        "headers": { },
+        
+        "bodyPatterns": [
+            //{ "matchesJsonPath" : "$[?(@.userName == '11111111-1')]"},
+            //{ "matchesJsonPath" : "$[?(@.password == '1')]"}
+        ]
+    },
+    "response": {
+        "status": 200,
+        "fixedDelayMilliseconds": 1000,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "jsonBody": {
+            "notifications": [
+                {
+                    "id": "1",
+                    "message": "Notificacion numero 1"
+                },
+                {
+                    "id": "2",
+                    "message": "Notificacion numero 2"
+                },
+                {
+                    "id": "3",
+                    "message": "Notificacion numero 3"
+                },
+                {
+                    "id": "4",
+                    "message": "Notificacion numero 4"
+                },
+                {
+                    "id": "5",
+                    "message": "Notificacion numero 5"
+                }
+            ]
+        }
+    }
+}

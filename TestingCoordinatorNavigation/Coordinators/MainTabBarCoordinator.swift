@@ -7,6 +7,7 @@
 
 import Foundation
 import Navigation
+import Notifications
 import SwiftUI
 
 enum MainTabBarCoordinatorEvent: TabBarCoordinatorEvent {
@@ -40,9 +41,9 @@ class MainTabBarCoordinator: TabBarViewCoordinator {
 
     func handleNotification(payload: PushNotificationPayload) {
         switch payload.flow {
-        case .thirdView:
-            goToTab(index: 1)
-            tabs[1].actionForNavigationButton()
+        case .notifications:
+            goToTab(index: 0)
+            tabs[0].coordinator.path.append(NotificationsListViewModel(coordinator: tabs[0].coordinator))
         case .none:
             break
         }

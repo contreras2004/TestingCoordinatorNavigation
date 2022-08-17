@@ -99,6 +99,6 @@ struct PushNotificationPayload {
 }
 
 enum PushNotificationFlow: String, Codable {
-    case thirdView
+    case notifications
     case none
 }

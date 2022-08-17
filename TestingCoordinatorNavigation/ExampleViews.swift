@@ -15,6 +15,10 @@ import UI
 public class View1ViewModel: BaseViewModel {
     override public var title: String { "View 1" }
     override public var iconForTab: String { "square.and.arrow.up.circle" }
+    override public var navigationButtonIcon: String? { "message" }
+    override public var actionForNavigationButton: () -> Void {{
+        self.coordinator.handle(event: MainNavigationCoordinatorEvent.goToNotifications)
+    }}
 
     deinit {
         debugPrint("\(self) has been deinitialized")
@@ -25,7 +29,7 @@ struct View1: View {
 
     var body: some View {
         ZStack {
-            Color.teal
+            ThemeColor.disabledButton.swiftUIColor
             VStack {
                 Text("This is \(viewModel.title)")
                 Circle()
@@ -66,7 +70,7 @@ struct View2: View {
     @ObservedObject var viewModel: View2ViewModel
     var body: some View {
         ZStack {
-            Color.gray
+            ThemeColor.disabledButton.swiftUIColor
             VStack {
                 Text("This is \(viewModel.title)")
                 Circle()
@@ -109,7 +113,7 @@ struct View3: View {
     @ObservedObject var viewModel: View3ViewModel
     var body: some View {
         ZStack {
-            Color.red
+            ThemeColor.disabledButton.swiftUIColor
             VStack {
                 Text("This is \(viewModel.title)")
                 Circle()

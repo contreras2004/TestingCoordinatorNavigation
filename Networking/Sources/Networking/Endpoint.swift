@@ -10,6 +10,7 @@ import Foundation
 public enum Endpoint: String {
     case login
     case register
+    case notifications
 
     private var baseUrl: String { "http://localhost:3001/" }
 
@@ -18,6 +19,8 @@ public enum Endpoint: String {
         case .login:
             return baseUrl + self.rawValue
         case .register:
+            return baseUrl + self.rawValue
+        case .notifications:
             return baseUrl + self.rawValue
         }
     }

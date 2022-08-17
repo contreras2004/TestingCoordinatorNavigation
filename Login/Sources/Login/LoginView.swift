@@ -1,5 +1,5 @@
 //
-//  Welcome.swift
+//  LoginView.swift
 //  Tolls
 //
 //  Created by Matias Contreras on 12-07-22.

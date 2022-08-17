@@ -31,7 +31,7 @@ public protocol ApiProtocol {
         endpoint: Endpoint,
         decodingType: T.Type,
         httpMethod: HTTPMethod,
-        params: Encodable) async -> Result<T, APIError> where T: Decodable
+        params: Encodable?) async -> Result<T, APIError> where T: Decodable
 }
 
 public struct API: ApiProtocol {
@@ -146,20 +146,23 @@ public struct API: ApiProtocol {
         endpoint: Endpoint,
         decodingType: T.Type,
         httpMethod: HTTPMethod,
-        params: Encodable) async -> Result<T, APIError> where T: Decodable {
+        params: Encodable? = nil) async -> Result<T, APIError> where T: Decodable {
         guard let url = URL(string: endpoint.fullUrl) else {
             return .failure(APIError.invalidRequestError("URL invalid"))
         }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
 
-        do {
-            let jsonBody = try JSONEncoder().encode(params)
-            request.httpBody = jsonBody
-            debugPrint("Sending: \(params) to: \(request)")
-        } catch {
-            return .failure(APIError.encodingError(error))
+        if let params = params {
+            do {
+                let jsonBody = try JSONEncoder().encode(params)
+                request.httpBody = jsonBody
+                debugPrint("Sending: \(params) to: \(request)")
+            } catch {
+                return .failure(APIError.encodingError(error))
+            }
         }
+
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         do {

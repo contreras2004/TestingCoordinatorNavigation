@@ -8,6 +8,7 @@
 import Foundation
 import Login
 import Navigation
+import Notifications
 import Register
 import SwiftUI
 
@@ -25,14 +26,20 @@ public struct ViewFactory: ViewFactoryProtocol {
             LoginView(viewModel: viewModel)
         case let viewModel as InfoViewModel:
             InfoView(viewModel: viewModel)
+
         case let viewModel as RegisterFormViewModel:
             RegisterFormView(viewModel: viewModel)
+
+        case let viewModel as NotificationsListViewModel:
+            NotificationsListView(viewModel: viewModel)
+
         case let viewModel as View1ViewModel:
             View1(viewModel: viewModel)
         case let viewModel as View2ViewModel:
             View2(viewModel: viewModel)
         case let viewModel as View3ViewModel:
             View3(viewModel: viewModel)
+
         default:
             Text("ViewModel not recognized")
         }

@@ -19,6 +19,7 @@ enum MainNavigationCoordinatorEvent: NavigationCoordinatorEvent {
     case goToTab(index: Int)
     case logout
     case removePreviouseViewFromStack
+    case goToNotifications
 }
 
 class MainNavigationCoordinator: NavigationCoordinator {
@@ -56,6 +57,8 @@ class MainNavigationCoordinator: NavigationCoordinator {
                 goToTab(index: index)
             case .removePreviouseViewFromStack:
                 removePreviouseView()
+            case .goToNotifications:
+                goToNotifications()
             }
         }
 

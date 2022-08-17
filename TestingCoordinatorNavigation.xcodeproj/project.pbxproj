@@ -19,6 +19,7 @@
 		8E29CA5F289B1AA700248D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA5E289B1AA700248D3F /* AppDelegate.swift */; };
 		8E29CA61289B1B5A00248D3F /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA60289B1B5A00248D3F /* NotificationModel.swift */; };
 		8E39923E28A31FCF00B73FB5 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E39923D28A31FCF00B73FB5 /* MainContentView.swift */; };
+		8E76FA9528AD74BD00F8E5B6 /* Notifications in Frameworks */ = {isa = PBXBuildFile; productRef = 8E76FA9428AD74BD00F8E5B6 /* Notifications */; };
 		8EB21F74289DAFDC00D71AB7 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 8EB21F73289DAFDC00D71AB7 /* Quick */; };
 		8EB21F76289DAFDC00D71AB7 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8EB21F75289DAFDC00D71AB7 /* Nimble */; };
 		8EB21F79289DAFEB00D71AB7 /* ViewFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB21F3D289D6E9000D71AB7 /* ViewFactoryTests.swift */; };
@@ -58,6 +59,7 @@
 		8E29CA60289B1B5A00248D3F /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		8E29CA62289B1B9800248D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8E39923D28A31FCF00B73FB5 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		8E76FA9328AD71BA00F8E5B6 /* Notifications */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Notifications; sourceTree = "<group>"; };
 		8EB21F3D289D6E9000D71AB7 /* ViewFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFactoryTests.swift; sourceTree = "<group>"; };
 		8EB21F60289DAFC700D71AB7 /* TestingCoordinatorNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingCoordinatorNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEAA8CF28AC4211007A8551 /* Login */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Login; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EEAA8D828AC42A7007A8551 /* Login in Frameworks */,
+				8E76FA9528AD74BD00F8E5B6 /* Notifications in Frameworks */,
 				8EEAA8DC28AC42CE007A8551 /* UI in Frameworks */,
 				8EEAA8E028AC42DC007A8551 /* Theme in Frameworks */,
 				8EEAA8DE28AC42D3007A8551 /* Navigation in Frameworks */,
@@ -164,6 +167,7 @@
 		8E344AEA28A1BD1800826AEF /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				8E76FA9328AD71BA00F8E5B6 /* Notifications */,
 				8EEAA8CF28AC4211007A8551 /* Login */,
 				8EEAA8D028AC4223007A8551 /* Navigation */,
 				8EEAA8D128AC4230007A8551 /* Networking */,
@@ -206,6 +210,7 @@
 				8EEAA8DB28AC42CE007A8551 /* UI */,
 				8EEAA8DD28AC42D3007A8551 /* Navigation */,
 				8EEAA8DF28AC42DC007A8551 /* Theme */,
+				8E76FA9428AD74BD00F8E5B6 /* Notifications */,
 			);
 			productName = TestingCoordinatorNavigation;
 			productReference = 8E259FB6289826CC00D8FA01 /* TestingCoordinatorNavigation.app */;
@@ -630,6 +635,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8E76FA9428AD74BD00F8E5B6 /* Notifications */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Notifications;
+		};
 		8EB21F73289DAFDC00D71AB7 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8EB21F0D289D60EA00D71AB7 /* XCRemoteSwiftPackageReference "Quick" */;
