@@ -6,7 +6,7 @@
   
 */
 
-// MARK: View titles
+// MARK: View
 "registerTitle" = "Register";
 "name" = "Name";
 "email" = "Email";
@@ -14,6 +14,10 @@
 "passPlaceholder" = "******";
 "repeatPassword" = "Repeat password";
 "acceptTC" = "I accept the Terms and Conditions";
+
+// MARK: Success messa
+"welcome" = "Welcome";
+"welcomeMessage" = "Welcome to the family! You can login now with your credentials.";
 
 // MARK: Error View
 "errorTitle"= "Error";

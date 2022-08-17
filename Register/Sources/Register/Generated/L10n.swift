@@ -32,6 +32,10 @@ internal enum L10n {
   internal static let registerTitle = L10n.tr("Localizable", "registerTitle", fallback: #"Register"#)
   /// Repeat password
   internal static let repeatPassword = L10n.tr("Localizable", "repeatPassword", fallback: #"Repeat password"#)
+  /// Welcome
+  internal static let welcome = L10n.tr("Localizable", "welcome", fallback: #"Welcome"#)
+  /// Welcome to the family! You can login now with your credentials.
+  internal static let welcomeMessage = L10n.tr("Localizable", "welcomeMessage", fallback: #"Welcome to the family! You can login now with your credentials."#)
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

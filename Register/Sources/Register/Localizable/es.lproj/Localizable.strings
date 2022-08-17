@@ -15,6 +15,10 @@
 "repeatPassword" = "Repite la contraseña";
 "acceptTC" = "Acepto los Términos y Condiciones";
 
+// MARK: Success messa
+"welcome" = "Bienvenido";
+"welcomeMessage" = "Bienvenido a la familia! Ahora puedes iniciar sesión con tus credenciales.";
+
 // MARK: Error View
 "errorTitle"= "Error";
 "errorMessage" = "Ups! Algo salió mal 🥲";

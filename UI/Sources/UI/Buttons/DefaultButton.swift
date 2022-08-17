@@ -8,48 +8,6 @@
 import SwiftUI
 import Theme
 
-/* The same view but as a ViewModifier
-public struct LargeButton: ViewModifier {
-    var text = "No text"
-    @Binding var isDisabled: Bool
-    @Binding var isLoading: Bool
-    var action: (() -> Void)?
-
-    private var buttonBackground: Color {
-        (isDisabled || isLoading) ? Color.DefaulTheme.disabledButton : Color.DefaulTheme.primaryAccent
-    }
-
-    public func body(content: Content) -> some View {
-        ZStack {
-            Button(action: action ?? { }) {
-                Spacer()
-                Text(isLoading ? "" : text)
-                    .bold()
-                Spacer()
-            }
-            .frame(maxWidth: .infinity, minHeight: 28)
-            .padding(12)
-            .background(buttonBackground)
-            .foregroundColor(.white)
-            .cornerRadius(5)
-            .disabled(isDisabled || isLoading)
-            .animation(.linear(duration: 0.3), value: isLoading)
-            ActivityIndicator(isAnimating: .constant(true), style: .medium)
-                .opacity(isLoading ? 1 : 0)
-        }
-    }
-}
-
-public extension View {
-    func largeButton(
-            text: String,
-            isDisabled: Binding<Bool>,
-            isLoading: Binding<Bool>,
-            action: (() -> Void)? = nil) -> some View {
-        modifier(LargeButton(text: text, isDisabled: isDisabled, isLoading: isLoading, action: action))
-    }
-}*/
-
 public struct DefaultButton: View {
     public enum Style {
         case filled, onlyText

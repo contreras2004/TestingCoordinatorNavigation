@@ -26,7 +26,7 @@ public struct ViewFactory: ViewFactoryProtocol {
         case let viewModel as InfoViewModel:
             InfoView(viewModel: viewModel)
         case let viewModel as RegisterFormViewModel:
-            RegisterForm(viewModel: viewModel)
+            RegisterFormView(viewModel: viewModel)
         case let viewModel as View1ViewModel:
             View1(viewModel: viewModel)
         case let viewModel as View2ViewModel:

@@ -16,6 +16,7 @@ public protocol ViewModelProtocol: ObservableObject, Identifiable, Hashable {
     //var viewModelForModal: (any ViewModelProtocol)? { get }
 }
 
+//@MainActor
 open class BaseViewModel: ViewModelProtocol, ObservableObject {
     public var id = UUID()
     open var title: String { "Title not set" }

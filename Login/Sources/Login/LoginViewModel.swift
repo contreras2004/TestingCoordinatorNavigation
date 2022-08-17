@@ -24,6 +24,7 @@ public class LoginViewModel: BaseViewModel {
 
     var service: LoginServiceProtocol = LoginService()
 
+    override public var title: String { L10n.login }
     override public var navigationButtonIcon: String? { "info.circle" }
     override public var navigationButtonIconColor: Color { .white }
     override public var actionForNavigationButton: (() -> Void) {
@@ -39,19 +40,20 @@ public class LoginViewModel: BaseViewModel {
 
     func login() {
         isLoading = true
-        Task(priority: .background) { [weak self] in
-            self?.isLoading = false
+        Task(priority: .background, operation: { [weak self] in
             let requestModel = LoginRequestModel(userName: user, password: pass)
             let result = await service.login(requestModel: requestModel)
             switch result {
             case .success(let model):
+                self?.isLoading = false
                 self?.userModel = model
                 self?.coordinator.handle(event: LoginEvents.login)
             case .failure(let error):
+                self?.isLoading = false
                 self?.apiError = error
                 self?.isPresentingError = true
             }
-        }
+        })
 
         // Example of canceling a request for any reason.
         // Enter the password = 3 to cancel after 3 seconds

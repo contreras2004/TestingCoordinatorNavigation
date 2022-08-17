@@ -26,7 +26,20 @@ class LoginServiceMock: LoginServiceProtocol {
 
     var serviceState: ServiceState = .success
 
-    func login(requestModel: Login.LoginRequestModel, completion: @escaping (Result<Login.LoginResponseModel, Login.LoginError>) -> Void) {
+    func login(requestModel: Login.LoginRequestModel) async -> Result<Login.LoginResponseModel, Login.LoginError> {
+        switch serviceState {
+        case .success:
+            let loginInfo = LoginResponseModel(name: "Matias Contreras")
+            return .success(loginInfo)
+        case .error:
+            return .failure(Login.LoginError.unknown)
+        case .noReturn:
+            sleep(10)
+            return .failure(Login.LoginError.unknown)
+        }
+    }
+
+    /*func login(requestModel: Login.LoginRequestModel, completion: @escaping (Result<Login.LoginResponseModel, Login.LoginError>) -> Void) {
         switch serviceState {
         case .success:
             let loginInfo = LoginResponseModel(name: "Matias Contreras")
@@ -36,7 +49,7 @@ class LoginServiceMock: LoginServiceProtocol {
         case .noReturn:
             return
         }
-    }
+    }*/
 }
 
 /*public enum JSONHelper {

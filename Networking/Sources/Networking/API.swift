@@ -172,27 +172,28 @@ public struct API: ApiProtocol {
                     let decodedResponse = try JSONDecoder().decode(decodingType, from: data)
                     return .success(decodedResponse)
                 } catch {
-                    throw APIError.decodingError(error)
+                    return .failure(.decodingError(error))
                 }
             } else {
                 let decoder = JSONDecoder()
                 let apiError = try decoder.decode(APIErrorMessage.self, from: data)
 
                 if urlResponse.statusCode == 400 {
-                    throw APIError.invalidRequestError(apiError.errorDescription)
+                    return .failure(.invalidRequestError(apiError.errorDescription))
                 }
 
                 // uncomment this to auto retry
                 if urlResponse.statusCode == 500 {
-                    throw APIError.validationError(apiError)
+                    debugPrint(urlResponse)
+                    debugPrint(apiError)
+                    return .failure(.validationError(apiError))
                 }
                 // uncomment this to auto retry
                 if (500..<600) ~= urlResponse.statusCode {
                     // let retryAfter = urlResponse.value(forHTTPHeaderField: "Retry-After")
-                    throw APIError.serverError(
+                    return .failure(APIError.serverError(
                         statusCode: urlResponse.statusCode,
-                        reason: apiError.errorDescription
-                        /*, retryAfter: retryAfter*/)
+                        reason: apiError.errorDescription))
                 }
             }
         } catch {

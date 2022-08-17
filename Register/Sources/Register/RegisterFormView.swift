@@ -10,7 +10,7 @@ import SwiftUI
 import Theme
 import UI
 
-public struct RegisterForm: View {
+public struct RegisterFormView: View {
     @ObservedObject var viewModel: RegisterFormViewModel
 
     public init(viewModel: RegisterFormViewModel) {
@@ -39,20 +39,20 @@ public struct RegisterForm: View {
                 })
         }
         .padding()
-        .alert(viewModel.apiError.title,
-               isPresented: $viewModel.isPresentingError,
+        .alert(viewModel.state.alertTitle,
+               isPresented: $viewModel.isPresentingAlert,
                presenting: RegisterError.self,
                actions: { _ in
             Button(L10n.errorAcceptButton, role: .cancel) { }
         }, message: { _ in
-            Text(viewModel.apiError.message)
+            Text(viewModel.state.alertMessage)
         })
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterForm(viewModel: RegisterFormViewModel(coordinator: NavigationCoordinator()))
+        RegisterFormView(viewModel: RegisterFormViewModel(coordinator: NavigationCoordinator()))
     }
 }
 

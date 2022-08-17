@@ -9,6 +9,31 @@ import Navigation
 import SwiftUI
 
 public class RegisterFormViewModel: BaseViewModel {
+    enum ViewState {
+        case waitingForSubmit
+        case waitingForResponse
+        case finishedWithSuccess
+        case finishedWithError(error: RegisterError)
+
+        var alertTitle: String {
+            switch self {
+            case .finishedWithSuccess, .waitingForSubmit, .waitingForResponse:
+                return L10n.welcome
+            case .finishedWithError(error: let error):
+                return error.title
+            }
+        }
+
+        var alertMessage: String {
+            switch self {
+            case .finishedWithSuccess, .waitingForSubmit, .waitingForResponse:
+                return L10n.welcomeMessage
+            case .finishedWithError(error: let error):
+                return error.message
+            }
+        }
+    }
+
     override public var title: String { L10n.registerTitle }
 
     let namePlaceHolder: String = L10n.name
@@ -25,22 +50,34 @@ public class RegisterFormViewModel: BaseViewModel {
     @Published var formIsDisabled = true
     @Published var emailError: String = ""
     @Published var passwordsDontMatchError: String = ""
+    @Published var isPresentingAlert = false
 
-    @Published var apiError: RegisterError = .unknown
-    @Published var isPresentingError = false
+    @Published var state: ViewState = .waitingForSubmit {
+        didSet {
+            switch state {
+            case .waitingForSubmit:
+                self.isLoading = false
+            case .finishedWithSuccess, .finishedWithError:
+                self.isPresentingAlert = true
+                self.isLoading = false
+            case .waitingForResponse:
+                self.isLoading = true
+            }
+        }
+    }
 
     func register() {
         if formIsValid() == false { return }
-        isLoading = true
+        self.state = .waitingForResponse
         let model = RegisterRequestModel(userName: userName, email: email, pass: password)
         Task { [weak self] in
             let response = await service.register(requestModel: model)
             switch response {
             case .success:
                 self?.coordinator.handle(event: RegisterEvent.goToRoot)
+                self?.state = .finishedWithSuccess
             case .failure(let error):
-                self?.apiError = error
-                self?.isPresentingError = true
+                self?.state = .finishedWithError(error: error)
             }
         }
     }

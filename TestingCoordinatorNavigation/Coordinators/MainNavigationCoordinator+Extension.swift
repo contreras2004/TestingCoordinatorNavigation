@@ -10,7 +10,9 @@ import Register
 
 extension MainNavigationCoordinator {
     func login() {
-        sessionManager?.isLogged = true
+        DispatchQueue.main.async { [weak self] in
+            self?.sessionManager?.isLogged = true
+        }
     }
 
     func goToRegisterForm() {

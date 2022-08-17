@@ -12,17 +12,17 @@ import TestUtils
 
 @testable import Register
 
-final class RegisterFormTests: QuickSpec {
+final class RegisterFormViewTests: QuickSpec {
     var viewModel: RegisterFormViewModel!
-    var sut: RegisterForm!
+    var sut: RegisterFormView!
 
     override func spec() {
         beforeEach {
             self.viewModel = RegisterFormViewModel()
-            self.sut = RegisterForm(viewModel: self.viewModel)
+            self.sut = RegisterFormView(viewModel: self.viewModel)
         }
 
-        describe("RegisterForm") {
+        describe("RegisterFormView") {
             context("on init") {
                 it("should have expected layout") {
                     expect(self.sut.view()) == snapshot()

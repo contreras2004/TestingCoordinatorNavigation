@@ -10,6 +10,7 @@ import SwiftUI
 
 public protocol TabBarCoordinatorEvent { }
 
+//@MainActor
 open class TabBarViewCoordinator: ObservableObject {
     public var selectedTabIndex: Int {
         tabs.firstIndex(where: { $0.id == selectedTab }) ?? 0
@@ -29,7 +30,7 @@ open class TabBarViewCoordinator: ObservableObject {
 
     open func handle(event: TabBarCoordinatorEvent) { }
 
-    func goToTab(index: Int) {
+    @MainActor func goToTab(index: Int) {
         self.selectedTab = tabs[index].id
     }
 }
