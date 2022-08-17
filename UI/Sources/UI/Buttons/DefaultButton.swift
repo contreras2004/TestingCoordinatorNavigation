@@ -68,7 +68,7 @@ public struct DefaultButton: View {
             .animation(.linear(duration: 0.3), value: isLoading)
             ActivityIndicator(isAnimating: .constant(true), style: .medium)
                 .opacity(isLoading ? 1 : 0)
-        }//.shadow(color: ThemeColor.primaryAccent.swiftUIColor, radius: style == .filled ? 5 : 0)
+        }// .shadow(color: ThemeColor.primaryAccent.swiftUIColor, radius: style == .filled ? 5 : 0)
     }
 }
 

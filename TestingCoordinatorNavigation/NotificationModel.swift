@@ -82,10 +82,9 @@ struct PushNotificationAps: Codable {
     }
 }
 
-// swiftlnt:disable:this discouraged_optional_collection
 struct PushNotificationPayload {
     let flow: PushNotificationFlow
-    let data: [String: AnyHashable]?
+    let data: [String: AnyHashable]? //swiftlint:disable:this discouraged_optional_collection
 
     private enum Keys: String {
         case flow

@@ -30,7 +30,7 @@ final class RegisterFormViewTests: QuickSpec {
             }
 
             context("after filling the data wrong") {
-                it ("should have expected layout") {
+                it("should have expected layout") {
                     self.viewModel.userName = "Matias Contreras"
                     self.viewModel.email = "wrong email"
                     self.viewModel.password = "123"
@@ -42,7 +42,7 @@ final class RegisterFormViewTests: QuickSpec {
             }
 
             context("after correcting the email") {
-                it ("should have expected layout") {
+                it("should have expected layout") {
                     self.viewModel.userName = "Matias Contreras"
                     self.viewModel.email = "asd@asd.com"
                     self.viewModel.password = "123"
@@ -54,7 +54,7 @@ final class RegisterFormViewTests: QuickSpec {
             }
 
             context("after correcting the passwords") {
-                it ("should have expected layout") {
+                it("should have expected layout") {
                     self.viewModel.userName = "Matias Contreras"
                     self.viewModel.email = "asd@asd.com"
                     self.viewModel.password = "123"

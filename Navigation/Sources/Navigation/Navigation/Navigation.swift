@@ -11,7 +11,7 @@ import SwiftUI
 public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
     @ObservedObject var coordinator: NavigationCoordinator
     let viewFactory: ViewFactory
-    @ObservedObject var viewModel: BaseViewModel //this is the root viewModel
+    @ObservedObject var viewModel: BaseViewModel // this is the root viewModel
 
     public init(viewModel: BaseViewModel,
                 @ViewBuilder viewFactory: () -> ViewFactory) {

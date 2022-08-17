@@ -43,7 +43,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             guard let body = PushNotificationBody(userInfo: userInfo),
                   let payload = body.payload else { completionHandler(UIBackgroundFetchResult.newData); return }
             handleNotification(payload: payload)
-            //coordinator?.handleNotification(payload: payload)
+            // coordinator?.handleNotification(payload: payload)
             completionHandler(UIBackgroundFetchResult.newData)
         }
 }

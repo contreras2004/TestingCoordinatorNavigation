@@ -40,7 +40,11 @@ public class LoginService: LoginServiceProtocol {
     var api: ApiProtocol = API()
 
     func login(requestModel: LoginRequestModel) async -> Result<LoginResponseModel, LoginError> {
-        let response = await api.execute(endpoint: .login, decodingType: LoginResponseModel.self, httpMethod: .post, params: requestModel)
+        let response = await api.execute(
+            endpoint: .login,
+            decodingType: LoginResponseModel.self,
+            httpMethod: .post,
+            params: requestModel)
         switch response {
         case .success(let success):
             return .success(success)

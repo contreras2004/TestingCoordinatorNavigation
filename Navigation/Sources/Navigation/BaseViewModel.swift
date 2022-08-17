@@ -13,10 +13,10 @@ public protocol ViewModelProtocol: ObservableObject, Identifiable, Hashable {
     var title: String { get }
     var iconForTab: String { get }
     var coordinator: NavigationCoordinator { get set }
-    //var viewModelForModal: (any ViewModelProtocol)? { get }
+    // var viewModelForModal: (any ViewModelProtocol)? { get }
 }
 
-//@MainActor
+// @MainActor
 open class BaseViewModel: ViewModelProtocol, ObservableObject {
     public var id = UUID()
     open var title: String { "Title not set" }

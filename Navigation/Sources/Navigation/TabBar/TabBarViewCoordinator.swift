@@ -10,7 +10,7 @@ import SwiftUI
 
 public protocol TabBarCoordinatorEvent { }
 
-//@MainActor
+// @MainActor
 open class TabBarViewCoordinator: ObservableObject {
     public var selectedTabIndex: Int {
         tabs.firstIndex(where: { $0.id == selectedTab }) ?? 0

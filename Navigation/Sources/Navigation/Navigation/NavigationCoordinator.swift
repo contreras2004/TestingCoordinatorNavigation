@@ -15,7 +15,7 @@ public protocol NavigationCoordinatorProtocol {
     var path: [BaseViewModel] { get set }
 }
 
-//@MainActor
+// @MainActor
 open class NavigationCoordinator: ObservableObject, NavigationCoordinatorProtocol {
     public weak var rootViewModel: BaseViewModel?
 

@@ -59,7 +59,7 @@ struct MainContentView: View {
             View2ViewModel(coordinator: coordinator2)
         ]
 
-        //Sets up the navigation for the logged out state
+        // Sets up the navigation for the logged out state
         tabBarCoordinator.sessionManager = sessionManager
         loginCoordinator.sessionManager = sessionManager
         loginViewModel.coordinator = loginCoordinator

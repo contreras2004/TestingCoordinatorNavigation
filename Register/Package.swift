@@ -12,7 +12,7 @@ let package = Package(
     products: [
         .library(
             name: "Register",
-            targets: ["Register"]),
+            targets: ["Register"])
     ],
     dependencies: [
         .package(path: "./Navigation"),

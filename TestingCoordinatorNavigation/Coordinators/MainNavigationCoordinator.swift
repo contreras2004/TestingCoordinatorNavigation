@@ -38,6 +38,7 @@ class MainNavigationCoordinator: NavigationCoordinator {
         self.bannerData = bannerData
     }
 
+    //swiftlint:disable cyclomatic_complexity
     override func handle(event: NavigationCoordinatorEvent) {
         if let event = event as? MainNavigationCoordinatorEvent {
             switch event {

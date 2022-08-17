@@ -11,7 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "TestUtils",
-            targets: ["TestUtils"]),
+            targets: ["TestUtils"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,6 +23,6 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "TestUtilsTests",
-            dependencies: ["TestUtils"]),
+            dependencies: ["TestUtils"])
     ]
 )

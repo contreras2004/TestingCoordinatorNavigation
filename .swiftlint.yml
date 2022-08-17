@@ -125,6 +125,10 @@ excluded:
     - DerivedData
     - TestingCoordinatorNavigationTests
     - Wiremock
+    
+    - Login/Tests
+    - Register/Tests
+    - Navigation/Tests
 
 function_parameter_count:
     - 4 # warning

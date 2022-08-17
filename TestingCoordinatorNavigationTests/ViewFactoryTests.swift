@@ -17,7 +17,7 @@ import TestUtils
 final class ViewFactoryTests: QuickSpec {
     override func spec() {
         describe("ViewFactory") {
-            
+
             context("view 1") {
                 it("should have expected layout") {
                     let viewModel = View1ViewModel()
@@ -25,7 +25,7 @@ final class ViewFactoryTests: QuickSpec {
                     expect(view.view()) == snapshot()
                 }
             }
-            
+
             context("view 2") {
                 it("should have expected layout") {
                     let viewModel = View2ViewModel()
@@ -33,7 +33,7 @@ final class ViewFactoryTests: QuickSpec {
                     expect(view.view()) == snapshot()
                 }
             }
-            
+
             context("view 3") {
                 it("should have expected layout") {
                     let viewModel = View3ViewModel()
