@@ -156,6 +156,7 @@ public struct API: ApiProtocol {
         do {
             let jsonBody = try JSONEncoder().encode(params)
             request.httpBody = jsonBody
+            debugPrint("Sending: \(params) to: \(request)")
         } catch {
             return .failure(APIError.encodingError(error))
         }
@@ -170,6 +171,7 @@ public struct API: ApiProtocol {
             if (200..<300) ~= urlResponse.statusCode {
                 do {
                     let decodedResponse = try JSONDecoder().decode(decodingType, from: data)
+                    debugPrint("Response: \(decodedResponse)")
                     return .success(decodedResponse)
                 } catch {
                     return .failure(.decodingError(error))

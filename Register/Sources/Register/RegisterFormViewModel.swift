@@ -70,14 +70,16 @@ public class RegisterFormViewModel: BaseViewModel {
         if formIsValid() == false { return }
         self.state = .waitingForResponse
         let model = RegisterRequestModel(userName: userName, email: email, pass: password)
-        Task { [weak self] in
+        Task {
             let response = await service.register(requestModel: model)
-            switch response {
-            case .success:
-                self?.coordinator.handle(event: RegisterEvent.goToRoot)
-                self?.state = .finishedWithSuccess
-            case .failure(let error):
-                self?.state = .finishedWithError(error: error)
+            DispatchQueue.main.async { [weak self] in
+                switch response {
+                case .success:
+                    self?.coordinator.handle(event: RegisterEvent.goToRoot)
+                    self?.state = .finishedWithSuccess
+                case .failure(let error):
+                    self?.state = .finishedWithError(error: error)
+                }
             }
         }
     }

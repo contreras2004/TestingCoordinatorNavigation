@@ -48,7 +48,7 @@ public class LoginService: LoginServiceProtocol {
         switch response {
         case .success(let success):
             return .success(success)
-        case .failure(let failure):
+        case .failure:
             return .failure(LoginError.unknown)
         }
     }
