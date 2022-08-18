@@ -41,9 +41,12 @@ class MainTabBarCoordinator: TabBarViewCoordinator {
 
     func handleNotification(payload: PushNotificationPayload) {
         switch payload.flow {
-        case .notifications:
-            goToTab(index: 0)
-            tabs[0].coordinator.path.append(NotificationsListViewModel(coordinator: tabs[0].coordinator))
+        case .notification:
+            if let notificationId = payload.data?["notificationId"] as? Int {
+                goToTab(index: 0)
+                tabs[0].coordinator.path.append(NotificationsListViewModel(coordinator: tabs[0].coordinator))
+                tabs[0].coordinator.path.append(NotificationDetailsViewModel(notificationId: notificationId))
+            }
         case .exampleModal:
             goToTab(index: 1)
             tabs[1].actionForNavigationButton()

@@ -63,4 +63,8 @@ extension MainNavigationCoordinator {
     func goToNotifications() {
         path.append(NotificationsListViewModel(coordinator: self))
     }
+
+    func goToNotificationDetails(viewModel: NotificationDetailsViewModel) {
+        path.append(viewModel)
+    }
 }

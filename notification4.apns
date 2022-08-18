@@ -10,6 +10,9 @@
       "sound":"default"
    },
    "payload": {
-        "flow": "notifications"
+        "flow": "notification",
+        "data": {
+                "notificationId": 4
+        }
    }
 }

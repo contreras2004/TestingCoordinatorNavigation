@@ -3,9 +3,9 @@
    "aps": {
        "badge": 5,
        "alert": {
-           "title": "Do you wana go somewhere nice?",
-           "subtitle": "Tap here",
-           "body": "Is this working?",
+           "title": "New notification!",
+           "subtitle": "Tap here to see the details",
+           "body": "🥸",
        },
       "sound":"default"
    },

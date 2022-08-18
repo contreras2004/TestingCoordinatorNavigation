@@ -24,8 +24,12 @@ public struct NotificationsListView: View {
                 ForEach(notifications, id: \.id) { notification in
                     HStack {
                         Image(systemName: "person.circle")
-                        Text(notification.message)
+                        Text(notification.title)
                         Spacer()
+                    }.onTapGesture {
+                        let viewModel = NotificationDetailsViewModel(notification: notification)
+                        viewModel.coordinator = self.viewModel.coordinator
+                        viewModel.coordinator.handle(event: NotificationsEvents.goToNotification(viewModel: viewModel))
                     }
                 }
                 .onDelete { notification in

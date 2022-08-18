@@ -22,17 +22,23 @@ public struct ViewFactory: ViewFactoryProtocol {
     @ViewBuilder
     public func viewFor(viewModel: BaseViewModel) -> some View {
         switch viewModel {
+        // MARK: Login Module
         case let viewModel as LoginViewModel:
             LoginView(viewModel: viewModel)
         case let viewModel as InfoViewModel:
             InfoView(viewModel: viewModel)
 
+        // MARK: Register Module
         case let viewModel as RegisterFormViewModel:
             RegisterFormView(viewModel: viewModel)
 
+        // MARK: Notifications Module
         case let viewModel as NotificationsListViewModel:
             NotificationsListView(viewModel: viewModel)
+        case let viewModel as NotificationDetailsViewModel:
+            NotificationDetailsView(viewModel: viewModel)
 
+        // MARK: Other Screens
         case let viewModel as View1ViewModel:
             View1(viewModel: viewModel)
         case let viewModel as View2ViewModel:

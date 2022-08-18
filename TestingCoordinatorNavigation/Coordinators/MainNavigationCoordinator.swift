@@ -7,6 +7,7 @@
 
 import Login
 import Navigation
+import Notifications
 import Register
 import SwiftUI
 import UI
@@ -73,6 +74,13 @@ class MainNavigationCoordinator: NavigationCoordinator {
 
             case .dismissModal:
                 self.isShowingModal = false
+            }
+        }
+
+        if let event = event as? NotificationsEvents {
+            switch event {
+            case .goToNotification(let viewModel):
+                goToNotificationDetails(viewModel: viewModel)
             }
         }
 

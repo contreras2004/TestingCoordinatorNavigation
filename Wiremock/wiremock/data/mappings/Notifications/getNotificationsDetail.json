@@ -1,0 +1,25 @@
+{
+    "request": {
+        "url": "/notification",
+        "method": "POST",
+        "headers": { },
+        
+        "bodyPatterns": [
+            //{ "matchesJsonPath" : "$[?(@.userName == '11111111-1')]"},
+            //{ "matchesJsonPath" : "$[?(@.password == '1')]"}
+        ]
+    },
+    "response": {
+        "status": 200,
+        "fixedDelayMilliseconds": 2000,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "jsonBody": {
+            "id": "4",
+            "title": "Notification title 4",
+            "message": "Nullam in venenatis lacus. Morbi bibendum erat et turpis efficitur consectetur. In venenatis mattis turpis. Curabitur maximus ipsum sed porta porttitor. Nunc id venenatis tellus. Mauris efficitur feugiat neque a pellentesque. Etiam at lectus auctor, lobortis turpis eu, consectetur magna.",
+            "image": "https://redgol.cl/__export/1639270776013/sites/redgol/img/2021/12/11/nick-young-meme_crop1639270727067.jpg_242310155.jpg"
+        }
+    }
+}
