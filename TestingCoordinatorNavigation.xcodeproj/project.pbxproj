@@ -19,17 +19,17 @@
 		8E29CA5F289B1AA700248D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA5E289B1AA700248D3F /* AppDelegate.swift */; };
 		8E29CA61289B1B5A00248D3F /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29CA60289B1B5A00248D3F /* NotificationModel.swift */; };
 		8E39923E28A31FCF00B73FB5 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E39923D28A31FCF00B73FB5 /* MainContentView.swift */; };
-		8E76FA9528AD74BD00F8E5B6 /* Notifications in Frameworks */ = {isa = PBXBuildFile; productRef = 8E76FA9428AD74BD00F8E5B6 /* Notifications */; };
 		8EB21F74289DAFDC00D71AB7 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 8EB21F73289DAFDC00D71AB7 /* Quick */; };
 		8EB21F76289DAFDC00D71AB7 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8EB21F75289DAFDC00D71AB7 /* Nimble */; };
 		8EB21F79289DAFEB00D71AB7 /* ViewFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB21F3D289D6E9000D71AB7 /* ViewFactoryTests.swift */; };
 		8ECE156128A40A3C00F790F8 /* Nimble-Snapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECE156028A40A3B00F790F8 /* Nimble-Snapshots */; };
 		8ECE156328A40AB600F790F8 /* TestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECE156228A40AB600F790F8 /* TestUtils */; };
-		8EEAA8D828AC42A7007A8551 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEAA8D728AC42A7007A8551 /* Login */; };
-		8EEAA8DA28AC42AE007A8551 /* Register in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEAA8D928AC42AE007A8551 /* Register */; };
-		8EEAA8DC28AC42CE007A8551 /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEAA8DB28AC42CE007A8551 /* UI */; };
-		8EEAA8DE28AC42D3007A8551 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEAA8DD28AC42D3007A8551 /* Navigation */; };
-		8EEAA8E028AC42DC007A8551 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEAA8DF28AC42DC007A8551 /* Theme */; };
+		8ED2DF4A28AEB89000A9B903 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED2DF4928AEB89000A9B903 /* Login */; };
+		8ED2DF4C28AEB89800A9B903 /* Notifications in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED2DF4B28AEB89800A9B903 /* Notifications */; };
+		8ED2DF4E28AEB8A500A9B903 /* Register in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED2DF4D28AEB8A500A9B903 /* Register */; };
+		8ED2DF5028AEB8C900A9B903 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED2DF4F28AEB8C900A9B903 /* Navigation */; };
+		8ED2DF5228AEB8D100A9B903 /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED2DF5128AEB8D100A9B903 /* UI */; };
+		8ED2DF5428AEB8D500A9B903 /* Theme in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED2DF5328AEB8D500A9B903 /* Theme */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,12 +76,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EEAA8D828AC42A7007A8551 /* Login in Frameworks */,
-				8E76FA9528AD74BD00F8E5B6 /* Notifications in Frameworks */,
-				8EEAA8DC28AC42CE007A8551 /* UI in Frameworks */,
-				8EEAA8E028AC42DC007A8551 /* Theme in Frameworks */,
-				8EEAA8DE28AC42D3007A8551 /* Navigation in Frameworks */,
-				8EEAA8DA28AC42AE007A8551 /* Register in Frameworks */,
+				8ED2DF5428AEB8D500A9B903 /* Theme in Frameworks */,
+				8ED2DF5228AEB8D100A9B903 /* UI in Frameworks */,
+				8ED2DF4E28AEB8A500A9B903 /* Register in Frameworks */,
+				8ED2DF4A28AEB89000A9B903 /* Login in Frameworks */,
+				8ED2DF5028AEB8C900A9B903 /* Navigation in Frameworks */,
+				8ED2DF4C28AEB89800A9B903 /* Notifications in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,12 +205,12 @@
 			);
 			name = TestingCoordinatorNavigation;
 			packageProductDependencies = (
-				8EEAA8D728AC42A7007A8551 /* Login */,
-				8EEAA8D928AC42AE007A8551 /* Register */,
-				8EEAA8DB28AC42CE007A8551 /* UI */,
-				8EEAA8DD28AC42D3007A8551 /* Navigation */,
-				8EEAA8DF28AC42DC007A8551 /* Theme */,
-				8E76FA9428AD74BD00F8E5B6 /* Notifications */,
+				8ED2DF4928AEB89000A9B903 /* Login */,
+				8ED2DF4B28AEB89800A9B903 /* Notifications */,
+				8ED2DF4D28AEB8A500A9B903 /* Register */,
+				8ED2DF4F28AEB8C900A9B903 /* Navigation */,
+				8ED2DF5128AEB8D100A9B903 /* UI */,
+				8ED2DF5328AEB8D500A9B903 /* Theme */,
 			);
 			productName = TestingCoordinatorNavigation;
 			productReference = 8E259FB6289826CC00D8FA01 /* TestingCoordinatorNavigation.app */;
@@ -635,10 +635,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8E76FA9428AD74BD00F8E5B6 /* Notifications */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Notifications;
-		};
 		8EB21F73289DAFDC00D71AB7 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8EB21F0D289D60EA00D71AB7 /* XCRemoteSwiftPackageReference "Quick" */;
@@ -658,23 +654,27 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = TestUtils;
 		};
-		8EEAA8D728AC42A7007A8551 /* Login */ = {
+		8ED2DF4928AEB89000A9B903 /* Login */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Login;
 		};
-		8EEAA8D928AC42AE007A8551 /* Register */ = {
+		8ED2DF4B28AEB89800A9B903 /* Notifications */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Notifications;
+		};
+		8ED2DF4D28AEB8A500A9B903 /* Register */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Register;
 		};
-		8EEAA8DB28AC42CE007A8551 /* UI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UI;
-		};
-		8EEAA8DD28AC42D3007A8551 /* Navigation */ = {
+		8ED2DF4F28AEB8C900A9B903 /* Navigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Navigation;
 		};
-		8EEAA8DF28AC42DC007A8551 /* Theme */ = {
+		8ED2DF5128AEB8D100A9B903 /* UI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UI;
+		};
+		8ED2DF5328AEB8D500A9B903 /* Theme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Theme;
 		};

@@ -13,6 +13,8 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
     let viewFactory: ViewFactory
     @ObservedObject var viewModel: BaseViewModel // this is the root viewModel
 
+    @State var isShowingModal = false // Fixes: Publishing changes from within view updates
+
     public init(viewModel: BaseViewModel,
                 @ViewBuilder viewFactory: () -> ViewFactory) {
         self.coordinator = viewModel.coordinator
@@ -33,12 +35,14 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
             Label(viewModel.title, systemImage: viewModel.iconForTab)
         }
         .tag(viewModel.id)
-        .sheet(isPresented: $coordinator.isShowingModal) {
+        .sheet(isPresented: $isShowingModal) {
             if let modalVm = self.coordinator.viewModelForModal {
                 viewFactory.viewFor(viewModel: modalVm)
             } else {
                 Text("❌ No modal defined for this view \n remember to override \"viewModelForModal\"")
             }
+        }.onChange(of: viewModel.coordinator.isShowingModal) { isShowingModal in
+            self.isShowingModal = isShowingModal
         }
     }
 }
