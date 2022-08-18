@@ -44,6 +44,7 @@ class MainTabBarCoordinator: TabBarViewCoordinator {
         case .notification:
             if let notificationId = payload.data?["notificationId"] as? Int {
                 goToTab(index: 0)
+                tabs[0].coordinator.path = []
                 tabs[0].coordinator.path.append(NotificationsListViewModel(coordinator: tabs[0].coordinator))
                 tabs[0].coordinator.path.append(NotificationDetailsViewModel(notificationId: notificationId))
             }

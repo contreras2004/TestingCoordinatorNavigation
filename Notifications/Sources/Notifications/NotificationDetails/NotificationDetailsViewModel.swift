@@ -13,6 +13,8 @@ public final class NotificationDetailsViewModel: BaseViewModel {
 
     var service: NotificationsServiceProtocol = NotificationsService()
 
+    override public var title: String { L10n.notification }
+
     public init(notification: NotificationsResponseModel.Notification) {
         self.notification = notification
     }
@@ -29,10 +31,8 @@ public final class NotificationDetailsViewModel: BaseViewModel {
                 switch response {
                 case .success(let notification):
                     self?.notification = notification
-                    //self?.state = .withData(notifications: notifications)
                 case .failure(let error):
                     debugPrint("error")
-                    //self?.state = .withError
                 }
             }
         }

@@ -12,7 +12,12 @@ import Foundation
 internal enum L10n {
   /// Oops, something whent wrong 🥸
   internal static let error = L10n.tr("Localizable", "error", fallback: #"Oops, something whent wrong 🥸"#)
-  /// Notifications
+  /// Notification
+  internal static let notification = L10n.tr("Localizable", "notification", fallback: #"Notification"#)
+  /// Localizable.strings
+  ///   Tolls
+  /// 
+  ///   Created by m.contreras.selman on 26-07-22.
   internal static let notificationsTitle = L10n.tr("Localizable", "notificationsTitle", fallback: #"Notifications"#)
   /// Plural format key: "%#@views@"
   internal static func nViews(_ p1: Int) -> String {

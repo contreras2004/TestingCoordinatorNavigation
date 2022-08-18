@@ -6,7 +6,7 @@
   
 */
 
-// MARK: View titles
 "notificationsTitle"= "Notificaciones";
 "reload"= "Recargar";
 "error"= "Oops, algo salió mal 🥸";
+"notification"= "Notificación";

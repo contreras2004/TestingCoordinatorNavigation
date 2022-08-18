@@ -70,10 +70,14 @@ class MainNavigationCoordinator: NavigationCoordinator {
             case .goToRegisterForm:
                 goToRegisterForm()
             case .showModal:
-                self.isShowingModal = true
+                DispatchQueue.main.async { [weak self] in
+                    self?.isShowingModal = true
+                }
 
             case .dismissModal:
-                self.isShowingModal = false
+                DispatchQueue.main.async { [weak self] in
+                    self?.isShowingModal = false
+                }
             }
         }
 
