@@ -24,9 +24,20 @@ public struct NotificationsListView: View {
                 ForEach(notifications, id: \.id) { notification in
                     HStack {
                         Image(systemName: "person.circle")
-                        Text(notification.title)
-                        Spacer()
-                    }.onTapGesture {
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30)
+
+                        VStack(alignment: .leading, content: {
+                            Text(notification.title)
+                                .font(.headline)
+                            Text(notification.message)
+                                .font(.footnote)
+                                .lineLimit(1)
+                        })
+                    }
+                    .padding(.all, 2)
+                    .onTapGesture {
                         let viewModel = NotificationDetailsViewModel(notification: notification)
                         viewModel.coordinator = self.viewModel.coordinator
                         viewModel.coordinator.handle(event: NotificationsEvents.goToNotification(viewModel: viewModel))
@@ -35,7 +46,9 @@ public struct NotificationsListView: View {
                 .onDelete { notification in
                     viewModel.removeNotification(at: notification)
                 }
-            }.refreshable {
+            }
+            .listStyle(.plain)
+            .refreshable {
                 viewModel.getNotifications()
             }.toolbar {
                 EditButton()

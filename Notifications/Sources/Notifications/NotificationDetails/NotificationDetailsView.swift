@@ -45,9 +45,11 @@ public struct NotificationDetailsView: View {
                      }
 
                      Text(notification.title)
+                         .font(.title)
                          .frame(maxWidth: .infinity, alignment: .leading)
                          .padding()
                      Text(notification.message)
+                         .font(.body)
                          .frame(maxWidth: .infinity, alignment: .leading)
                          .padding([.leading, .trailing])
 
