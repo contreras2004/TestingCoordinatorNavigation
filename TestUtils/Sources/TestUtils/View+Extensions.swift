@@ -1,7 +1,7 @@
 import SwiftUI
 
 public extension View {
-    func view(width: CGFloat? = nil, height: CGFloat? = nil,colorScheme: ColorScheme? = nil) -> UIView {
+    func view(width: CGFloat? = nil, height: CGFloat? = nil, colorScheme: ColorScheme? = nil) -> UIView {
         let viewController = UIHostingController(rootView: self.environment(\.colorScheme, colorScheme ?? .light))
         viewController._disableSafeArea = true
 

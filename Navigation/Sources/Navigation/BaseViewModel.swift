@@ -15,7 +15,6 @@ public protocol ViewModelProtocol: ObservableObject, Identifiable, Hashable {
     var coordinator: NavigationCoordinator { get set }
 }
 
-// @MainActor
 open class BaseViewModel: ViewModelProtocol, ObservableObject {
     public var id = UUID()
     open var title: String { "Title not set" }
@@ -26,6 +25,7 @@ open class BaseViewModel: ViewModelProtocol, ObservableObject {
     open var navigationButtonIconColor: Color { .blue }
 
     open var coordinator: NavigationCoordinator
+
     /// Init method for the BaseViewModel
     /// - Parameter coordinator: Will set the passed coordinator.
     /// WARNING: A default coordinator will be assigned if not passed

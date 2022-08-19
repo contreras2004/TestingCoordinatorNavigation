@@ -37,6 +37,62 @@
             BlueprintName = "TestingCoordinatorNavigation"
             ReferencedContainer = "container:TestingCoordinatorNavigation.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Theme"
+            BuildableName = "Theme"
+            BlueprintName = "Theme"
+            ReferencedContainer = "container:Theme">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Networking"
+            BuildableName = "Networking"
+            BlueprintName = "Networking"
+            ReferencedContainer = "container:Networking">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "TestUtils"
+            BuildableName = "TestUtils"
+            BlueprintName = "TestUtils"
+            ReferencedContainer = "container:TestUtils">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Login"
+            BuildableName = "Login"
+            BlueprintName = "Login"
+            ReferencedContainer = "container:Login">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Navigation"
+            BuildableName = "Navigation"
+            BlueprintName = "Navigation"
+            ReferencedContainer = "container:Navigation">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Notifications"
+            BuildableName = "Notifications"
+            BlueprintName = "Notifications"
+            ReferencedContainer = "container:Notifications">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Register"
+            BuildableName = "Register"
+            BlueprintName = "Register"
+            ReferencedContainer = "container:Register">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "UI"
+            BuildableName = "UI"
+            BlueprintName = "UI"
+            ReferencedContainer = "container:UI">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

@@ -38,6 +38,8 @@ protocol LoginServiceProtocol {
 }
 
 public class LoginService: LoginServiceProtocol {
+    var api: ApiProtocol = API()
+
     func login(requestModel: LoginRequestModel, completion: @escaping (Result<LoginResponseModel, LoginError>) -> Void) {
         Task {
             let response = await self.api.execute(
@@ -61,30 +63,4 @@ public class LoginService: LoginServiceProtocol {
             }
         }
     }
-
-    var api: ApiProtocol = API()
-
-    /*func login(requestModel: LoginRequestModel) async -> Result<LoginResponseModel, LoginError> {
-        Task {
-            let response = await api.execute(
-                endpoint: .login,
-                decodingType: LoginResponseModel.self,
-                httpMethod: .post,
-                params: requestModel)
-            
-            DispatchQueue.main.async { [weak self] in
-                switch response {
-                case .success(let success):
-                    return  .success(success)
-                case .failure(let error):
-                    switch error {
-                    case .validationError(let error):
-                        return .failure(LoginError(rawValue: error.errorCode) ?? .unknown)
-                    default:
-                        return .failure(LoginError.unknown)
-                    }
-                }
-            }
-        }
-    }*/
 }

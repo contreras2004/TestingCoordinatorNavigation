@@ -5,11 +5,11 @@
 //  Created by m.contreras.selman on 19-08-22.
 //
 
-import SwiftUI
 import Foundation
-import Quick
 import Nimble
 import Nimble_Snapshots
+import Quick
+import SwiftUI
 import TestUtils
 
 @testable import UI
