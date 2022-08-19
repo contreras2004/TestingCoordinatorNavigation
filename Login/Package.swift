@@ -34,6 +34,7 @@ let package = Package(
                 .product(name: "Networking", package: "Networking"),
                 .product(name: "UI", package: "UI")
             ],
+            //resources: [.copy("JSON")],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
             ]
@@ -47,7 +48,8 @@ let package = Package(
                 "TestUtils",
                 "Nimble-Snapshots",
                 "Networking"
-            ]
+            ],
+            resources: [.copy("JSON")]
         )
     ]
 )

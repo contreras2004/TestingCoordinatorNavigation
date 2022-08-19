@@ -16,7 +16,13 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(path: "./Theme")
+        .package(path: "./Theme"),
+        .package(path: "./TestUtils"),
+        .package(url: "https://github.com/Quick/Quick.git",
+                 .upToNextMajor(from: "5.0.1")),
+        .package(url: "https://github.com/Quick/Nimble.git",
+                 .upToNextMajor(from: "10.0.0")),
+        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -28,6 +34,12 @@ let package = Package(
             ]),
         .testTarget(
             name: "UITests",
-            dependencies: ["UI"])
+            dependencies: [
+                "UI",
+                "TestUtils",
+                "Quick",
+                "Nimble",
+                "Nimble-Snapshots"
+            ])
     ]
 )

@@ -40,7 +40,20 @@ public class LoginViewModel: BaseViewModel {
 
     func login() {
         isLoading = true
-        Task {
+
+        let requestModel = LoginRequestModel(userName: user, password: pass)
+        service.login(requestModel: requestModel) { [weak self] result in
+            self?.isLoading = false
+            switch result {
+            case .success(let model):
+                self?.userModel = model
+                self?.coordinator.handle(event: LoginEvents.login)
+            case .failure(let error):
+                self?.apiError = error
+                self?.isPresentingError = true
+            }
+        }
+        /*Task {
             let requestModel = LoginRequestModel(userName: user, password: pass)
             let result = await service.login(requestModel: requestModel)
             DispatchQueue.main.async { [weak self] in
@@ -50,11 +63,14 @@ public class LoginViewModel: BaseViewModel {
                     self?.userModel = model
                     self?.coordinator.handle(event: LoginEvents.login)
                 case .failure(let error):
+                    debugPrint("error: \(error)")
+                    debugPrint(self)
                     self?.apiError = error
                     self?.isPresentingError = true
+                    debugPrint("Is presenting error: \(self?.isPresentingError)")
                 }
             }
-        }
+        }*/
 
         // Example of canceling a request for any reason.
         // Enter the password = 3 to cancel after 3 seconds

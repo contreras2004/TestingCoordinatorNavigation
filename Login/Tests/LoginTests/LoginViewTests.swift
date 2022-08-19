@@ -29,6 +29,21 @@ final class LoginViewTests: QuickSpec {
                 }
 
                 context("when taped login") {
+                    fit("should show error") {
+                        let service = LoginServiceMock()
+                        service.serviceState = .error
+                        
+                        self.viewModel = LoginViewModel()
+                        self.viewModel.user = "11111111-1"
+                        self.viewModel.pass = "111"
+                        self.viewModel.service = service
+
+                        self.viewModel.login()
+                        expect(self.viewModel.isPresentingError).to(beTrue())
+                    }
+                }
+                
+                context("when taped login") {
                     it("should show loading") {
                         let service = LoginServiceMock()
                         service.serviceState = .noReturn
