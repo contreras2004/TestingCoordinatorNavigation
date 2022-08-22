@@ -11,6 +11,6 @@ import Navigation
 public enum LoginEvents: NavigationCoordinatorEvent {
     case login
     case goToRegisterForm
-    case showModal
+    case showModal(viewModel: BaseViewModel)
     case dismissModal
 }

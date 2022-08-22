@@ -29,8 +29,8 @@ public class LoginViewModel: BaseViewModel {
     override public var navigationButtonIconColor: Color { .white }
     override public var actionForNavigationButton: (() -> Void) {
         {
-            self.coordinator.viewModelForModal = InfoViewModel(coordinator: self.coordinator)
-            self.coordinator.handle(event: LoginEvents.showModal)
+            let viewModel = InfoViewModel(coordinator: self.coordinator)
+            self.coordinator.handle(event: LoginEvents.showModal(viewModel: viewModel))
         }
     }
 

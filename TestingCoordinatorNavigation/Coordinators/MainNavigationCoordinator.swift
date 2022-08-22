@@ -81,10 +81,10 @@ extension MainNavigationCoordinator {
             login()
         case .goToRegisterForm:
             goToRegisterForm()
-        case .showModal:
-            isShowingModal = true
+        case .showModal(let viewModel):
+            self.viewModelForModal = viewModel
         case .dismissModal:
-            isShowingModal = false
+            self.viewModelForModal = nil
         }
     }
 

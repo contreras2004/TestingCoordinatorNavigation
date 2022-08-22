@@ -59,7 +59,7 @@ public struct InfoView: View {
                 }
             }.padding()
 
-            Text("To show any modal you should override the property \"viewModelForModal\" in the parent View")
+            Text("To show any modal you should send a new value for the viewModelForModal in the coordinator")
                 .foregroundColor(.white)
                 .padding()
                 .multilineTextAlignment(.center)

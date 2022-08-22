@@ -32,17 +32,8 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
             Label(viewModel.title, systemImage: viewModel.iconForTab)
         }
         .tag(viewModel.id)
-        .sheet(isPresented: $viewModel.coordinator.isShowingModal) { modalView() }
-        // check this thread to check if apple responded sometime in the future
-        // https://developer.apple.com/forums/thread/711899
-    }
-
-    @ViewBuilder
-    public func modalView() -> some View {
-        if let modalVm = self.coordinator.viewModelForModal {
-            viewFactory.viewFor(viewModel: modalVm)
-        } else {
-            Text("❌ No modal defined for this view \n remember to override \"viewModelForModal\"")
-        }
+        .sheet(item: $coordinator.viewModelForModal, content: { innerVM in
+            viewFactory.viewFor(viewModel: innerVM).modified(viewModel: innerVM)
+        })
     }
 }

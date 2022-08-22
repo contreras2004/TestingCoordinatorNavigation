@@ -16,25 +16,12 @@ public protocol NavigationCoordinatorProtocol {
 }
 
 open class NavigationCoordinator: ObservableObject, NavigationCoordinatorProtocol {
-    @Published public var isShowingModal = false {
-        didSet {
-            debugPrint("DidChange isShowingModal: \(isShowingModal)")
-        }
-    }
-
-    public var viewModelForModal: BaseViewModel? {
-        didSet {
-            debugPrint("DidSet del viewModelForModal: \(viewModelForModal)")
-        }
-    }
-
+    
     public weak var tabBarCoordinator: TabBarViewCoordinator?
+    
+    @Published public var viewModelForModal: BaseViewModel?
 
-    @Published public var path: [BaseViewModel] = [] {
-        willSet {
-            debugPrint(path) }
-        didSet {
-            debugPrint(path) } }
+    @Published public var path: [BaseViewModel] = []
 
     public func indexFor(viewModel: BaseViewModel) -> Int? {
         path.firstIndex(where: { $0 == viewModel })

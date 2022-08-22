@@ -61,8 +61,8 @@ class View2ViewModel: BaseViewModel {
 
     override var actionForNavigationButton: (() -> Void) {
         {
-            self.coordinator.viewModelForModal = InfoViewModel(coordinator: self.coordinator)
-            self.coordinator.handle(event: LoginEvents.showModal)
+            let viewModel = InfoViewModel(coordinator: self.coordinator)
+            self.coordinator.handle(event: LoginEvents.showModal(viewModel: viewModel))
         }
     }
 }
