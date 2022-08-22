@@ -34,7 +34,7 @@ enum LoginError: Int64, Error {
 protocol LoginServiceProtocol {
     var api: ApiProtocol { get }
 
-    func login(requestModel: LoginRequestModel, completion: @escaping (Result<LoginResponseModel, LoginError>) -> Void ) /*async -> Result<LoginResponseModel, LoginError>*/
+    func login(requestModel: LoginRequestModel, completion: @escaping (Result<LoginResponseModel, LoginError>) -> Void )
 }
 
 public class LoginService: LoginServiceProtocol {

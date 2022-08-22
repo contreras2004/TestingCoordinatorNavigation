@@ -33,24 +33,30 @@ public class NotificationsListViewModel: BaseViewModel {
 
     override public var title: String { L10n.notificationsTitle }
 
-    override public init(coordinator: NavigationCoordinator = NavigationCoordinator(tabBarCoordinator: nil)) {
+    init(
+        service: NotificationsServiceProtocol = NotificationsService(),
+        coordinator: NavigationCoordinator = NavigationCoordinator(tabBarCoordinator: nil)) {
+        self.service = service
         super.init(coordinator: coordinator)
+
         getNotifications()
+    }
+
+    override public convenience init(coordinator: NavigationCoordinator) {
+        self.init(service: NotificationsService(), coordinator: coordinator)
     }
 
     func getNotifications() {
         if state == .withError {
             state = .loading
         }
-        Task {
-            let response = await service.getNotifications()
-            DispatchQueue.main.async { [weak self] in
-                switch response {
-                case .success(let notifications):
-                    self?.state = .withData(notifications: notifications)
-                case .failure:
-                    self?.state = .withError
-                }
+
+        service.getNotifications { [weak self] result in
+            switch result {
+            case .success(let notifications):
+                self?.state = .withData(notifications: notifications)
+            case .failure:
+                self?.state = .withError
             }
         }
     }

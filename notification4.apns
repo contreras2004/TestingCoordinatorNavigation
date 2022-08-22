@@ -3,9 +3,9 @@
    "aps": {
        "badge": 5,
        "alert": {
-           "title": "Do you wana go somewhere nice?",
-           "subtitle": "Tap here",
-           "body": "Is this working?",
+           "title": "¡Aprovecha este super descuento!",
+           "subtitle": "Haz click aquí para saber más",
+           "body": "No te vas a arrepentir 1313 😳",
        },
       "sound":"default"
    },

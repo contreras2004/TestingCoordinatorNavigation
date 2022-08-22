@@ -1,0 +1,34 @@
+{
+    "notifications": [
+        {
+            "id": "1",
+            "title": "Notification title 1",
+            "message": "Cras arcu sapien, tempus nec neque at, feugiat vehicula ligula. Aenean magna metus, egestas eget nisl a, feugiat aliquet augue. Fusce a purus vestibulum, accumsan felis eu, pretium ex. Cras pretium vel lectus nec congue. Praesent quis nulla at leo commodo convallis vel a leo. Etiam eleifend quam lectus, non posuere justo ultrices a. Sed blandit nisl nec lectus mollis tincidunt. Quisque blandit accumsan fringilla.",
+            "image": "https://img2.rtve.es/imagenes/fotografia-se-convirtio-meme-conocido-como-disaster-girl/1620920852564.jpg"
+        },
+        {
+            "id": "2",
+            "title": "Notification title 2",
+            "message": "Suspendisse dapibus lectus ullamcorper nulla fermentum, in pharetra leo sagittis. Proin at faucibus mauris. Donec tellus lorem, suscipit et arcu et, fringilla condimentum sem. Sed sit amet faucibus elit, eu facilisis orci. Integer quis metus et metus gravida laoreet. Sed sed mollis purus. Pellentesque lobortis pellentesque commodo.",
+            "image": "https://i.blogs.es/d86db0/meme-fry-1/450_1000.jpg"
+        },
+        {
+            "id": "3",
+            "title": "Notification title 3",
+            "message": "Vestibulum tincidunt odio pulvinar enim semper, ac laoreet turpis tempor. Ut finibus tortor sit amet maximus sagittis. Donec at finibus augue. Aenean lobortis mollis odio. Vivamus varius tincidunt congue. Nunc in libero nec tellus congue rutrum sed a arcu. Aliquam pharetra orci diam, nec rutrum augue sodales ac. Suspendisse sit amet mauris eget risus finibus hendrerit vitae quis eros. Aliquam in volutpat justo.",
+            "image": "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2018/03/28/15222363072573.jpg"
+        },
+        {
+            "id": "4",
+            "title": "Notification title 4",
+            "message": "Nullam in venenatis lacus. Morbi bibendum erat et turpis efficitur consectetur. In venenatis mattis turpis. Curabitur maximus ipsum sed porta porttitor. Nunc id venenatis tellus. Mauris efficitur feugiat neque a pellentesque. Etiam at lectus auctor, lobortis turpis eu, consectetur magna.",
+            "image": "https://redgol.cl/__export/1639270776013/sites/redgol/img/2021/12/11/nick-young-meme_crop1639270727067.jpg_242310155.jpg"
+        },
+        {
+            "id": "5",
+            "title": "Notification title 5",
+            "message": "Ut a purus in quam tempus congue quis quis mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas facilisis erat fringilla, volutpat massa a, cursus ex. Donec blandit libero dolor, nec lobortis quam molestie sit amet. Aliquam libero augue, suscipit sed congue at, dictum at nisl.",
+            "image": "https://i.ytimg.com/vi/KxYDR0tI12I/maxresdefault.jpg"
+        }
+    ]
+}

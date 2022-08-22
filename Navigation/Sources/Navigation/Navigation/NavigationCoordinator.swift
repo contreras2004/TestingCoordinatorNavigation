@@ -16,7 +16,6 @@ public protocol NavigationCoordinatorProtocol {
 }
 
 open class NavigationCoordinator: ObservableObject, NavigationCoordinatorProtocol {
-
     @Published public var isShowingModal = false
 
     public var viewModelForModal: BaseViewModel?

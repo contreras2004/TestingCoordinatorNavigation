@@ -47,7 +47,8 @@ let package = Package(
                 "TestUtils",
                 "Nimble-Snapshots",
                 "Networking"
-            ]
+            ],
+            resources: [.copy("JSON")]
         )
     ]
 )

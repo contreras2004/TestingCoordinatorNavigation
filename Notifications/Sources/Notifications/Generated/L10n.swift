@@ -19,10 +19,6 @@ internal enum L10n {
   /// 
   ///   Created by m.contreras.selman on 26-07-22.
   internal static let notificationsTitle = L10n.tr("Localizable", "notificationsTitle", fallback: #"Notifications"#)
-  /// Plural format key: "%#@views@"
-  internal static func nViews(_ p1: Int) -> String {
-    return L10n.tr("Localizable", "nViews", p1, fallback: #"Plural format key: "%#@views@""#)
-  }
   /// Reload
   internal static let reload = L10n.tr("Localizable", "reload", fallback: #"Reload"#)
 }
