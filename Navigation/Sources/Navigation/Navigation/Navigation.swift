@@ -11,7 +11,7 @@ import SwiftUI
 public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
     let viewFactory: ViewFactory
     @ObservedObject var coordinator: NavigationCoordinator
-    @ObservedObject var viewModel: BaseViewModel // this is the root viewModel
+    @ObservedObject var viewModel: BaseViewModel
 
     public init(viewModel: BaseViewModel,
                 @ViewBuilder viewFactory: () -> ViewFactory) {
@@ -21,7 +21,8 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
     }
 
     public var body: some View {
-        NavigationStack(path: $coordinator.path) {
+        Self._printChanges()
+        return NavigationStack(path: $coordinator.path) {
             viewFactory.modified(viewModel: viewModel)
             .navigationDestination(for: BaseViewModel.self) { innerVM in
                 viewFactory.viewFor(viewModel: innerVM).modified(viewModel: innerVM)
@@ -32,6 +33,8 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
         }
         .tag(viewModel.id)
         .sheet(isPresented: $viewModel.coordinator.isShowingModal) { modalView() }
+        // check this thread to check if apple responded sometime in the future
+        // https://developer.apple.com/forums/thread/711899
     }
 
     @ViewBuilder
