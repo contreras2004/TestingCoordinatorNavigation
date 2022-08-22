@@ -96,10 +96,40 @@ struct PushNotificationPayload {
         self.flow = PushNotificationFlow(rawValue: flow) ?? .none
         self.data = payload[Keys.data.rawValue] as? [String: AnyHashable]
     }
+
+    init(flow: PushNotificationFlow, payload: [String: AnyHashable]) {
+        self.flow = flow
+        self.data = payload
+    }
 }
 
 enum PushNotificationFlow: String, Codable {
     case notification
     case exampleModal
     case none
+}
+
+extension URL {
+    var queryDictionary: [String: AnyHashable] {
+        guard let query = self.query else { return [:] }
+
+        var queryStrings = [String: AnyHashable]()
+        for pair in query.components(separatedBy: "&") {
+            let key = pair.components(separatedBy: "=")[0]
+
+            let value = pair
+                .components(separatedBy: "=")[1]
+                .replacingOccurrences(of: "+", with: " ")
+                .removingPercentEncoding ?? ""
+
+            queryStrings[key] = value.isNumber ? Int64(value) : value
+        }
+        return queryStrings
+    }
+}
+
+extension String {
+    var isNumber: Bool {
+        !isEmpty && rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
+    }
 }

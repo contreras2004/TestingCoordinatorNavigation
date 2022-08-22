@@ -16,9 +16,17 @@ public protocol NavigationCoordinatorProtocol {
 }
 
 open class NavigationCoordinator: ObservableObject, NavigationCoordinatorProtocol {
-    @Published public var isShowingModal = false
+    @Published public var isShowingModal = false {
+        didSet {
+            debugPrint("DidChange isShowingModal: \(isShowingModal)")
+        }
+    }
 
-    public var viewModelForModal: BaseViewModel?
+    public var viewModelForModal: BaseViewModel? {
+        didSet {
+            debugPrint("DidSet del viewModelForModal: \(viewModelForModal)")
+        }
+    }
 
     public weak var tabBarCoordinator: TabBarViewCoordinator?
 

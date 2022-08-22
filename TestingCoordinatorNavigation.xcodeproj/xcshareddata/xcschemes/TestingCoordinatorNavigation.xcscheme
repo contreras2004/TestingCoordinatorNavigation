@@ -119,26 +119,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NavigationTests"
-               BuildableName = "NavigationTests"
-               BlueprintName = "NavigationTests"
-               ReferencedContainer = "container:Navigation">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NetworkingTests"
-               BuildableName = "NetworkingTests"
-               BlueprintName = "NetworkingTests"
-               ReferencedContainer = "container:Networking">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "NotificationsTests"
                BuildableName = "NotificationsTests"
                BlueprintName = "NotificationsTests"
@@ -163,6 +143,26 @@
                BuildableName = "TestUtilsTests"
                BlueprintName = "TestUtilsTests"
                ReferencedContainer = "container:TestUtils">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NavigationTests"
+               BuildableName = "NavigationTests"
+               BlueprintName = "NavigationTests"
+               ReferencedContainer = "container:Navigation">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NetworkingTests"
+               BuildableName = "NetworkingTests"
+               BlueprintName = "NetworkingTests"
+               ReferencedContainer = "container:Networking">
             </BuildableReference>
          </TestableReference>
          <TestableReference

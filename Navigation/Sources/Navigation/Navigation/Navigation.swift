@@ -12,7 +12,6 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
     let viewFactory: ViewFactory
     @ObservedObject var coordinator: NavigationCoordinator
     @ObservedObject var viewModel: BaseViewModel // this is the root viewModel
-    @State var isShowingModal = false // Fixes: Publishing changes from within view updates
 
     public init(viewModel: BaseViewModel,
                 @ViewBuilder viewFactory: () -> ViewFactory) {
@@ -27,14 +26,12 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
             .navigationDestination(for: BaseViewModel.self) { innerVM in
                 viewFactory.viewFor(viewModel: innerVM).modified(viewModel: innerVM)
             }
-        }.tabItem {
+        }
+        .tabItem {
             Label(viewModel.title, systemImage: viewModel.iconForTab)
         }
         .tag(viewModel.id)
-        .sheet(isPresented: $isShowingModal) { modalView() }
-        .onChange(of: viewModel.coordinator.isShowingModal) { isShowingModal in
-            self.isShowingModal = isShowingModal
-        }
+        .sheet(isPresented: $viewModel.coordinator.isShowingModal) { modalView() }
     }
 
     @ViewBuilder

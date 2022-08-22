@@ -82,14 +82,9 @@ extension MainNavigationCoordinator {
         case .goToRegisterForm:
             goToRegisterForm()
         case .showModal:
-            DispatchQueue.main.async { [weak self] in
-                self?.isShowingModal = true
-            }
-
+            isShowingModal = true
         case .dismissModal:
-            DispatchQueue.main.async { [weak self] in
-                self?.isShowingModal = false
-            }
+            isShowingModal = false
         }
     }
 

@@ -45,6 +45,7 @@ struct MainContentView: View {
             }
         }
         .modifier(BannerModifier(model: $loginCoordinator.bannerData))
+        .onOpenURL { url in handleDeeplink(url: url) }
     }
 
     func setUpNavigation() {
@@ -63,5 +64,15 @@ struct MainContentView: View {
         tabBarCoordinator.sessionManager = sessionManager
         loginCoordinator.sessionManager = sessionManager
         loginViewModel.coordinator = loginCoordinator
+    }
+
+    func handleDeeplink(url: URL) {
+        if !(loginCoordinator.sessionManager?.isLogged ?? true) {
+            let bannerData = BannerData(title: "Debes iniciar sesión primero", type: .warning)
+            loginCoordinator.showBanner(bannerData: bannerData)
+        }
+
+        guard let payload = DeeplinkManager.extractPushNotificationPayload(from: url) else { return }
+        tabBarCoordinator.handleNotification(payload: payload)
     }
 }

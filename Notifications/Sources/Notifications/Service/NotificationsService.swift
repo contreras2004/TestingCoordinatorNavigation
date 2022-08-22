@@ -21,7 +21,8 @@ public class NotificationsService: NotificationsServiceProtocol {
 
     public init() { }
 
-    public func getNotifications(completion: @escaping (Result<[NotificationsResponseModel.Notification], Networking.APIError>) -> Void) {
+    public func getNotifications(
+        completion: @escaping (Result<[NotificationsResponseModel.Notification], Networking.APIError>) -> Void) {
         Task {
             let response = await api.execute(
                 endpoint: .notifications,
@@ -39,7 +40,9 @@ public class NotificationsService: NotificationsServiceProtocol {
         }
     }
 
-    public func fetchNotification(id: Int, completion: @escaping (Result<NotificationsResponseModel.Notification, Networking.APIError>) -> Void ) {
+    public func fetchNotification(
+        id: Int,
+        completion: @escaping (Result<NotificationsResponseModel.Notification, Networking.APIError>) -> Void ) {
         Task {
             let params = NotificationDetailRequestModel(id: id)
             let response = await api.execute(
@@ -47,6 +50,7 @@ public class NotificationsService: NotificationsServiceProtocol {
                 decodingType: NotificationsResponseModel.Notification.self,
                 httpMethod: .post,
                 params: params)
+
             DispatchQueue.main.async {
                 switch response {
                 case .success(let responseModel):
