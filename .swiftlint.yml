@@ -126,6 +126,7 @@ excluded:
     - TestingCoordinatorNavigationTests
     - Wiremock
     
+    - UI/Tests
     - Login/Tests
     - Register/Tests
     - Navigation/Tests

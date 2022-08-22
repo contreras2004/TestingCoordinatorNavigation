@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable convenience_type
 class DeeplinkManager {
     enum DeepLinkConstants: String {
         case scheme = "tcn"

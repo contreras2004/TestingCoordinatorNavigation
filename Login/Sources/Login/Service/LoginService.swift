@@ -40,7 +40,9 @@ protocol LoginServiceProtocol {
 public class LoginService: LoginServiceProtocol {
     var api: ApiProtocol = API()
 
-    func login(requestModel: LoginRequestModel, completion: @escaping (Result<LoginResponseModel, LoginError>) -> Void) {
+    func login(
+        requestModel: LoginRequestModel,
+        completion: @escaping (Result<LoginResponseModel, LoginError>) -> Void) {
         Task {
             let response = await self.api.execute(
                 endpoint: .login,

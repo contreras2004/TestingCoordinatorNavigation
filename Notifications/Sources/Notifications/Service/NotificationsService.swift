@@ -13,7 +13,9 @@ public protocol NotificationsServiceProtocol {
 
     func getNotifications(completion: @escaping (Result<[NotificationsResponseModel.Notification], APIError>) -> Void)
 
-    func fetchNotification(id: Int, completion: @escaping (Result<NotificationsResponseModel.Notification, APIError>) -> Void)
+    func fetchNotification(
+        id: Int,
+        completion: @escaping (Result<NotificationsResponseModel.Notification, APIError>) -> Void)
 }
 
 public class NotificationsService: NotificationsServiceProtocol {

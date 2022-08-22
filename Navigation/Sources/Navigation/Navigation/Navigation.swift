@@ -21,8 +21,7 @@ public struct Navigation<ViewFactory: ViewFactoryProtocol>: View {
     }
 
     public var body: some View {
-        Self._printChanges()
-        return NavigationStack(path: $coordinator.path) {
+        NavigationStack(path: $coordinator.path) {
             viewFactory.modified(viewModel: viewModel)
             .navigationDestination(for: BaseViewModel.self) { innerVM in
                 viewFactory.viewFor(viewModel: innerVM).modified(viewModel: innerVM)

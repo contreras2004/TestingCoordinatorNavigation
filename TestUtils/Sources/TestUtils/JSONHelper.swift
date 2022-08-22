@@ -8,7 +8,10 @@
 import Foundation
 
 public enum JSONHelper {
-    public static func loadJSON<Element: Decodable>(withFile fileName: String, inBundleWithName bundle: String, subdirectory: String) -> Element? {
+    public static func loadJSON<Element: Decodable>(
+        withFile fileName: String,
+        inBundleWithName bundle: String,
+        subdirectory: String) -> Element? {
         let bundle = Bundle.currentModule(name: bundle)
         var jsonData: Element?
 

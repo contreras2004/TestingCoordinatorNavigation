@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Bundle+Extensions.swift
 //  
 //
 //  Created by m.contreras.selman on 18-08-22.
