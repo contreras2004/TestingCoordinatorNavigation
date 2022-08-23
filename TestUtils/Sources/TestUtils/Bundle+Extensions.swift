@@ -9,7 +9,6 @@ import Foundation
 
 public extension Foundation.Bundle {
     static func currentModule(name: String) -> Bundle {
-        //var thisModuleName = "Login_Login"
         var thisModuleName = name + "_" + name
         var url = Bundle.main.bundleURL
 
@@ -26,14 +25,4 @@ public extension Foundation.Bundle {
 
         return bundle
     }
-
-    /// Directory containing resource bundle
-    static var moduleDir: URL = {
-        var url = Bundle.main.bundleURL
-        for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
-            // remove 'ExecutableNameTests.xctest' path component
-            url = bundle.bundleURL.deletingLastPathComponent()
-        }
-        return url
-    }()
 }
