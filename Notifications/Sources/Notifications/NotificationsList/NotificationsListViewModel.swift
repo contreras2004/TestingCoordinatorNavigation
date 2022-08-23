@@ -54,7 +54,9 @@ public class NotificationsListViewModel: BaseViewModel {
         service.getNotifications { [weak self] result in
             switch result {
             case .success(let notifications):
-                self?.state = .withData(notifications: notifications)
+                withAnimation {
+                    self?.state = .withData(notifications: notifications)
+                }
             case .failure:
                 self?.state = .withError
             }
@@ -62,6 +64,14 @@ public class NotificationsListViewModel: BaseViewModel {
     }
 
     func removeNotification(at offsets: IndexSet) {
-        debugPrint("we need to remove the item")
+        switch state {
+        case .withData(var notifications):
+            offsets.forEach { index in
+                notifications.remove(at: index)
+            }
+            state = .withData(notifications: notifications)
+        default:
+            debugPrint("nothing to remove")
+        }
     }
 }
