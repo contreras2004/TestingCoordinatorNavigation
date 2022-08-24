@@ -24,6 +24,7 @@ Go to the folder `APNS simulator tests` and drag and drop each of the `.apns` fi
 Execute one of the following lines in the terminal while the simulator is runing the app:
 
 `xcrun simctl openurl booted "tcn://matiascontreras.TestingCoordinatorNavigation/exampleModal"`
+
 `xcrun simctl openurl booted "tcn://matiascontreras.TestingCoordinatorNavigation/notification?notificationId=4"`
 
 # WIP and Known issues
