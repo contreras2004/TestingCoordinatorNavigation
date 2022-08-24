@@ -5,6 +5,7 @@
 //  Created by Matias Contreras on 12-07-22.
 //
 
+import Combine
 import SwiftUI
 import Theme
 
@@ -16,7 +17,8 @@ public struct DefaultButton: View {
     var text = "No text"
     @Binding var isDisabled: Bool
     @Binding var isLoading: Bool
-    var action: (() -> Void)
+    var action: (() -> Void)?
+    var asyncAction: (() async -> Void)?
     let style: Style
 
     public init(
@@ -24,11 +26,24 @@ public struct DefaultButton: View {
         isDisabled: Binding<Bool> = .constant(false),
         isLoading: Binding<Bool> = .constant(false),
         style: Style = .filled,
-        action: @escaping () -> Void = { }) {
+        action: (() -> Void)? = nil) {
         self.text = text
         _isDisabled = isDisabled
         _isLoading = isLoading
         self.action = action
+        self.style = style
+    }
+
+    public init(
+        text: String,
+        isDisabled: Binding<Bool> = .constant(false),
+        isLoading: Binding<Bool> = .constant(false),
+        style: Style = .filled,
+        asyncAction: (() async -> Void)? = nil) {
+        self.text = text
+        _isDisabled = isDisabled
+        _isLoading = isLoading
+        self.asyncAction = asyncAction
         self.style = style
     }
 
@@ -53,7 +68,16 @@ public struct DefaultButton: View {
 
     public var body: some View {
         ZStack {
-            Button(action: action) {
+            Button {
+                if let action = action {
+                    action()
+                }
+                if let asyncAction = asyncAction {
+                    Task {
+                        await asyncAction()
+                    }
+                }
+            } label: {
                 Spacer()
                 Text(isLoading ? "" : text)
                     .bold()

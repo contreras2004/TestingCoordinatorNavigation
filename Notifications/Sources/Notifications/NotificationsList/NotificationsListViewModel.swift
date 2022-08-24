@@ -10,6 +10,7 @@ import Navigation
 import SwiftUI
 
 public class NotificationsListViewModel: BaseViewModel {
+    
     enum ViewState: Equatable {
         case loading
         case withData(notifications: [NotificationsResponseModel.Notification])
@@ -19,7 +20,7 @@ public class NotificationsListViewModel: BaseViewModel {
             switch (lhs, rhs) {
             case (.loading, .withError):
                 return false
-            case (.withError, withError):
+            case (.withError, .withError):
                 return true
             default:
                 return false
@@ -38,7 +39,6 @@ public class NotificationsListViewModel: BaseViewModel {
         coordinator: NavigationCoordinator = NavigationCoordinator(tabBarCoordinator: nil)) {
         self.service = service
         super.init(coordinator: coordinator)
-
         getNotifications()
     }
 
@@ -46,19 +46,35 @@ public class NotificationsListViewModel: BaseViewModel {
         self.init(service: NotificationsService(), coordinator: coordinator)
     }
 
-    func getNotifications() {
+    // example of wrapped callback in async/await to be used by the pull to refresh component
+    func fetchNotifications() async -> ViewState {
         if state == .withError {
             state = .loading
         }
 
-        service.getNotifications { [weak self] result in
+        return await withCheckedContinuation { continuation in
+            getNotifications(continuation: continuation)
+        }
+    }
+
+    // optional continuation to be able to call the function in synchronous context
+    func getNotifications(continuation: (CheckedContinuation<ViewState, Never>)? = nil) {
+        service.getNotifications { result in
             switch result {
             case .success(let notifications):
                 withAnimation {
-                    self?.state = .withData(notifications: notifications)
+                    if let continuation {
+                        continuation.resume(returning: ViewState.withData(notifications: notifications))
+                    } else {
+                        self.state = ViewState.withData(notifications: notifications)
+                    }
                 }
             case .failure:
-                self?.state = .withError
+                if let continuation {
+                    continuation.resume(returning: ViewState.withError)
+                } else {
+                    self.state = ViewState.withError
+                }
             }
         }
     }

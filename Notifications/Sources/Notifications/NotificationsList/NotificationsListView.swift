@@ -47,16 +47,19 @@ public struct NotificationsListView: View {
                     viewModel.removeNotification(at: notification)
                 }
             }
-            .listStyle(.plain)
             .refreshable {
-                viewModel.getNotifications()
-            }.toolbar {
+                viewModel.state = await viewModel.fetchNotifications()
+            }.onAppear {
+                UIRefreshControl.appearance().backgroundColor = .white
+            }
+            .listStyle(.plain)
+            .toolbar {
                 EditButton()
             }
         case .withError:
             Text(L10n.error)
             DefaultButton(text: L10n.reload, style: .onlyText) {
-                viewModel.getNotifications()
+                viewModel.state = await viewModel.fetchNotifications()
             }
         case .loading:
             ActivityIndicator(isAnimating: .constant(true), style: .medium)
