@@ -39,59 +39,45 @@
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Theme"
-            BuildableName = "Theme"
-            BlueprintName = "Theme"
-            ReferencedContainer = "container:Theme">
+            BlueprintIdentifier = "UITests"
+            BuildableName = "UITests"
+            BlueprintName = "UITests"
+            ReferencedContainer = "container:UI">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Networking"
-            BuildableName = "Networking"
-            BlueprintName = "Networking"
-            ReferencedContainer = "container:Networking">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "TestUtils"
-            BuildableName = "TestUtils"
-            BlueprintName = "TestUtils"
-            ReferencedContainer = "container:TestUtils">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Login"
-            BuildableName = "Login"
-            BlueprintName = "Login"
-            ReferencedContainer = "container:Login">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Navigation"
-            BuildableName = "Navigation"
-            BlueprintName = "Navigation"
-            ReferencedContainer = "container:Navigation">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Notifications"
-            BuildableName = "Notifications"
-            BlueprintName = "Notifications"
-            ReferencedContainer = "container:Notifications">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Register"
-            BuildableName = "Register"
-            BlueprintName = "Register"
+            BlueprintIdentifier = "RegisterTests"
+            BuildableName = "RegisterTests"
+            BlueprintName = "RegisterTests"
             ReferencedContainer = "container:Register">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "UI"
-            BuildableName = "UI"
-            BlueprintName = "UI"
-            ReferencedContainer = "container:UI">
+            BlueprintIdentifier = "LoginTests"
+            BuildableName = "LoginTests"
+            BlueprintName = "LoginTests"
+            ReferencedContainer = "container:Login">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "NotificationsTests"
+            BuildableName = "NotificationsTests"
+            BlueprintName = "NotificationsTests"
+            ReferencedContainer = "container:Notifications">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8EB21F5F289DAFC700D71AB7"
+            BuildableName = "TestingCoordinatorNavigationTests.xctest"
+            BlueprintName = "TestingCoordinatorNavigationTests"
+            ReferencedContainer = "container:TestingCoordinatorNavigation.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "ThemeTests"
+            BuildableName = "ThemeTests"
+            BlueprintName = "ThemeTests"
+            ReferencedContainer = "container:Theme">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -133,36 +119,6 @@
                BuildableName = "RegisterTests"
                BlueprintName = "RegisterTests"
                ReferencedContainer = "container:Register">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "TestUtilsTests"
-               BuildableName = "TestUtilsTests"
-               BlueprintName = "TestUtilsTests"
-               ReferencedContainer = "container:TestUtils">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NavigationTests"
-               BuildableName = "NavigationTests"
-               BlueprintName = "NavigationTests"
-               ReferencedContainer = "container:Navigation">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NetworkingTests"
-               BuildableName = "NetworkingTests"
-               BlueprintName = "NetworkingTests"
-               ReferencedContainer = "container:Networking">
             </BuildableReference>
          </TestableReference>
          <TestableReference
