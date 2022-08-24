@@ -18,6 +18,7 @@ public protocol ViewModelProtocol: ObservableObject, Identifiable, Hashable {
 open class BaseViewModel: ViewModelProtocol, ObservableObject {
     public var id = UUID()
     open var title: String { "Title not set" }
+    open var navigationTitleColor: Color { .black }
     open var iconForTab: String { "xmark" }
 
     open var navigationButtonIcon: String? { nil }

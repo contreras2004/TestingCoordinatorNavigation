@@ -53,13 +53,6 @@ public struct LoginView: View {
         }, message: { _ in
             Text(viewModel.apiError.message)
         })
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                VStack {
-                    Text(viewModel.title).foregroundColor(.white).font(.headline)
-                }
-            }
-        }
     }
 }
 

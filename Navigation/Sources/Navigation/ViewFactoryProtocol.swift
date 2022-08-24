@@ -25,11 +25,21 @@ struct ViewFactoryModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .navigationTitle(viewModel.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if let iconName = viewModel.navigationButtonIcon {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                            Text(viewModel.title)
+                                .fixedSize()
+                                .font(.headline)
+                                .foregroundColor(viewModel.navigationTitleColor)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .lineLimit(1)
+                                .accessibilityAddTraits(.isHeader)
+                    }
+                }
+                if let iconName = viewModel.navigationButtonIcon {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             viewModel.actionForNavigationButton()
                         } label: {

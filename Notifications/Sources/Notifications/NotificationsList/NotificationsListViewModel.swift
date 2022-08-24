@@ -27,7 +27,13 @@ public class NotificationsListViewModel: BaseViewModel {
         }
     }
 
-    @Published var state: ViewState = .loading
+    var state: ViewState = .loading {
+        willSet {
+            withAnimation {
+                objectWillChange.send()
+            }
+        }
+    }
 
     var service: NotificationsServiceProtocol = NotificationsService()
 
@@ -61,12 +67,10 @@ public class NotificationsListViewModel: BaseViewModel {
         service.getNotifications { result in
             switch result {
             case .success(let notifications):
-                withAnimation {
-                    if let continuation {
-                        continuation.resume(returning: ViewState.withData(notifications: notifications))
-                    } else {
-                        self.state = ViewState.withData(notifications: notifications)
-                    }
+                if let continuation {
+                    continuation.resume(returning: ViewState.withData(notifications: notifications))
+                } else {
+                    self.state = ViewState.withData(notifications: notifications)
                 }
             case .failure:
                 if let continuation {

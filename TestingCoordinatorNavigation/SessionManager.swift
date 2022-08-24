@@ -11,7 +11,12 @@ import SwiftUI
 class SessionManager: ObservableObject {
     static let key: String = "isLogged"
 
-    @Published public var isLogged = false {
+    public var isLogged = false {
+        willSet {
+            withAnimation {
+                objectWillChange.send()
+            }
+        }
         didSet {
             UserDefaults.standard.set(self.isLogged, forKey: SessionManager.key)
         }
