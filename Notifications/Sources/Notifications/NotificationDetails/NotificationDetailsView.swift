@@ -33,7 +33,6 @@ public struct NotificationDetailsView: View {
                                  .resizable()
                                  .aspectRatio(contentMode: .fit)
                                  .frame(maxWidth: .infinity, maxHeight: imageHeight)
-                                 .padding()
                          }
                      } placeholder: {
                          ZStack {
