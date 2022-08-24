@@ -80,12 +80,15 @@ public struct BannerModifier: ViewModifier {
                     VStack {
                         HStack(alignment: .firstTextBaseline) {
                             Image(systemName: model?.type.icon ?? BannerData.BannerType.success.icon)
+                                .foregroundColor(model?.type.textColor)
                             VStack(alignment: .leading) {
                                 Text(model?.title ?? "")
                                     .font(.headline)
+                                    .foregroundColor(model?.type.textColor)
                                 if let message = model?.message {
                                     Text(message)
                                         .font(.footnote)
+                                        .foregroundColor(model?.type.textColor)
                                 }
                             }
                             Spacer()
