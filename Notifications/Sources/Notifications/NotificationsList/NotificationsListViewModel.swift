@@ -10,7 +10,6 @@ import Navigation
 import SwiftUI
 
 public class NotificationsListViewModel: BaseViewModel {
-    
     enum ViewState: Equatable {
         case loading
         case withData(notifications: [NotificationsResponseModel.Notification])

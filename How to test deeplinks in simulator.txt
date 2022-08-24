@@ -1,3 +1,0 @@
-How to test deeplinks in simulator:
-
-xcrun simctl openurl booted "tcn://test"
