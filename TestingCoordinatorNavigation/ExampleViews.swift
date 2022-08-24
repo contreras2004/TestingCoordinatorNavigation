@@ -12,10 +12,11 @@ import SwiftUI
 import Theme
 import UI
 
-public class View1ViewModel: BaseViewModel {
-    override public var title: String { "View 1" }
-    override public var iconForTab: String { "square.and.arrow.up.circle" }
-    override public var navigationButtonIcon: String? { "message" }
+class View1ViewModel: BaseViewModel {
+    override var title: String { "View 1" }
+    override var iconForTab: String { "square.and.arrow.up.circle" }
+    override var navigationButtonIcon: String? { "message.badge" }
+    override var navigationButtonIconColor: Color { ThemeColor.primaryAccent.swiftUIColor }
     override public var actionForNavigationButton: () -> Void {{
         self.coordinator.handle(event: MainNavigationCoordinatorEvent.goToNotifications)
     }}
@@ -58,6 +59,7 @@ class View2ViewModel: BaseViewModel {
     override var title: String { "View 2" }
     override var iconForTab: String { "info" }
     override var navigationButtonIcon: String? { "info.circle.fill" }
+    override var navigationButtonIconColor: Color { ThemeColor.primaryAccent.swiftUIColor }
 
     override var actionForNavigationButton: (() -> Void) {
         {

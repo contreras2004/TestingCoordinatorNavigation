@@ -8,6 +8,7 @@
 import Login
 import Navigation
 import SwiftUI
+import Theme
 import UI
 
 struct MainContentView: View {
@@ -35,13 +36,13 @@ struct MainContentView: View {
                     ForEach(tabBarCoordinator.tabs) { viewModel in
                         Navigation(viewModel: viewModel) {
                             ViewFactory(viewModel: viewModel)
-                        }
+                        }.accentColor(ThemeColor.primaryAccent.swiftUIColor)
                     }
                 }
             } else {
                 Navigation(viewModel: loginViewModel) {
                     ViewFactory(viewModel: loginViewModel)
-                }
+                }.accentColor(ThemeColor.primaryAccent.swiftUIColor)
             }
         }
         .modifier(BannerModifier(model: $loginCoordinator.bannerData))
