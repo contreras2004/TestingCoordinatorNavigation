@@ -15,6 +15,10 @@ let package = Package(
             targets: ["Theme"])
     ],
     dependencies: [
+        .package(url: "https://github.com/Quick/Quick.git",
+                 .upToNextMajor(from: "5.0.1")),
+        .package(url: "https://github.com/Quick/Nimble.git",
+                 .upToNextMajor(from: "10.0.0")),
         .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.0")
     ],
     targets: [
@@ -29,6 +33,10 @@ let package = Package(
         ),
         .testTarget(
             name: "ThemeTests",
-            dependencies: ["Theme"])
+            dependencies: [
+                "Theme",
+                "Quick",
+                "Nimble"
+            ])
     ]
 )
