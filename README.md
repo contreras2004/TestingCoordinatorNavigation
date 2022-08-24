@@ -17,14 +17,14 @@ After installing Wiremock, go to the wiremock folder and run `make mock`. This w
 
 # How to test Push notifications in the simulator:
 
-Go to the folder **APNS simulator tests** and drag and drop each of the **.apns** files into the simulator.
+Go to the folder `APNS simulator tests` and drag and drop each of the `.apns` files into the simulator.
 
 # How to test deeplinks in simulator:
 
 Execute one of the following lines in the terminal while the simulator is runing the app:
 
-xcrun simctl openurl booted "tcn://matiascontreras.TestingCoordinatorNavigation/exampleModal"
-xcrun simctl openurl booted "tcn://matiascontreras.TestingCoordinatorNavigation/notification?notificationId=4"
+`xcrun simctl openurl booted "tcn://matiascontreras.TestingCoordinatorNavigation/exampleModal"`
+`xcrun simctl openurl booted "tcn://matiascontreras.TestingCoordinatorNavigation/notification?notificationId=4"`
 
 # WIP and Known issues
 
