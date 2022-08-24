@@ -14,39 +14,54 @@ import TestUtils
 
 @testable import UI
 
-/*final class BannerModifierTests: QuickSpec {
-    var sut: View = Text("Hola").frame(height: 400)
-    @ObservedObject var dummyClass:DummyClass = DummyClass()
-    
-    override func spec() {
-        /*beforeEach {
-            sut = Text("Testing Banner")
-        }*/
+final class BannerModifierTests: QuickSpec {
         
+    override func spec() {
         describe("BannerModifier") {
             context("when applied to view") {
-                it("should have expected layout") {
-                    /*@Published var bannerData = BannerData(
-                        title: "Testing",
-                        message: "Error banner",
-                        type: .error,
-                        autoDismiss: false,
-                        autoDismissSeconds: 0)*/
-                    //var dummyClass = DummyClass()
-                    
-                    self.sut.modifier(BannerModifier(model: self.$dummyClass.bannerData))
-                    expect(self.sut.view(sizeThatFitsWidth: 300, colorScheme: .light)) == recordSnapshot()
+                it("should have expected layout with only title") {
+                    let view = Text("")
+                        .frame(width: 300, height: 100)
+                        .modifier(BannerModifier(
+                            model: .constant(BannerData(title: "Hola"))))
+                    expect(view.view(width: 300, height: 100)) == snapshot()
+                }
+                
+                it("should have expected layout with title and subtitle") {
+                    let view = Text("")
+                        .frame(width: 300, height: 100)
+                        .modifier(BannerModifier(
+                            model: .constant(BannerData(
+                                title: "Hola",
+                                message: "Este es el mensaje"
+                            ))))
+                    expect(view.view(width: 300, height: 100)) == snapshot()
+                }
+                
+                it("should have expected layout when type is Warning") {
+                    let view = Text("")
+                        .frame(width: 300, height: 100)
+                        .modifier(BannerModifier(
+                            model: .constant(BannerData(
+                                title: "Hola",
+                                message: "Este es el mensaje",
+                                type: .warning
+                            ))))
+                    expect(view.view(width: 300, height: 100)) == snapshot()
+                }
+                
+                it("should have expected layout when type is Error") {
+                    let view = Text("")
+                        .frame(width: 300, height: 100)
+                        .modifier(BannerModifier(
+                            model: .constant(BannerData(
+                                title: "Hola",
+                                message: "Este es el mensaje",
+                                type: .error
+                            ))))
+                    expect(view.view(width: 300, height: 100)) == snapshot()
                 }
             }
         }
     }
-}*/
-
-class DummyClass: ObservableObject {
-    @Published var bannerData: BannerData? = BannerData(
-        title: "Testing",
-        message: "Error banner",
-        type: .error,
-        autoDismiss: false,
-        autoDismissSeconds: 0)
 }
